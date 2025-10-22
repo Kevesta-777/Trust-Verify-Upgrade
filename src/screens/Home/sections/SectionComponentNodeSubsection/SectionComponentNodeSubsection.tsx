@@ -1,30 +1,29 @@
-import React from "react";
-import { Avatar, AvatarFallback } from "../../../../components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../../../../components/ui/avatar";
 import { Badge } from "../../../../components/ui/badge";
 import { Card, CardContent } from "../../../../components/ui/card";
 
 const testimonials = [
   {
     name: "Reynolds Anthony",
-    avatar: "",
+    avatar: "/Avatar2.png",
     date: "May 14, @TrustPilot",
     text: "\"For years, I've trusted Finto Insurance. Their attentive team consistently finds me the perfect coverage. I'm confident in their protection of assets.\"",
   },
   {
     name: "Tomasz Adam",
-    avatar: "",
+    avatar: "/Avatar3.png",
     date: "May 14, @TrustPilot",
     text: "\"For years, I've trusted Finto Insurance. Their attentive team consistently finds me the perfect coverage. I'm confident in their protection of assets.\"",
   },
   {
     name: "Tomasz Adam",
-    avatar: "",
+    avatar: "/Avatar2.png",
     date: "May 14, @TrustPilot",
     text: "\"For years, I've trusted Finto Insurance. Their attentive team consistently finds me the perfect coverage. I'm confident in their protection of assets.\"",
   },
   {
     name: "Tomasz Adam",
-    avatar: "",
+    avatar: "/Avatar3.png",
     date: "May 14, @TrustPilot",
     text: "\"For years, I've trusted Finto Insurance. Their attentive team consistently finds me the perfect coverage. I'm confident in their protection of assets.\"",
   },
@@ -33,25 +32,25 @@ const testimonials = [
 const testimonials2 = [
   {
     name: "Eleanor Emily",
-    avatar: "",
+    avatar: "/Avatar1.png",
     date: "May 14, @TrustPilot",
     text: "\"For years, I've trusted Finto Insurance. Their attentive team consistently finds me the perfect coverage. I'm confident in their protection of assets.\"",
   },
   {
     name: "Eleanor Emily",
-    avatar: "",
+    avatar: "/Avatar2.png",
     date: "May 14, @TrustPilot",
     text: "\"For years, I've trusted Finto Insurance. Their attentive team consistently finds me the perfect coverage. I'm confident in their protection of assets.\"",
   },
   {
     name: "Eleanor Emily",
-    avatar: "",
+    avatar: "/Avatar1.png",
     date: "May 14, @TrustPilot",
     text: "\"For years, I've trusted Finto Insurance. Their attentive team consistently finds me the perfect coverage. I'm confident in their protection of assets.\"",
   },
   {
     name: "Eleanor Emily",
-    avatar: "",
+    avatar: "/Avatar1.png",
     date: "May 14, @TrustPilot",
     text: "\"For years, I've trusted Finto Insurance. Their attentive team consistently finds me the perfect coverage. I'm confident in their protection of assets.\"",
   },
@@ -86,7 +85,10 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
                 <CardContent className="p-[30px]">
                   <div className="flex items-start gap-[15px] mb-[31px]">
                     <Avatar className="w-[50px] h-[50px] bg-[#f3f3f3]">
-                      <AvatarFallback className="bg-[#f3f3f3]" />
+                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                      <AvatarFallback className="bg-[#f3f3f3]">
+                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      </AvatarFallback>
                     </Avatar>
                     <div className="flex flex-col gap-[7px]">
                       <div className="[font-family:'Inter',Helvetica] font-normal text-[#003d2b] text-[15.5px] tracking-[0] leading-4">
@@ -118,7 +120,10 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
                 <CardContent className="p-[30px]">
                   <div className="flex items-start gap-[15px] mb-[31px]">
                     <Avatar className="w-[50px] h-[50px] bg-[#f3f3f3]">
-                      <AvatarFallback className="bg-[#f3f3f3]" />
+                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                      <AvatarFallback className="bg-[#f3f3f3]">
+                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      </AvatarFallback>
                     </Avatar>
                     <div className="flex flex-col gap-[7px]">
                       <div className="[font-family:'Inter',Helvetica] font-normal text-[#003d2b] text-[15.9px] tracking-[0] leading-4">
