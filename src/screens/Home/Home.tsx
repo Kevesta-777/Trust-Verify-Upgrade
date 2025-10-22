@@ -29,13 +29,13 @@ export const Home = (): JSX.Element => {
       />
 
       <img
-        className="absolute top-[1091px] left-[1789px] w-[30px] h-[30px] z-10 pointer-events-none"
+        className="absolute top-[1091px] right-[101px] w-[30px] h-[30px] z-10 pointer-events-none"
         alt="Icon star"
         src="/icon-star-3.svg"
       />
 
       <img
-        className="absolute top-[7089px] left-[1770px] w-[30px] h-[30px] z-10 pointer-events-none"
+        className="absolute top-[7089px] right-[120px] w-[30px] h-[30px] z-10 pointer-events-none"
         alt="Icon star"
         src="/icon-star.svg"
       />
