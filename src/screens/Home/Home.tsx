@@ -4,12 +4,12 @@ import { BackgroundSubsection } from "./sections/BackgroundSubsection";
 import { BackgroundWrapperSubsection } from "./sections/BackgroundWrapperSubsection";
 import { DivSubsection } from "./sections/DivSubsection";
 import { DivWrapperSubsection } from "./sections/DivWrapperSubsection";
-import { FooterSubsection } from "./sections/FooterSubsection";
+import { Footer } from "../../components/Footer";
 import { FormSubsection } from "./sections/FormSubsection";
 import { Frame1Subsection } from "./sections/Frame1Subsection";
 import { FrameSubsection } from "./sections/FrameSubsection";
 import { FrameWrapperSubsection } from "./sections/FrameWrapperSubsection";
-import { HeaderWrapperSubsection } from "./sections/HeaderWrapperSubsection";
+import { Header } from "../../components/Header";
 import { HeroSliderSubsection } from "./sections/HeroSliderSubsection";
 import { SectionComponentNodeSubsection } from "./sections/SectionComponentNodeSubsection";
 
@@ -46,7 +46,7 @@ export const Home = (): JSX.Element => {
         src="/icon-star-1.svg"
       />
 
-      <HeaderWrapperSubsection />
+      <Header backgroundImage = {''}/>
       <HeroSliderSubsection />
       <FrameSubsection />
       <FrameWrapperSubsection />
@@ -57,7 +57,7 @@ export const Home = (): JSX.Element => {
       <BackgroundWrapperSubsection />
       <FormSubsection />
       <SectionComponentNodeSubsection />
-      <FooterSubsection />
+      <Footer />
     </main>
   );
 };
