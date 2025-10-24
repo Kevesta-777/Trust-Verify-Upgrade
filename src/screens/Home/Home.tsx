@@ -4,12 +4,12 @@ import { BackgroundSubsection } from "./sections/BackgroundSubsection";
 import { BackgroundWrapperSubsection } from "./sections/BackgroundWrapperSubsection";
 import { DivSubsection } from "./sections/DivSubsection";
 import { DivWrapperSubsection } from "./sections/DivWrapperSubsection";
-import { Footer } from "../../components/Footer";
+import { FooterSubsection } from "./sections/FooterSubsection";
 import { FormSubsection } from "./sections/FormSubsection";
 import { Frame1Subsection } from "./sections/Frame1Subsection";
 import { FrameSubsection } from "./sections/FrameSubsection";
 import { FrameWrapperSubsection } from "./sections/FrameWrapperSubsection";
-import { Header } from "../../components/Header";
+import { HeaderWrapperSubsection } from "./sections/HeaderWrapperSubsection";
 import { HeroSliderSubsection } from "./sections/HeroSliderSubsection";
 import { SectionComponentNodeSubsection } from "./sections/SectionComponentNodeSubsection";
 
@@ -29,13 +29,13 @@ export const Home = (): JSX.Element => {
       />
 
       <img
-        className="absolute top-[1091px] right-[101px] w-[30px] h-[30px] z-10 pointer-events-none"
+        className="absolute top-[1091px] left-[1789px] w-[30px] h-[30px] z-10 pointer-events-none"
         alt="Icon star"
         src="/icon-star-3.svg"
       />
 
       <img
-        className="absolute top-[7089px] right-[120px] w-[30px] h-[30px] z-10 pointer-events-none"
+        className="absolute top-[7089px] left-[1770px] w-[30px] h-[30px] z-10 pointer-events-none"
         alt="Icon star"
         src="/icon-star.svg"
       />
@@ -46,7 +46,7 @@ export const Home = (): JSX.Element => {
         src="/icon-star-1.svg"
       />
 
-      <Header backgroundImage = {''}/>
+      <HeaderWrapperSubsection />
       <HeroSliderSubsection />
       <FrameSubsection />
       <FrameWrapperSubsection />
@@ -57,7 +57,7 @@ export const Home = (): JSX.Element => {
       <BackgroundWrapperSubsection />
       <FormSubsection />
       <SectionComponentNodeSubsection />
-      <Footer />
+      <FooterSubsection />
     </main>
   );
 };
