@@ -1,6 +1,6 @@
 import React from "react";
-import { Card, CardContent } from "../../../../components/ui/card";
-import { Input } from "../../../../components/ui/input";
+import { Card, CardContent } from "../ui/card";
+import { Input } from "../ui/input";
 
 const companyLinks = [
   { label: "Home" },
@@ -29,7 +29,7 @@ const socialLinks = [
   { label: "Twitter" },
 ];
 
-export const FooterSubsection = (): JSX.Element => {
+export const Footer = (): JSX.Element => {
   return (
     <footer className="relative w-full bg-app-primary">
       <img
@@ -108,7 +108,7 @@ export const FooterSubsection = (): JSX.Element => {
             </nav>
           </div>
         </div>
-        <Card className="bg-[#ffffff1a] border-none rounded-[20px] mb-[60px]">
+        <Card className="bg-[#ffffff1a] border-none rounded-[20px] mb-[40px]">
           <CardContent className="p-[39px] flex items-center gap-[47px]">
             <img className="h-[54px]" alt="Group" src="/footer_logo.png" />
 
@@ -134,7 +134,7 @@ export const FooterSubsection = (): JSX.Element => {
           </CardContent>
         </Card>
 
-        <div className="flex items-center justify-between mb-14">
+        <div className="flex items-center justify-between mb-8">
           <p className="text-base leading-[27.2px] [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white opacity-80">
             Copyright © 2025 All Rights Reserved.
           </p>
