@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import React from "react";
 import { Button } from "../../../../components/ui/button";
 
@@ -9,6 +9,7 @@ const slides = [
       text: "PROTECTING EVERY TRANSACTION, EVERYWHERE",
     },
     title: "/heading-1---insurance-plans-for-life-s-journey.svg",
+    backgroundImage: "/Hero1.png", // Add background image
     description:
       "Our advanced security network spans across 195+ countries, monitoring billions of transactions in real-time to ensure your financial operations remain secure no matter where business takes you.",
     features: [
@@ -32,6 +33,7 @@ const slides = [
       text: "INTELLIGENCE THAT NEVER SLEEP",
     },
     title: "/heading-1---insurance-plans-for-life-s-journey-1.svg",
+    backgroundImage: "/Hero2.png", // Add background image
     description:
       "Machine learning algorithms analyze transaction patterns, behavioral biometrics, and risk indicators to identify and prevent fraud before it happens, with 99.7% accuracy.",
     features: [
@@ -55,6 +57,7 @@ const slides = [
       text: "YOUR TRUST, OUR FOUNDATION",
     },
     title: "/heading-1---insurance-plans-for-life-s-journey-2.svg",
+    backgroundImage: "/Hero3.png", // Add background image
     description:
       "Bank-grade encryption, multi-layered authentication, and continuous monitoring create an impenetrable shield around your financial data and transactions.",
     features: [
@@ -76,6 +79,19 @@ const slides = [
 
 export const HeroSliderSubsection = (): JSX.Element => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
+  const [isTransitioning, setIsTransitioning] = React.useState(false);
+
+  const handleSlideChange = (index: number) => {
+    if (index === currentSlide) return;
+    
+    setIsTransitioning(true);
+    setCurrentSlide(index);
+    
+    // Reset transition state after animation completes
+    setTimeout(() => {
+      setIsTransitioning(false);
+    }, 500);
+  };
 
   return (
     <section className="relative w-full h-[867px] overflow-hidden">
@@ -86,7 +102,13 @@ export const HeroSliderSubsection = (): JSX.Element => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="min-w-full h-full flex flex-col gap-5 bg-cover bg-[50%_50%] px-[110px] pt-[204px]"
+            className="min-w-full h-full flex flex-col gap-5 bg-cover bg-center px-[110px] pt-[204px] relative"
+            style={{ 
+              backgroundImage: `url(${slide.backgroundImage})`,
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              transition: isTransitioning ? 'background-size 0.5s ease-in-out' : 'none',
+            }}
           >
             <div className="flex w-[471px] h-[50px] items-center gap-5">
               <img
@@ -134,12 +156,12 @@ export const HeroSliderSubsection = (): JSX.Element => {
               <div className="inline-flex items-center gap-5">
                 <Button className="w-[223px] h-14 bg-app-secondary hover:bg-app-secondary/90 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-white text-lg tracking-[-0.20px] leading-[18px]">
                   Get Started Free
-                  <ArrowRightIcon className="w-[30px] h-[30px] ml-2" />
+                  <ArrowUpRight className="w-[30px] h-[30px] ml-2" />
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="w-[198px] h-14 border-app-secondary text-app-secondary hover:bg-app-secondary/10 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-lg tracking-[-0.20px] leading-[18px]"
+                  className="w-[198px] h-14 border-app-secondary text-app-secondary bg-transparent hover:bg-app-secondary/10 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-lg tracking-[-0.20px] leading-[18px]"
                 >
                   Learn More
                 </Button>
@@ -153,7 +175,7 @@ export const HeroSliderSubsection = (): JSX.Element => {
         {slides.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentSlide(index)}
+            onClick={() => handleSlideChange(index)}
             className={`h-1.5 rounded-[50px] transition-all ${
               index === currentSlide
                 ? "w-10 bg-app-secondary"

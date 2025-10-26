@@ -60,6 +60,14 @@ const CardContent = React.forwardRef<
 ));
 CardContent.displayName = "CardContent";
 
+const CardContentReverse = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("pb-0", className)} {...props} />
+));
+CardContentReverse.displayName = "CardContentReverse";
+
 const CardFooter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -79,4 +87,5 @@ export {
   CardTitle,
   CardDescription,
   CardContent,
+  CardContentReverse
 };

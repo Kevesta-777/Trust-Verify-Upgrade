@@ -1,5 +1,4 @@
-import { ArrowRightIcon } from "lucide-react";
-import React from "react";
+import { TrendingUp } from "lucide-react";
 import { Badge } from "../../../../components/ui/badge";
 import { Button } from "../../../../components/ui/button";
 
@@ -86,7 +85,7 @@ export const FrameWrapperSubsection = (): JSX.Element => {
         <div className="flex items-center gap-5">
           <Button className="w-[223px] h-14 bg-app-primary hover:bg-app-primary/90 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-white text-lg tracking-[-0.20px]">
             Start Free Trial
-            <ArrowRightIcon className="ml-2 w-[30px] h-[30px]" />
+            <TrendingUp className="ml-2 w-[30px] h-[30px]" />
           </Button>
 
           <Button

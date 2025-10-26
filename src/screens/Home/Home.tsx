@@ -46,7 +46,7 @@ export const Home = (): JSX.Element => {
         src="/icon-star-1.svg"
       />
 
-      <Header backgroundImage = {''}/>
+      <Header />
       <HeroSliderSubsection />
       <FrameSubsection />
       <FrameWrapperSubsection />
