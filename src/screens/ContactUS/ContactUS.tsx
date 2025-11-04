@@ -11,7 +11,7 @@ const contactCards = [
   {
     id: 1,
     backgroundImage: "/sub-image6.png",
-    icon: "/background-3.svg",
+    icon: "/call.png",
     title: "Call Us Any Time!",
     description: "Speak directly with our support team for urgent issues!",
     details: [{ label: "UK:", value: "+44 20 7123 4567" }],
@@ -20,7 +20,7 @@ const contactCards = [
   {
     id: 2,
     backgroundImage: "/sub-image7.png",
-    icon: "/background-1.svg",
+    icon: "/mail.png",
     title: "Send Us E-mail",
     description:
       "Get Help with your account, technical issues, or general inquiries",
@@ -33,7 +33,7 @@ const contactCards = [
   {
     id: 3,
     backgroundImage: "/sub-image8.png",
-    icon: "/background-2.svg",
+    icon: "/time.png",
     title: "Response Time",
     description: "Our commitment to fast, reliable support",
     details: [
@@ -316,9 +316,9 @@ export const ContactUS = (): JSX.Element => {
           src="/icon-star.svg"
         />
         <img
-          className="absolute top-0 left-0 w-[222px] h-[653px]"
+          className="absolute top-0 -left-[222px] w-[439px] h-[653px]"
           alt="shape"
-          src="/shape_nate_31.png"
+          src="/shape_nate_32.png"
         />
         <div className="flex flex-col w-full items-center gap-9 px-4">
           <header className="flex flex-col max-w-[1129px] items-center gap-5">

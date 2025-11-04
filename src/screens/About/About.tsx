@@ -74,6 +74,16 @@ export const About = (): JSX.Element => {
         }}
       />
       <section className="relative w-full overflow-hidden">
+        <img
+          className="absolute top-[367px] left-[-227px] w-[399px] h-[528px] z-10 pointer-events-none"
+          alt="Nate shape"
+          src="/nate-shape.svg"
+        />
+        <img
+          className="absolute top-[184px] right-[101px] w-[30px] h-[30px]"
+          alt="Icon star"
+          src="/icon-star-1.svg"
+        />
         <div className="flex flex-col items-center justify-between gap-5 py-[100px] mx-auto max-w-[1326px]">
           <div className="flex items-center justify-between">
            <div className="flex flex-col gap-5 w-1/2">
@@ -132,6 +142,11 @@ export const About = (): JSX.Element => {
       </section>
 
       <section className="relative w-full bg-[#f3f3f3] py-20">
+        <img
+          className="absolute bottom-[169px] left-[100px] w-[30px] h-[30px]"
+          alt="Icon star"
+          src="/icon-star.svg"
+        />
         <div className="mx-auto max-w-[1326px]">
         <div className="flex flex-row gap-24 justify-between">
             <div className="w-1/2">
@@ -186,7 +201,16 @@ export const About = (): JSX.Element => {
       </section>
 
       <section className="relative w-full overflow-hidden pt-24">
-        <div className="flex flex-col gap-5 items-center justify-between">
+        <img
+          className="absolute top-[345px] right-[-200px] w-[399px] h-[528px]"
+          alt="Nate shape"
+          src="/nate-shape-1.svg"
+        />
+        <img
+          className="absolute top-[1320px] right-0 w-[287px] h-[682px]"
+          alt="Nate shape"
+          src="/nate-shape-2.png"
+        />        <div className="flex flex-col gap-5 items-center justify-between">
           <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] rounded-[800px] px-[10px]">
             <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
               OUR GOALS
