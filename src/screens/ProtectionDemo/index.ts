@@ -1,1 +1,0 @@
-export { ProtectionDemo } from "./ProtectionDemo";

@@ -86,7 +86,7 @@ const services = [
   },
 ];
 
-export const CustomerProtection = (): JSX.Element => {
+export const ConsumerProtection = (): JSX.Element => {
   return (
     <main className="bg-white overflow-hidden w-full relative">
       <Header 

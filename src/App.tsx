@@ -10,17 +10,19 @@ import { PlatformSuite } from "./screens/PlatformSuite";
 import { PressMedia } from "./screens/Press&Media";
 import { PricingDetail } from "./screens/PricingDetail";
 import { PrivacyPolicy } from "./screens/PrivacyPolicy";
-import { ProtectionDemo } from "./screens/ProtectionDemo";
 import { RegulatoryCompliances } from "./screens/RegulatoryCompliances";
 import { TermsOfServices } from "./screens/Terms";
 import { Training } from "./screens/Training";
-import { CustomerProtection } from "./screens/CustomerProtection";
-
+import { ConsumerProtection } from "./screens/ConsumerProtection";
+import { Login } from "./screens/Login"; 
+import { Signup } from "./screens/Signup";
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Signup />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactUS />} />
         <Route path="/help" element={<HelpCenter />} />
@@ -31,11 +33,10 @@ function App() {
         <Route path="/media" element={<PressMedia />} />
         <Route path="/pricing" element={<PricingDetail />} />
         <Route path="/policies" element={<PrivacyPolicy />} />
-        <Route path="/demo" element={<ProtectionDemo />} />
         <Route path="/compliances" element={<RegulatoryCompliances />} />
         <Route path="/terms" element={<TermsOfServices />} />
         <Route path="/training" element={<Training />} />
-        <Route path="/customer-protection" element={<CustomerProtection />} />
+        <Route path="/consumer-protection" element={<ConsumerProtection />} />
 
       </Routes>
     </Router>
