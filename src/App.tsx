@@ -16,6 +16,8 @@ import { Training } from "./screens/Training";
 import { ConsumerProtection } from "./screens/ConsumerProtection";
 import { Login } from "./screens/Login"; 
 import { Signup } from "./screens/Signup";
+import { ApiReferences } from "./screens/API references";
+
 function App() {
   return (
     <Router>
@@ -37,7 +39,7 @@ function App() {
         <Route path="/terms" element={<TermsOfServices />} />
         <Route path="/training" element={<Training />} />
         <Route path="/consumer-protection" element={<ConsumerProtection />} />
-
+        <Route path="/api-references" element={<ApiReferences />} />
       </Routes>
     </Router>
   );
