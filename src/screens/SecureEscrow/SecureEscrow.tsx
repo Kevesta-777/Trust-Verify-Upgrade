@@ -5,15 +5,8 @@ import { Card, CardContent } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
 import { Label } from "../../components/ui/label";
 import { Textarea } from "../../components/ui/textarea";
-import { APIHeader } from "../../components/APIHeader";
+import { HeaderDemo } from "../../components/HeaderDemo";
 
-const navigationItems = [
-  { label: "Demo", isActive: true },
-  { label: "Business", isActive: false },
-  { label: "Developers", isActive: false },
-  { label: "Pricing", isActive: false },
-  { label: "Support", isActive: false },
-];
 
 const statsData = [
     {
@@ -125,8 +118,7 @@ export const SecureEscrow = (): JSX.Element => {
 
   return (
     <main className="bg-[#f6f6f6] overflow-hidden w-full flex flex-col relative">
-      <APIHeader navigationItems={navigationItems} />
-
+    <HeaderDemo />
     <section className="flex flex-col items-start gap-[30px] w-full px-4 sm:px-6 md:px-[50px] py-10 md:py-[70px]">
       <div className="flex flex-col items-start gap-6 w-full">
         <button className="inline-flex items-center gap-2.5 cursor-pointer">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import { X, Clock, Copy, Eye, Trash2, ChevronDown } from "lucide-react";
-import { APIHeader } from "../../components/APIHeader";
+import { HeaderDemo } from "../../components/HeaderDemo";
 import { Button } from "../../components/ui/button";
 import { Separator } from "../../components/ui/separator";
 import { Badge } from "../../components/ui/badge";
@@ -337,8 +337,7 @@ export const DeveloperPortal = (): JSX.Element => {
 
   return (
     <div className="bg-[#f6f6f6] w-full flex flex-col">
-      <APIHeader navigationItems={navigationItems} />
-
+      <HeaderDemo />
       {/* Header Section with Title and Menu Button */}
       <section className="flex flex-col items-start gap-2.5 w-full pb-4 md:px-8 md:py-6">
         <div className="flex items-center justify-start gap-2.5 md:justify-start w-full bg-white py-5 px-4 md:px-0">

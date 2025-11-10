@@ -2,15 +2,7 @@ import { useState } from "react";
 import { ChevronRightIcon, CopyIcon, X } from "lucide-react";
 import { Badge } from "../../components/ui/badge";
 import { Card, CardContent } from "../../components/ui/card";
-import { APIHeader } from "../../components/APIHeader";
-
-const navigationItems = [
-    { label: "Demo", isActive: true },
-    { label: "Business", isActive: false },
-    { label: "Developers", isActive: false },
-    { label: "Pricing", isActive: false },
-    { label: "Support", isActive: false },
-  ];
+import { HeaderDemo } from "../../components/HeaderDemo";
 
   const apiEndpoints = [
     {
@@ -578,7 +570,7 @@ export const ApiReferences = (): JSX.Element => {
   
   return (
     <div className="bg-[#f6f6f6] w-full flex flex-col relative">
-        <APIHeader navigationItems={navigationItems} />
+        <HeaderDemo />
 
         <div className="flex flex-col items-start gap-4 sm:gap-[30px] w-full px-4 sm:px-6 md:px-[100px] pt-6 sm:pt-[50px] pb-8 sm:pb-[120px]">
             <div className="flex flex-col items-start gap-4 sm:gap-6 w-full">

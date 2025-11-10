@@ -161,7 +161,7 @@ export const IdVerification = (): JSX.Element => {
                   </div>
                 </div>
 
-                {step.isCompleted && (
+                {step.isActive && (
                   <div className="hidden md:block absolute left-0 bottom-0 w-full h-[5px] rounded-[3px] bg-[linear-gradient(128deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)]" />
                 )}
               </div>
@@ -258,11 +258,10 @@ export const IdVerification = (): JSX.Element => {
                     Document Upload
                   </h2>
                   <p className="font-normal text-[#808080] text-sm sm:text-base leading-6">
-                    Upload your ID documents for verification
+                    Upload clear photos of your identification document
                   </p>
                 </div>
                 <div className="w-full">
-                  <p className="text-[#808080]">Document upload form will be implemented here</p>
                 </div>
               </div>
             </CardContent>
