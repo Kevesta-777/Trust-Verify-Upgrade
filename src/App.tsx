@@ -18,6 +18,10 @@ import { Login } from "./screens/Login";
 import { Signup } from "./screens/Signup";
 import { Dashboard } from "./screens/Dashboard";
 import { IdVerification } from "./screens/IDVerification";
+import { ApiReferences } from "./screens/API references";
+import { SecureEscrow } from "./screens/SecureEscrow";
+import { FraudPrevention } from "./screens/FraudPrevention";
+import { DeveloperPortal } from "./screens/DeveloperPortal";
 
 function App() {
   return (
@@ -43,6 +47,10 @@ function App() {
         <Route path="/consumer-protection" element={<ConsumerProtection />} />
         <Route path="/id-verification" element={<IdVerification />} />
 
+        <Route path="/api-references" element={<ApiReferences />} />
+        <Route path="/secure-escrow" element={<SecureEscrow />} />
+        <Route path="/fraud-prevention" element={<FraudPrevention />} />
+        <Route path="/developer-portal" element={<DeveloperPortal />} />
       </Routes>
     </Router>
   );
