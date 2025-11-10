@@ -133,22 +133,22 @@ const setupSteps = [
 
 const coreFeatures = [
   {
-    icon: "/p-2-rounded-lg-bg-accent-10-1.svg",
+    icon: "/p-2-rounded-lg-bg-accent-10-1-1.svg",
     title: "Fraud Detection",
     description: "AI-powered real-time analysis",
   },
   {
-    icon: "/p-2-rounded-lg-bg-accent-10-2.svg",
+    icon: "/p-2-rounded-lg-bg-accent-10-2-1.svg",
     title: "Instant Verification",
     description: "Sub-second response times",
   },
   {
-    icon: "/p-2-rounded-lg-bg-accent-10-3.svg",
+    icon: "/p-2-rounded-lg-bg-accent-10-3-1.svg",
     title: "Global Coverage",
     description: "195+ countries supported",
   },
   {
-    icon: "/p-2-rounded-lg-bg-accent-10-4.svg",
+    icon: "/p-2-rounded-lg-bg-accent-10-4-1.svg",
     title: "Escrow Services",
     description: "Secure payment holding",
   },
@@ -567,7 +567,7 @@ export const DeveloperCenter = (): JSX.Element => {
                                     <img
                                       className="w-[16px] h-[16px] sm:w-[18px] sm:h-[18px]"
                                       alt="Copy endpoint"
-                                      src="/fi-5859288.svg"
+                                      src="/fi-5859289.svg"
                                     />
                                   </div>
                                 </div>
