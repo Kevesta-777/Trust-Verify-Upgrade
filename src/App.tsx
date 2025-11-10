@@ -14,8 +14,15 @@ import { RegulatoryCompliances } from "./screens/RegulatoryCompliances";
 import { TermsOfServices } from "./screens/Terms";
 import { Training } from "./screens/Training";
 import { ConsumerProtection } from "./screens/ConsumerProtection";
-import { Login } from "./screens/Login"; 
+import { Login } from "./screens/Login";
 import { Signup } from "./screens/Signup";
+import { DeveloperCenter } from "./screens/DeveloperCenter";
+import { Messages } from "./screens/Messages";
+import { MessagesChat } from "./screens/MessagesChat";
+import { SupportCenter } from "./screens/SupportCenter";
+import { ReportScam } from "./screens/ReportScam";
+import { SecureTransactions } from "./screens/SecureTransactions";
+import { CreateNewTransaction } from "./screens/CreateNewTransaction";
 function App() {
   return (
     <Router>
@@ -37,7 +44,13 @@ function App() {
         <Route path="/terms" element={<TermsOfServices />} />
         <Route path="/training" element={<Training />} />
         <Route path="/consumer-protection" element={<ConsumerProtection />} />
-
+        <Route path="/developer-center" element={<DeveloperCenter />} />
+        <Route path="/messages" element={<Messages />} />
+        <Route path="/messages-chat" element={<MessagesChat />} />
+        <Route path="/support-center" element={<SupportCenter />} />
+        <Route path="/report-scam" element={<ReportScam />} />
+        <Route path="/secure-transaction" element={<SecureTransactions />} />
+        <Route path="/create-new-transaction" element={<CreateNewTransaction />} /> 
       </Routes>
     </Router>
   );
