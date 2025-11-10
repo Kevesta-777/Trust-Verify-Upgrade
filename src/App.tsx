@@ -16,6 +16,11 @@ import { Training } from "./screens/Training";
 import { ConsumerProtection } from "./screens/ConsumerProtection";
 import { Login } from "./screens/Login"; 
 import { Signup } from "./screens/Signup";
+import { ApiReferences } from "./screens/API references";
+import { SecureEscrow } from "./screens/SecureEscrow";
+import { FraudPrevention } from "./screens/FraudPrevention";
+import { DeveloperPortal } from "./screens/DeveloperPortal";
+
 function App() {
   return (
     <Router>
@@ -37,7 +42,10 @@ function App() {
         <Route path="/terms" element={<TermsOfServices />} />
         <Route path="/training" element={<Training />} />
         <Route path="/consumer-protection" element={<ConsumerProtection />} />
-
+        <Route path="/api-references" element={<ApiReferences />} />
+        <Route path="/secure-escrow" element={<SecureEscrow />} />
+        <Route path="/fraud-prevention" element={<FraudPrevention />} />
+        <Route path="/developer-portal" element={<DeveloperPortal />} />
       </Routes>
     </Router>
   );
