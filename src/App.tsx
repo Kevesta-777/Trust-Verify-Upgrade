@@ -23,6 +23,13 @@ import { SupportCenter } from "./screens/SupportCenter";
 import { ReportScam } from "./screens/ReportScam";
 import { SecureTransactions } from "./screens/SecureTransactions";
 import { CreateNewTransaction } from "./screens/CreateNewTransaction";
+import { Dashboard } from "./screens/Dashboard";
+import { IdVerification } from "./screens/IDVerification";
+import { ApiReferences } from "./screens/API references";
+import { SecureEscrow } from "./screens/SecureEscrow";
+import { FraudPrevention } from "./screens/FraudPrevention";
+import { DeveloperPortal } from "./screens/DeveloperPortal";
+
 function App() {
   return (
     <Router>
@@ -30,6 +37,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactUS />} />
         <Route path="/help" element={<HelpCenter />} />
@@ -51,6 +59,11 @@ function App() {
         <Route path="/report-scam" element={<ReportScam />} />
         <Route path="/secure-transaction" element={<SecureTransactions />} />
         <Route path="/create-new-transaction" element={<CreateNewTransaction />} /> 
+        <Route path="/id-verification" element={<IdVerification />} />
+        <Route path="/api-references" element={<ApiReferences />} />
+        <Route path="/secure-escrow" element={<SecureEscrow />} />
+        <Route path="/fraud-prevention" element={<FraudPrevention />} />
+        <Route path="/developer-portal" element={<DeveloperPortal />} />
       </Routes>
     </Router>
   );
