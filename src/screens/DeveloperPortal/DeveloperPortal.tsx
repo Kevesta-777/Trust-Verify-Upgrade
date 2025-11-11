@@ -339,7 +339,7 @@ export const DeveloperPortal = (): JSX.Element => {
     <div className="bg-[#f6f6f6] w-full flex flex-col">
       <HeaderDemo />
       {/* Header Section with Title and Menu Button */}
-      <section className="flex flex-col items-start gap-2.5 w-full pb-4 md:px-8 md:py-6">
+      <section className="md:hidden flex flex-col items-start gap-2.5 w-full pb-4 md:px-8 md:py-6">
         <div className="flex items-center justify-start gap-2.5 md:justify-start w-full bg-white py-5 px-4 md:px-0">
           <button
             type="button"
@@ -350,7 +350,7 @@ export const DeveloperPortal = (): JSX.Element => {
             <img className="w-5 h-5" alt="Menu" src="/fi-9091429.png" />
           </button>
 
-          <div className="flex flex-col items-start md:items-start gap-2 flex-1">
+          <div className=" flex flex-col items-start md:items-start gap-2 flex-1">
             <h1 className="w-auto mt-[-1.00px] bg-[linear-gradient(90deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-transparent text-2xl md:text-3xl lg:text-[26px] tracking-[0] leading-[26px] whitespace-nowrap">
               Developer Portal
             </h1>
@@ -375,7 +375,7 @@ export const DeveloperPortal = (): JSX.Element => {
         <nav
           className={`hidden lg:flex flex-col items-start gap-2.5 rounded-[0px_0px_20px_0px] overflow-hidden border border-solid border-[#e4e4e4] shadow-[2px_0px_20px_#27ae6033] w-[330px] bg-white`}
         >
-          <div className="min-w-[290px] bg-white h-full overflow-y-auto">
+          <div className="min-w-[290px] bg-white h-full">
             <div className="flex flex-col items-start gap-2 px-9 pt-9 pb-6">
               <h1 className="self-stretch mt-[-1.00px] bg-[linear-gradient(90deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] [-webkit-background-clip:text] bg-clip-text [-webkit-text-fill-color:transparent] [text-fill-color:transparent] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-transparent text-[26px] tracking-[0] leading-[26px] whitespace-nowrap">
                 Developer Portal
@@ -446,7 +446,7 @@ export const DeveloperPortal = (): JSX.Element => {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-[33.68px] w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-[33.68px] w-full">
                 {dashboardMetricCards.map((card, index) => (
                   <Card
                     key={index}
@@ -455,7 +455,7 @@ export const DeveloperPortal = (): JSX.Element => {
                     <CardContent className="p-4 md:p-6 lg:p-7">
                       <div className="flex items-start gap-3 md:gap-4 lg:gap-[18px]">
                         <img
-                          className="w-12 h-12 md:w-14 md:h-14 lg:w-[70.21px] lg:h-[70.21px] flex-shrink-0"
+                          className="w-12 h-12 md:w-14 md:h-14 flex-shrink-0"
                           alt={card.label}
                           src={card.icon}
                         />
