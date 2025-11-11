@@ -20,6 +20,7 @@ import { ApiReferences } from "./screens/API references";
 import { SecureEscrow } from "./screens/SecureEscrow";
 import { FraudPrevention } from "./screens/FraudPrevention";
 import { DeveloperPortal } from "./screens/DeveloperPortal";
+import { TrustverifyLive } from "./screens/TrustverifyLive";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/secure-escrow" element={<SecureEscrow />} />
         <Route path="/fraud-prevention" element={<FraudPrevention />} />
         <Route path="/developer-portal" element={<DeveloperPortal />} />
+        <Route path="/trustverify-live" element={<TrustverifyLive />} />
       </Routes>
     </Router>
   );
