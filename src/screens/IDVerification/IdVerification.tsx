@@ -73,6 +73,25 @@ const formFields = {
   ],
 };
 
+const guidelines = [
+  {
+    title: "Face Clearly Visible",
+    description: "Your entire face should be in the frame",
+  },
+  {
+    title: "Good Lighting",
+    description: "Avoid shadows and ensure even lighting",
+  },
+  {
+    title: "No Accessories",
+    description: "Remove sunglasses, hats, or face coverings",
+  },
+  {
+    title: "Look Directly At Camera",
+    description: "Make eye contact with the camera lens",
+  },
+];
+
 export const IdVerification = (): JSX.Element => {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
 
@@ -86,7 +105,7 @@ export const IdVerification = (): JSX.Element => {
   }));
 
   return (
-    <main className="bg-white overflow-hidden w-full relative">
+    <main className="bg-[#fcfcfc] overflow-hidden w-full relative">
       <HeaderDemo />
 
       <section className="w-full max-w-[1703px] flex flex-col items-center gap-8 md:gap-[30px] mx-auto px-4 sm:px-6 lg:px-10 py-10 md:py-20">
@@ -171,7 +190,7 @@ export const IdVerification = (): JSX.Element => {
 
         {/* Card Section */}
         {activeStepIndex === 0 && (
-          <Card className="w-full bg-[#fcfcfc] rounded-[20px] border border-solid border-[#e4e4e4]">
+          <Card className="w-full bg-white rounded-[20px] border border-solid border-[#e4e4e4]">
             <CardContent className="p-4 sm:p-6 md:p-8">
               <div className="flex flex-col items-start gap-8 md:gap-[30px]">
                 {/* Heading */}
@@ -250,134 +269,211 @@ export const IdVerification = (): JSX.Element => {
         )}
 
         {activeStepIndex === 1 && (
-        <Card className="w-full bg-[#fcfcfc] rounded-[20px] border-[0.8px] border-solid border-[#e4e4e4]">
-        <CardContent className="flex flex-col items-end gap-[30px] p-6">
-          <div className="flex flex-col items-start gap-[30px] w-full">
-            <div className="flex flex-col items-start gap-[30px] max-w-[1134px]">
-              <div className="flex flex-col items-start gap-[5px] max-w-[1033px]">
-                <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-6">
-                  Document Upload
-                </h2>
-                <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base tracking-[0] leading-6 whitespace-nowrap">
-                  Upload clear photos of your identification document
-                </p>
-              </div>
+          <Card className="w-full bg-white rounded-[20px] border-[0.8px] border-solid border-[#e4e4e4]">
+            <CardContent className="flex flex-col items-center gap-[20px] p-6">
+              <div className="flex flex-col items-start gap-[20px] w-full">
+                <div className="flex flex-col items-start gap-[10px] w-full">
+                  <div className="flex flex-col items-start gap-[5px]">
+                    <h2 className="font-semibold text-[#003d2b] text-xl leading-6">
+                      Document Upload
+                    </h2>
+                    <p className="font-normal text-[#808080] text-base leading-6">
+                      Upload clear photos of your identification document
+                    </p>
+                  </div>
 
-              <div className="flex items-center gap-[50px] w-full">
-                  <div className="flex flex-col w-[542px] items-start gap-4" >
-                    <h3 className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-base tracking-[0] leading-6">
-                      Front of Document
-                    </h3>
-
-                    <div className="w-full h-[246px] rounded-[20px] overflow-hidden border-2 border-dashed border-[#e4e4e4] flex items-center justify-center">
-                      <div className="flex flex-col w-[212px] items-center gap-6">
-                        <div className="flex flex-col items-center gap-4 w-full">
+                  <div className="flex flex-col md:flex-row gap-[30px] w-full">
+                    {/* Front of Document */}
+                    <div className="flex flex-col w-full items-start gap-4">
+                      <h3 className="font-medium text-[#003d2b] text-base leading-6">
+                        Front of Document
+                      </h3>
+                      <div className="w-full py-6 px-auto md:px-20 lg:px-32 rounded-[20px] overflow-hidden border-2 border-dashed border-[#e4e4e4] flex items-center justify-center">
+                        <div className="flex flex-col items-center gap-6">
                           <div className="w-[68px] h-[68px] flex items-center justify-center bg-[#0B3A7826] rounded-[10px] border border-solid border-[#e4e4e4]">
                             <UploadIcon className="w-6 h-6 text-[#808080]" />
                           </div>
-
                           <div className="flex flex-col items-center gap-0.5 w-full">
-                            <h4 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-base text-center tracking-[0] leading-6">
+                            <h4 className="font-semibold text-[#003d2b] text-base text-center leading-6">
                               Upload Image
                             </h4>
-                            <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm text-center tracking-[0] leading-5">
+                            <p className="font-normal text-[#808080] text-sm text-center leading-5">
                               Drag and drop or click to browse
                             </p>
                           </div>
+                          <Button className="w-40 h-11 bg-app-primary rounded-lg overflow-hidden hover:bg-app-primary/90">
+                            <span className="font-medium text-[#ffffff] text-sm text-center leading-[18px] whitespace-nowrap">
+                              Upload Image
+                            </span>
+                          </Button>
                         </div>
 
-                        <Button className="w-40 h-11 bg-app-primary rounded-lg overflow-hidden hover:bg-app-primary/90">
-                          <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#ffffff] text-sm text-center tracking-[-0.20px] leading-[18px] whitespace-nowrap">
-                            Upload Image
-                          </span>
-                        </Button>
                       </div>
                     </div>
-                  </div>
-                  <div className="flex flex-col w-[542px] items-start gap-4" >
-                    <h3 className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-base tracking-[0] leading-6">
-                      Back of Document
-                    </h3>
 
-                    <div className="w-full h-[246px] rounded-[20px] overflow-hidden border-2 border-dashed border-[#e4e4e4] flex items-center justify-center">
-                      <div className="flex flex-col w-[212px] items-center gap-6">
-                        <div className="flex flex-col items-center gap-4 w-full">
+                    {/* Back of Document */}
+                    <div className="flex flex-col w-full items-start gap-4">
+                      <h3 className="font-medium text-[#003d2b] text-base leading-6">
+                        Back of Document
+                      </h3>
+                      <div className="w-full py-6 px-auto md:px-20 lg:px-32 rounded-[20px] overflow-hidden border-2 border-dashed border-[#e4e4e4] flex items-center justify-center">
+                        <div className="flex flex-col items-center gap-6">
                           <div className="w-[68px] h-[68px] flex items-center justify-center bg-[#0B3A7826] rounded-[10px] border border-solid border-[#e4e4e4]">
                             <UploadIcon className="w-6 h-6 text-[#808080]" />
                           </div>
-
                           <div className="flex flex-col items-center gap-0.5 w-full">
-                            <h4 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-base text-center tracking-[0] leading-6">
+                            <h4 className="font-semibold text-[#003d2b] text-base text-center leading-6">
                               Upload Image
                             </h4>
-                            <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm text-center tracking-[0] leading-5">
+                            <p className="font-normal text-[#808080] text-sm text-center leading-5">
                               Drag and drop or click to browse
                             </p>
                           </div>
+                          <Button className="w-40 h-11 bg-app-primary rounded-lg overflow-hidden hover:bg-app-primary/90">
+                            <span className="font-medium text-[#ffffff] text-sm text-center leading-[18px] whitespace-nowrap">
+                              Upload Image
+                            </span>
+                          </Button>
                         </div>
-
-                        <Button className="w-40 h-11 bg-app-primary rounded-lg overflow-hidden hover:bg-app-primary/90">
-                          <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#ffffff] text-sm text-center tracking-[-0.20px] leading-[18px] whitespace-nowrap">
-                            Upload Image
-                          </span>
-                        </Button>
                       </div>
                     </div>
                   </div>
-              </div>
-            </div>
-
-            <div className="w-full bg-[#d320301a] rounded-xl border-0 px-6 py-4">
-              <div className="flex items-center gap-[5px]">
-                <AlertTriangleIcon className="w-4 h-5 flex-shrink-0 text-[#d32030]" />
-                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#d32030] text-sm tracking-[-0.20px] leading-7">
-                  Ensure your documents are clearly visible, well-lit, and all
-                  corners are in frame. Blurry or cropped images may delay
-                  verification.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="inline-flex items-center gap-5">
-            <Button
-              variant="secondary"
-              className="bg-[#e4e4e4] w-[190px] h-[50px] rounded-lg overflow-hidden hover:bg-[#e4e4e4]/90 py-4"
-            >
-              <span className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#909090] text-sm text-center tracking-[-0.20px] leading-[18px] whitespace-nowrap">
-                Back
-              </span>
-            </Button>
-
-            <Button className="bg-[linear-gradient(128deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] w-[190px] h-[50px] rounded-lg overflow-hidden hover:opacity-90 py-4">
-              <span className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#ffffff] text-sm text-center tracking-[-0.20px] leading-[18px] whitespace-nowrap">
-                Continue
-              </span>
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-
-        )}
-
-        {activeStepIndex === 2 && (
-          <Card className="w-full bg-[#fcfcfc] rounded-[20px] border border-solid border-[#e4e4e4]">
-            <CardContent className="p-4 sm:p-6 md:p-8">
-              <div className="flex flex-col items-start gap-8 md:gap-[30px]">
-                <div className="flex flex-col items-start gap-[5px] max-w-full md:max-w-[1033px]">
-                  <h2 className="font-semibold text-[#003d2b] text-lg sm:text-xl leading-6">
-                    Identity Verification
-                  </h2>
-                  <p className="font-normal text-[#808080] text-sm sm:text-base leading-6">
-                    Take a verification selfie to complete your identity verification
-                  </p>
                 </div>
-                <div className="w-full">
-                  <p className="text-[#808080]">Identity verification form will be implemented here</p>
+
+                {/* Alert for clarity */}
+                <div className="w-full bg-[#d320301a] rounded-xl border-0 px-6 py-4">
+                  <div className="flex items-start gap-[5px]">
+                    <AlertTriangleIcon className="pt-1.5 w-4 h-5 flex-shrink-0 text-[#d32030]" />
+                    <p className="font-medium text-[#d32030] text-sm leading-7">
+                      Ensure your documents are clearly visible, well-lit, and all corners are in frame. Blurry or cropped images may delay verification.
+                    </p>
+                  </div>
                 </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex items-center justify-end gap-5 w-full">
+                <Button
+                  variant="secondary"
+                  className="bg-[#e4e4e4] w-[190px] h-[50px] rounded-lg overflow-hidden hover:bg-[#e4e4e4]/90 py-4"
+                >
+                  <span className="font-semibold text-[#909090] text-sm text-center leading-[18px] whitespace-nowrap">
+                    Back
+                  </span>
+                </Button>
+
+                <Button className="bg-[linear-gradient(128deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] w-[190px] h-[50px] rounded-lg overflow-hidden hover:opacity-90 py-4">
+                  <span className="font-semibold text-[#ffffff] text-sm text-center leading-[18px] whitespace-nowrap">
+                    Continue
+                  </span>
+                </Button>
               </div>
             </CardContent>
           </Card>
+        )}
+
+
+        {activeStepIndex === 2 && (
+          <div className="flex flex-col md:flex-row items-start w-full gap-6">
+            <Card className="w-full md:w-3/5 bg-white rounded-[20px] border-[0.8px] border-solid border-[#e4e4e4]">
+              <CardContent className="flex flex-col items-center gap-[20px] p-6">
+                <div className="flex flex-col items-start gap-[20px] w-full">
+                  <div className="flex flex-col items-start gap-[10px] w-full">
+                    <div className="flex flex-col items-start gap-[5px] max-w-[1033px]">
+                      <h2 className="font-semibold text-[#003d2b] text-xl leading-6">
+                        Verification Selfie
+                      </h2>
+                      <p className="font-normal text-[#808080] text-base leading-6">
+                        Take a selfie to verify your identity matches your documents
+                      </p>
+                    </div>
+                    <div className="flex flex-col w-full items-center gap-4">
+                      <div className="w-full py-6 px-auto md:px-20 lg:px-32 rounded-[20px] overflow-hidden border-2 border-dashed border-[#e4e4e4] flex items-center justify-center">
+                        <div className="flex flex-col items-center gap-6">
+                          <div className="w-[68px] h-[68px] flex items-center justify-center bg-[#0B3A7826] rounded-[10px] border border-solid border-[#e4e4e4]">
+                            <UploadIcon className="w-6 h-6 text-[#808080]" />
+                          </div>
+                          <div className="flex flex-col items-center gap-0.5 w-full">
+                            <h4 className="font-semibold text-[#003d2b] text-base text-center leading-6">
+                              Verification Selfie
+                            </h4>
+                            <p className="font-normal text-[#808080] text-sm text-center leading-5">
+                              Clear photo of your face
+                            </p>
+                          </div>
+                          <Button className="w-40 h-11 bg-app-primary rounded-lg overflow-hidden hover:bg-app-primary/90">
+                            <span className="font-medium text-[#ffffff] text-sm text-center leading-[18px] whitespace-nowrap">
+                              Upload or Take Image
+                            </span>
+                          </Button>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+
+                  {/* Alert for clarity */}
+                  <div className="w-full bg-[#d320301a] rounded-xl border-0 px-6 py-4">
+                    <div className="flex items-start gap-[5px]">
+                      <AlertTriangleIcon className="pt-1.5 w-4 h-5 flex-shrink-0 text-[#d32030]" />
+                      <p className="font-medium text-[#d32030] text-sm leading-7">
+                        Look directly at the camera, ensure good lighting, and remove any sunglasses or hats. Your face should match the photo on your ID document.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex items-center justify-end gap-5 w-full">
+                  <Button
+                    variant="secondary"
+                    className="bg-[#e4e4e4] w-[190px] h-[50px] rounded-lg overflow-hidden hover:bg-[#e4e4e4]/90 py-4"
+                  >
+                    <span className="font-semibold text-[#909090] text-sm text-center leading-[18px] whitespace-nowrap">
+                      Back
+                    </span>
+                  </Button>
+
+                  <Button className="bg-[linear-gradient(128deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] w-[190px] h-[50px] rounded-lg overflow-hidden hover:opacity-90 py-4">
+                    <span className="font-semibold text-[#ffffff] text-sm text-center leading-[18px] whitespace-nowrap">
+                      Submit Verification
+                    </span>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="w-full md:w-2/5 bg-white rounded-[20px] border-[0.8px] border-solid border-[#e4e4e4]">
+              <CardContent className="flex flex-col items-start gap-[20px] p-6">
+              <div className="w-full flex items-center gap-2.5 mb-[29px]">
+                <img
+                  className="md:w-[46px] md:h-[46px]"
+                  alt="P rounded lg bg"
+                  src="/p-2-rounded-lg-bg-accent-10.svg"
+                />
+                <p className="rotate-[-0.47deg] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-4 whitespace-nowrap">
+                  Photo Guidelines
+                </p>
+              </div>
+              <div className="flex flex-col w-full items-start gap-5">
+                {guidelines.map((guideline, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col h-12 items-start gap-[5px] w-full"
+                  >
+                    <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-base tracking-[0] leading-4 whitespace-nowrap">
+                      {guideline.title}
+                    </p>
+                    <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm tracking-[0] leading-4">
+                      {guideline.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              </CardContent>
+            </Card>
+          </div>
+        
         )}
 
         {activeStepIndex === 3 && (
@@ -398,6 +494,7 @@ export const IdVerification = (): JSX.Element => {
               </div>
             </CardContent>
           </Card>
+          
         )}
       </section>
     </main>
