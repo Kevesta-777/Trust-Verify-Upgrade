@@ -5,7 +5,7 @@ import { Input } from "../../components/ui/input";
 import { Button } from "../../components/ui/button";
 import { Badge } from "../../components/ui/badge";
 import { Label } from "../../components/ui/label";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon, AlertTriangleIcon, UploadIcon } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -250,22 +250,114 @@ export const IdVerification = (): JSX.Element => {
         )}
 
         {activeStepIndex === 1 && (
-          <Card className="w-full bg-[#fcfcfc] rounded-[20px] border border-solid border-[#e4e4e4]">
-            <CardContent className="p-4 sm:p-6 md:p-8">
-              <div className="flex flex-col items-start gap-8 md:gap-[30px]">
-                <div className="flex flex-col items-start gap-[5px] max-w-full md:max-w-[1033px]">
-                  <h2 className="font-semibold text-[#003d2b] text-lg sm:text-xl leading-6">
-                    Document Upload
-                  </h2>
-                  <p className="font-normal text-[#808080] text-sm sm:text-base leading-6">
-                    Upload clear photos of your identification document
-                  </p>
-                </div>
-                <div className="w-full">
-                </div>
+        <Card className="w-full bg-[#fcfcfc] rounded-[20px] border-[0.8px] border-solid border-[#e4e4e4]">
+        <CardContent className="flex flex-col items-end gap-[30px] p-6">
+          <div className="flex flex-col items-start gap-[30px] w-full">
+            <div className="flex flex-col items-start gap-[30px] max-w-[1134px]">
+              <div className="flex flex-col items-start gap-[5px] max-w-[1033px]">
+                <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-6">
+                  Document Upload
+                </h2>
+                <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base tracking-[0] leading-6 whitespace-nowrap">
+                  Upload clear photos of your identification document
+                </p>
               </div>
-            </CardContent>
-          </Card>
+
+              <div className="flex items-center gap-[50px] w-full">
+                  <div className="flex flex-col w-[542px] items-start gap-4" >
+                    <h3 className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-base tracking-[0] leading-6">
+                      Front of Document
+                    </h3>
+
+                    <div className="w-full h-[246px] rounded-[20px] overflow-hidden border-2 border-dashed border-[#e4e4e4] flex items-center justify-center">
+                      <div className="flex flex-col w-[212px] items-center gap-6">
+                        <div className="flex flex-col items-center gap-4 w-full">
+                          <div className="w-[68px] h-[68px] flex items-center justify-center bg-[#0B3A7826] rounded-[10px] border border-solid border-[#e4e4e4]">
+                            <UploadIcon className="w-6 h-6 text-[#808080]" />
+                          </div>
+
+                          <div className="flex flex-col items-center gap-0.5 w-full">
+                            <h4 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-base text-center tracking-[0] leading-6">
+                              Upload Image
+                            </h4>
+                            <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm text-center tracking-[0] leading-5">
+                              Drag and drop or click to browse
+                            </p>
+                          </div>
+                        </div>
+
+                        <Button className="w-40 h-11 bg-app-primary rounded-lg overflow-hidden hover:bg-app-primary/90">
+                          <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#ffffff] text-sm text-center tracking-[-0.20px] leading-[18px] whitespace-nowrap">
+                            Upload Image
+                          </span>
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex flex-col w-[542px] items-start gap-4" >
+                    <h3 className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-base tracking-[0] leading-6">
+                      Back of Document
+                    </h3>
+
+                    <div className="w-full h-[246px] rounded-[20px] overflow-hidden border-2 border-dashed border-[#e4e4e4] flex items-center justify-center">
+                      <div className="flex flex-col w-[212px] items-center gap-6">
+                        <div className="flex flex-col items-center gap-4 w-full">
+                          <div className="w-[68px] h-[68px] flex items-center justify-center bg-[#0B3A7826] rounded-[10px] border border-solid border-[#e4e4e4]">
+                            <UploadIcon className="w-6 h-6 text-[#808080]" />
+                          </div>
+
+                          <div className="flex flex-col items-center gap-0.5 w-full">
+                            <h4 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-base text-center tracking-[0] leading-6">
+                              Upload Image
+                            </h4>
+                            <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm text-center tracking-[0] leading-5">
+                              Drag and drop or click to browse
+                            </p>
+                          </div>
+                        </div>
+
+                        <Button className="w-40 h-11 bg-app-primary rounded-lg overflow-hidden hover:bg-app-primary/90">
+                          <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#ffffff] text-sm text-center tracking-[-0.20px] leading-[18px] whitespace-nowrap">
+                            Upload Image
+                          </span>
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <div className="w-full bg-[#d320301a] rounded-xl border-0 px-6 py-4">
+              <div className="flex items-center gap-[5px]">
+                <AlertTriangleIcon className="w-4 h-5 flex-shrink-0 text-[#d32030]" />
+                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#d32030] text-sm tracking-[-0.20px] leading-7">
+                  Ensure your documents are clearly visible, well-lit, and all
+                  corners are in frame. Blurry or cropped images may delay
+                  verification.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="inline-flex items-center gap-5">
+            <Button
+              variant="secondary"
+              className="bg-[#e4e4e4] w-[190px] h-[50px] rounded-lg overflow-hidden hover:bg-[#e4e4e4]/90 py-4"
+            >
+              <span className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#909090] text-sm text-center tracking-[-0.20px] leading-[18px] whitespace-nowrap">
+                Back
+              </span>
+            </Button>
+
+            <Button className="bg-[linear-gradient(128deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] w-[190px] h-[50px] rounded-lg overflow-hidden hover:opacity-90 py-4">
+              <span className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#ffffff] text-sm text-center tracking-[-0.20px] leading-[18px] whitespace-nowrap">
+                Continue
+              </span>
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+
         )}
 
         {activeStepIndex === 2 && (
