@@ -69,85 +69,87 @@ const safetyTips = [
 export const ReportScam = (): JSX.Element => {
     return (
         <div className="bg-[#f6f6f6] w-full flex flex-col">
-            <div className="flex w-full flex-col items-start gap-2.5 px-[110px] py-[17px] bg-[linear-gradient(169deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)]">
+            <div className="flex w-full flex-col items-start gap-2.5 px-4 sm:px-8 lg:px-[110px] py-[17px] bg-[linear-gradient(169deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] sticky top-0 z-20">
                 <header className="w-full bg-transparent">
-                    <nav className="flex items-center justify-between h-20">
+                    <nav className="flex items-center justify-between h-auto sm:h-20">
                         <img
-                            className="w-[184px] h-[38px]"
+                            className="w-32 sm:w-[140px] md:w-[184px] h-auto sm:h-[30px] md:h-[38px]"
                             alt="TrustVerify Logo"
                             src="/group.png"
                         />
 
-                        <div className="flex items-center gap-16">
+                        <div className="hidden lg:flex items-center gap-8 xl:gap-16">
                             {navigationItems.map((item, index) => (
                                 <button
                                     key={index}
+                                    aria-label={`Navigate to ${item.label}`}
                                     className={`flex items-center justify-center w-fit ${item.isActive
                                         ? "[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-lg"
                                         : "[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[17.7px]"
-                                        } text-[#d8d8d8] tracking-[0] leading-[18px] whitespace-nowrap`}
+                                        } text-[#d8d8d8] tracking-[0] leading-[18px] whitespace-nowrap hover:opacity-80 transition-opacity`}
                                 >
                                     {item.label}
                                 </button>
                             ))}
                         </div>
+
+                        <div className="hidden lg:block w-[184px]"></div>
                     </nav>
                 </header>
             </div>
-            <section className="flex flex-col w-full gap-[30px] px-4 md:px-8 lg:px-[107px] py-[72px]">
-                <div className="flex flex-col gap-6 w-full">
-                    <button className="inline-flex items-center gap-2.5 w-fit">
+            <section className="flex flex-col w-full gap-4 sm:gap-6 md:gap-[30px] px-4 sm:px-8 lg:px-[107px] py-4 sm:py-6 md:py-[72px]">
+                <div className="flex flex-col gap-4 sm:gap-6 w-full">
+                    <button className="inline-flex items-center gap-2.5 w-fit" aria-label="Return to Homepage">
                         <img
-                            className="w-6 h-6"
+                            className="w-5 h-5 sm:w-6 sm:h-6"
                             alt="Return to Homepage"
                             src="/flat-color-icons-next.svg"
                         />
-                        <span className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-[22px] tracking-[0] leading-[normal]">
+                        <span className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base sm:text-lg lg:text-[22px] tracking-[0] leading-[normal]">
                             Return to Homepage
                         </span>
                     </button>
 
-                    <div className="flex flex-col gap-2.5 w-full">
-                        <h1 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[0] leading-[normal]">
+                    <div className="flex flex-col gap-2 sm:gap-2.5 w-full">
+                        <h1 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl sm:text-4xl lg:text-5xl tracking-[0] leading-[normal]">
                             Report Scam
                         </h1>
-                        <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
+                        <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base sm:text-lg lg:text-xl tracking-[0] leading-6 sm:leading-7 lg:leading-8">
                             Help protect the community by reporting fraudulent activities.
                         </p>
                     </div>
                 </div>
 
-                <div className="flex flex-col lg:flex-row gap-6 w-full">
-                    <Card className="flex-1 bg-[#fcfcfc] rounded-[20px] border-[0.8px] border-[#e4e4e4]">
-                        <CardContent className="p-6 flex flex-col gap-[30px]">
-                            <div className="flex flex-col gap-[30px]">
+                <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 w-full">
+                    <Card className="flex-1 bg-[#fcfcfc] rounded-[20px] border-[0.8px] border-[#e4e4e4] w-full">
+                        <CardContent className="p-4 sm:p-6 flex flex-col gap-4 sm:gap-6 lg:gap-[30px]">
+                            <div className="flex flex-col gap-4 sm:gap-6 lg:gap-[30px]">
                                 <div className="flex items-center gap-2.5">
                                     <img
-                                        className="w-[46px] h-[46px]"
+                                        className="w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] flex-shrink-0"
                                         alt="Report Icon"
                                         src="/p-2-rounded-lg-bg-accent-17-1.svg"
                                     />
-                                    <div className="flex flex-col gap-[5px] flex-1">
-                                        <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-6">
+                                    <div className="flex flex-col gap-[5px] flex-1 min-w-0">
+                                        <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-lg sm:text-xl tracking-[0] leading-6">
                                             Report Fraudulent Acitivity
                                         </h2>
-                                        <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base tracking-[0] leading-6">
+                                        <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm sm:text-base tracking-[0] leading-6">
                                             Provide detailed information about the scam or fraudulent
                                             behaviour
                                         </p>
                                     </div>
                                 </div>
 
-                                <div className="flex flex-col gap-5">
+                                <div className="flex flex-col gap-4 sm:gap-5">
                                     <div className="flex flex-col gap-2.5">
-                                        <label className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-base tracking-[0] leading-6">
+                                        <label className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm sm:text-base tracking-[0] leading-6">
                                             Select Scam Type
                                         </label>
                                         <Select>
-                                            <SelectTrigger className="h-[50px] bg-[#fcfcfc] rounded-[10px] border border-[#e4e4e4] px-5">
+                                            <SelectTrigger className="h-[50px] bg-[#fcfcfc] rounded-[10px] border border-[#e4e4e4] px-5 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm sm:text-base">
                                                 <SelectValue
                                                     placeholder="Select type"
-                                                    className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base"
                                                 />
                                             </SelectTrigger>
                                             <SelectContent>
@@ -163,37 +165,37 @@ export const ReportScam = (): JSX.Element => {
                                     </div>
 
                                     <div className="flex flex-col gap-2.5">
-                                        <label className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-base tracking-[0] leading-6">
+                                        <label className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm sm:text-base tracking-[0] leading-6">
                                             Scammer Information
                                         </label>
                                         <Input
                                             placeholder="Email, phone, username etc"
-                                            className="h-[50px] bg-[#fcfcfc] rounded-[10px] border border-[#e4e4e4] px-5 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base"
+                                            className="h-[50px] bg-[#fcfcfc] rounded-[10px] border border-[#e4e4e4] px-5 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm sm:text-base"
                                         />
                                     </div>
 
-                                    <div className="flex flex-col md:flex-row gap-4">
+                                    <div className="flex flex-col lg:flex-row gap-4">
                                         <div className="flex flex-col gap-2.5 flex-1">
-                                            <label className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-base tracking-[0] leading-6">
-                                                <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-base tracking-[0] leading-6">
+                                            <label className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm sm:text-base tracking-[0] leading-6">
+                                                <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm sm:text-base tracking-[0] leading-6">
                                                     Amount Lost
                                                 </span>
-                                                <span className="text-[13px]"> (Optional)</span>
+                                                <span className="text-xs sm:text-[13px]"> (Optional)</span>
                                             </label>
                                             <Input
                                                 placeholder="$0.00"
-                                                className="h-[50px] bg-[#fcfcfc] rounded-[10px] border border-[#e4e4e4] px-5 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base"
+                                                className="h-[50px] bg-[#fcfcfc] rounded-[10px] border border-[#e4e4e4] px-5 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm sm:text-base"
                                             />
                                         </div>
 
                                         <div className="flex flex-col gap-2.5 flex-1">
-                                            <label className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-base tracking-[0] leading-6">
+                                            <label className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm sm:text-base tracking-[0] leading-6">
                                                 Date Occurred
                                             </label>
                                             <div className="relative">
                                                 <Input
                                                     placeholder="Select Date"
-                                                    className="h-[50px] bg-[#fcfcfc] rounded-[10px] border border-[#e4e4e4] px-5 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base"
+                                                    className="h-[50px] bg-[#fcfcfc] rounded-[10px] border border-[#e4e4e4] px-5 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm sm:text-base"
                                                 />
                                                 <CalendarIcon className="absolute right-5 top-1/2 -translate-y-1/2 w-[19px] h-[19px] text-[#808080]" />
                                             </div>
@@ -201,48 +203,49 @@ export const ReportScam = (): JSX.Element => {
                                     </div>
 
                                     <div className="flex flex-col gap-2.5">
-                                        <label className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-base tracking-[0] leading-6">
+                                        <label className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm sm:text-base tracking-[0] leading-6">
                                             Description
                                         </label>
                                         <Textarea
                                             placeholder="Provide detailed description of your issue....."
-                                            className="min-h-[120px] bg-[#fcfcfc] rounded-[10px] border border-[#e4e4e4] px-5 py-[15px] [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base resize-none"
+                                            className="min-h-[120px] bg-[#fcfcfc] rounded-[10px] border border-[#e4e4e4] px-5 py-[15px] [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm sm:text-base resize-none"
                                         />
                                     </div>
                                 </div>
                             </div>
 
-                            <Button className="h-[50px] w-full rounded-lg bg-[linear-gradient(128deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] hover:opacity-90 [font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-white text-sm tracking-[-0.20px] leading-[18px]">
+                            <Button className="h-[50px] w-full rounded-lg bg-[linear-gradient(128deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] hover:opacity-90 [font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-white text-sm sm:text-base tracking-[-0.20px] leading-[18px]">
                                 Continue To Evidence
                             </Button>
                         </CardContent>
                     </Card>
 
-                    <div className="flex flex-col gap-6 w-full lg:w-[542px]">
+                    <div className="flex flex-col gap-4 sm:gap-6 w-full lg:w-[542px] flex-shrink-0">
                         <Card className="bg-[#fcfcfc] rounded-[20px] border-[0.8px] border-[#e4e4e4]">
-                            <CardContent className="p-6 flex flex-col gap-[30px]">
-                                <div className="flex flex-col gap-6">
+                            <CardContent className="p-4 sm:p-6 flex flex-col gap-4 sm:gap-6 lg:gap-[30px]">
+                                <div className="flex flex-col gap-4 sm:gap-6">
                                     <div className="flex items-center gap-2.5">
                                         <img
-                                            className="w-[46px] h-[46px]"
+                                            className="w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] flex-shrink-0"
                                             alt="Community Reports Icon"
                                             src="/p-2-rounded-lg-bg-accent-16.svg"
                                         />
-                                        <div className="flex flex-col gap-[5px] flex-1">
-                                            <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-6">
+                                        <div className="flex flex-col gap-[5px] flex-1 min-w-0">
+                                            <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-lg sm:text-xl tracking-[0] leading-6">
                                                 Community Reports
                                             </h2>
-                                            <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base tracking-[0] leading-6">
+                                            <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm sm:text-base tracking-[0] leading-6">
                                                 Report scam reports from the community
                                             </p>
                                         </div>
                                     </div>
 
                                     <div className="relative">
-                                        <SearchIcon className="absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-[#808080]" />
+                                        <SearchIcon className="absolute left-4 sm:left-5 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-[#808080]" />
                                         <Input
-                                            placeholder="SearchIcon reports..."
-                                            className="h-[50px] bg-[#fcfcfc] rounded-[10px] border border-[#e4e4e4] pl-12 pr-5 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base"
+                                            placeholder="Search reports..."
+                                            aria-label="Search reports"
+                                            className="h-[50px] bg-[#fcfcfc] rounded-[10px] border border-[#e4e4e4] pl-10 sm:pl-12 pr-5 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm sm:text-base"
                                         />
                                     </div>
                                 </div>
@@ -253,24 +256,24 @@ export const ReportScam = (): JSX.Element => {
                                             key={index}
                                             className="rounded-xl border border-[#ececec]"
                                         >
-                                            <CardContent className="p-4 flex flex-col gap-5">
+                                            <CardContent className="p-4 flex flex-col gap-4 sm:gap-5">
                                                 <div className="flex flex-col gap-4">
-                                                    <div className="flex flex-col gap-4">
-                                                        <div className="flex items-center justify-between">
-                                                            <div className="inline-flex items-center gap-2.5">
-                                                                <span className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-base tracking-[0] leading-6 whitespace-nowrap">
+                                                    <div className="flex flex-col gap-3 sm:gap-4">
+                                                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
+                                                            <div className="inline-flex items-center gap-2 sm:gap-2.5 flex-wrap">
+                                                                <span className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-sm sm:text-base tracking-[0] leading-6">
                                                                     {report.type}
                                                                 </span>
                                                                 <Badge
-                                                                    className={`inline-flex items-center justify-center gap-[5px] px-2.5 py-[7px] ${report.statusColor} rounded-[50px] h-auto`}
+                                                                    className={`inline-flex items-center justify-center gap-[5px] px-2.5 py-[7px] ${report.statusColor} rounded-[50px] h-auto flex-shrink-0`}
                                                                 >
                                                                     <report.icon className="w-2.5 h-2.5" />
-                                                                    <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-xs text-center tracking-[0] leading-[9.2px] whitespace-nowrap">
+                                                                    <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-xs text-center tracking-[0] leading-[9.2px]">
                                                                         {report.status}
                                                                     </span>
                                                                 </Badge>
                                                             </div>
-                                                            <span className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm tracking-[0] leading-6 whitespace-nowrap">
+                                                            <span className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xs sm:text-sm tracking-[0] leading-6">
                                                                 {report.date}
                                                             </span>
                                                         </div>
@@ -280,12 +283,12 @@ export const ReportScam = (): JSX.Element => {
                                                         </p>
                                                     </div>
 
-                                                    <div className="flex items-center justify-between">
-                                                        <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#e24843] text-sm tracking-[0] leading-6">
+                                                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
+                                                        <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#e24843] text-sm tracking-[0] leading-6 break-words">
                                                             {report.contact}
                                                         </span>
                                                         {report.amount && (
-                                                            <span className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#808080] text-lg tracking-[0] leading-6 whitespace-nowrap">
+                                                            <span className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#808080] text-base sm:text-lg tracking-[0] leading-6">
                                                                 {report.amount}
                                                             </span>
                                                         )}
@@ -304,22 +307,22 @@ export const ReportScam = (): JSX.Element => {
                         </Card>
 
                         <Card className="bg-[#fcfcfc] rounded-[20px] border-[0.8px] border-[#e4e4e4]">
-                            <CardContent className="p-6 flex flex-col gap-[30px]">
+                            <CardContent className="p-4 sm:p-6 flex flex-col gap-4 sm:gap-6 lg:gap-[30px]">
                                 <div className="inline-flex items-center gap-2.5">
                                     <img
-                                        className="w-[46px] h-[46px]"
+                                        className="w-[40px] h-[40px] sm:w-[46px] sm:h-[46px] flex-shrink-0"
                                         alt="Safety Tips Icon"
                                         src="/p-2-rounded-lg-bg-accent-16-2.svg"
                                     />
-                                    <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-6 whitespace-nowrap">
+                                    <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-lg sm:text-xl tracking-[0] leading-6">
                                         Safety Tips
                                     </h2>
                                 </div>
 
-                                <div className="flex flex-col gap-5">
+                                <div className="flex flex-col gap-4 sm:gap-5">
                                     {safetyTips.map((tip, index) => (
                                         <div key={index} className="flex flex-col gap-[5px]">
-                                            <h3 className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-base tracking-[0] leading-6">
+                                            <h3 className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-sm sm:text-base tracking-[0] leading-6">
                                                 {tip.title}
                                             </h3>
                                             <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm tracking-[0] leading-6">
