@@ -240,13 +240,6 @@ export const MessagesChat = ({ onBack }: MessagesChatProps = {}): JSX.Element =>
                                                 : ""
                                                 }`}
                                         >
-                                            {chat.backgroundImage && (
-                                                <img
-                                                    className="absolute top-0 left-0 w-full h-full min-h-[100px] sm:h-[111px] object-cover"
-                                                    alt="Background"
-                                                    src={chat.backgroundImage}
-                                                />
-                                            )}
                                             <div className="flex items-center justify-between w-full relative z-10">
                                                 <img
                                                     className="w-12 h-12 sm:w-[62px] sm:h-[62px] flex-shrink-0"
@@ -258,7 +251,7 @@ export const MessagesChat = ({ onBack }: MessagesChatProps = {}): JSX.Element =>
                                                         {chat.date}
                                                     </div>
                                                     <div className="flex flex-col items-start gap-1.5 w-full -mt-2.5 min-w-0">
-                                                        <div className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-sm sm:text-base tracking-[0] leading-[normal] w-full truncate">
+                                                        <div className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-sm sm:text-base tracking-[0] leading-[normal] w-full truncate text-left">
                                                             {chat.name}
                                                         </div>
                                                         <div className="flex items-center justify-between w-full gap-2 min-w-0">
