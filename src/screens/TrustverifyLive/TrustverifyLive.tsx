@@ -74,7 +74,7 @@ export const TrustverifyLive = (): JSX.Element => {
                   <img
                     className="w-[18px] h-[18px]"
                     alt="Demo Controls Icon"
-                    src="/fi-9073187.svg"
+                    src="/fi-90731877.svg"
                   />
                   <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-lg md:text-xl leading-4 text-[#003d2b] tracking-[0] whitespace-nowrap">
                     Demo Controls
