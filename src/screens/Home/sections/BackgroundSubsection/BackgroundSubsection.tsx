@@ -3,20 +3,6 @@ import React from "react";
 import { Badge } from "../../../../components/ui/badge";
 import { Card, CardContent } from "../../../../components/ui/card";
 
-const featureItems = [
-  {
-    icon: "/group.svg",
-    title: "Global Detection",
-    description:
-      "Worldwide fraud intelligence covering all payment methods, digital transactions, and emerging threat patterns",
-  },
-  {
-    icon: "/group-2.svg",
-    title: "Escrow Protection",
-    description:
-      "Funds hold securirty with payment partners until fraud verification completes",
-  },
-];
 
 const verificationItems = [
   "Identity Verified",
