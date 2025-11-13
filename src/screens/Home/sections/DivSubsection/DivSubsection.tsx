@@ -43,7 +43,7 @@ const protectionFeatures = [
 
 export const DivSubsection = (): JSX.Element => {
   return (
-    <section className="flex flex-col w-full items-center gap-[60px] py-[130px]">
+    <section className="flex flex-col w-full items-center gap-[60px] py-[130px] px-6 md:px-10">
       <div className="flex flex-col w-full max-w-[1129px] items-center gap-[19px]">
         <Badge className="h-[30px] bg-[#003d2b1a] hover:bg-[#003d2b1a] rounded-[800px] px-[9px]">
           <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm tracking-[0] leading-[14px]">
@@ -76,13 +76,13 @@ export const DivSubsection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="flex items-center gap-6 w-full max-w-[1328px]">
+      <div className="grid gird-cols-1 sm:grid-cols-2 xl:grid-cols-4 items-center justify-items-center gap-6 w-full max-w-[1328px]">
         {protectionFeatures.map((feature, index) => (
           <Card
             key={index}
             className="w-[314px] h-[370px] bg-white rounded-[20px] overflow-hidden border border-solid border-[#e4e4e4]"
           >
-            <CardContent className="p-0 relative h-full">
+            <CardContent className="p-4 relative h-full">
               <div
                 className={`${feature.numberLeft} w-[110px] absolute top-[301px] h-[120px] flex items-center justify-center [-webkit-text-stroke:1px_#f5f5f5] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-transparent text-[100px] tracking-[3.00px] leading-[120px] whitespace-nowrap`}
               >
@@ -100,7 +100,7 @@ export const DivSubsection = (): JSX.Element => {
               </div>
 
               <img
-                className="absolute top-5 left-[calc(50.00%_-_137px)] w-[274px] h-[206px] object-cover"
+                className="absolute top-5 left-1/2 -translate-x-1/2 object-cover"
                 alt="Rectangle"
                 src={feature.image}
               />

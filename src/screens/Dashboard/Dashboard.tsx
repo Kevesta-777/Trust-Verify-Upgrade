@@ -52,25 +52,6 @@ const metricCards = [
   },
 ];
 
-const quickActions = [
-  {
-    icon: "/p-2-rounded-lg-bg-primary-10-group-hover-bg-primary-20-transitio.svg",
-    label: "New Transaction",
-  },
-  {
-    icon: "/p-2-rounded-lg-bg-accent-10-group-hover-bg-accent-20-transition-.svg",
-    label: "Upload KYC",
-  },
-  {
-    icon: "/p-2-rounded-lg-bg-secondary-10-group-hover-bg-secondary-20-trans.svg",
-    label: "Messages",
-  },
-  {
-    icon: "/p-2-rounded-lg-bg-destructive-10-group-hover-bg-destructive-20-t.svg",
-    label: "Report Issue",
-  },
-];
-
 const recentTransactions = [
   {
     icon: "/ecommerce.png",
@@ -240,20 +221,20 @@ const StarRating = ({ rating, maxRating = 5 }: { rating: number; maxRating?: num
   const emptyStars = maxRating - fullStars - (hasHalfStar ? 1 : 0);
 
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-0.5">
       {[...Array(fullStars)].map((_, i) => (
-        <Star key={`full-${i}`} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+        <Star key={`full-${i}`} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
       ))}
       {hasHalfStar && (
-        <div className="relative w-5 h-5">
-          <Star className="absolute w-5 h-5 fill-gray-300 text-gray-300" />
+        <div className="relative w-4 h-4">
+          <Star className="absolute w-4 h-4 fill-gray-300 text-gray-300" />
           <div className="absolute overflow-hidden w-1/2">
-            <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
           </div>
         </div>
       )}
       {[...Array(emptyStars)].map((_, i) => (
-        <Star key={`empty-${i}`} className="w-5 h-5 fill-gray-300 text-gray-300" />
+        <Star key={`empty-${i}`} className="w-4 h-4 fill-gray-300 text-gray-300" />
       ))}
     </div>
   );
@@ -266,7 +247,7 @@ export const Dashboard = (): JSX.Element => {
   return (
     <main className="bg-white overflow-hidden w-full relative">
       <HeaderDemo />
-      <section className="w-full max-w-[1700px]  mx-auto py-14">
+      <section className="w-full flex items-center justify-center px-6 sm:px-10 xl:px-20 2xl:px-28 py-14">
         <div className="flex flex-col items-end gap-[30px] w-full">
           <div className="flex flex-col items-start gap-6 w-full">
             <Button
@@ -291,15 +272,15 @@ export const Dashboard = (): JSX.Element => {
           </div>
 
           <div className="flex flex-col items-start gap-6 w-full">
-            <div className="grid grid-cols-4 gap-[37px] w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-[37px] w-full">
               {metricCards.map((card, index) => (
                 <Card
                   key={index}
-                  className="bg-[#fcfcfc] rounded-[20px] border-[0.8px] flex items-start justify-start border-solid border-[#e4e4e4]"
+                  className="bg-[#fcfcfc] rounded-[20px] border-[0.8px] flex items-center justify-center border-solid border-[#e4e4e4]"
                 >
-                  <CardContent className="p-[31px] w-full h-full flex items-center gap-8">
+                  <CardContent className="p-[31px] w-full h-full flex items-start justify-center gap-5">
                     <img
-                      className="w-[77px] h-[77px] flex-shrink-0"
+                      className="w-[74px] h-[74px] flex-shrink-0"
                       alt={card.label}
                       src={card.icon}
                     />
@@ -331,7 +312,7 @@ export const Dashboard = (): JSX.Element => {
                             alt="Trend"
                             src={card.trend.icon}
                           />
-                          <div className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-base tracking-[0] leading-[normal]">
+                          <div className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-sm tracking-[0] leading-[normal]">
                             <span className={card.trend.textColor}>
                               {card.trend.text}
                             </span>
@@ -347,8 +328,8 @@ export const Dashboard = (): JSX.Element => {
               ))}
             </div>
 
-            <div className="flex items-start gap-[23px] w-full">
-              <div className="flex flex-col flex-1 items-start gap-6">
+            <div className="flex flex-col lg:flex-row items-center lg:items-start gap-[23px] w-full">
+              <div className="w-full flex flex-col flex-1 items-start gap-6">
                 <Card className="bg-[#fcfcfc] rounded-[20px] overflow-hidden border-[0.8px] border-solid border-[#e4e4e4] w-full">
                   <CardContent className="p-6 flex flex-col items-start gap-[30px]">
                     <div className="inline-flex items-center gap-2.5">
@@ -360,7 +341,7 @@ export const Dashboard = (): JSX.Element => {
                       </h2>
                     </div>
 
-                    <div className="grid grid-cols-4 gap-[19px] w-full">
+                    <div className="grid grid-cols-2 xl:grid-cols-4 gap-[19px] w-full">
                         <Button
                           variant="outline"
                           className="h-[98px] rounded-[10px] border border-dashed border-neutral-300 flex flex-col items-center justify-center gap-4 hover:bg-accent/50"
@@ -435,7 +416,7 @@ export const Dashboard = (): JSX.Element => {
                           className="w-full bg-[#f6f6f6] rounded-[20px] p-4"
                         >
                           <div className="flex items-center justify-between w-full">
-                            <div className="inline-flex items-end gap-[13px]">
+                            <div className="inline-flex items-start gap-[13px]">
                               <img
                                 className="w-[54px] h-[54px]"
                                 alt={transaction.title}
@@ -447,7 +428,7 @@ export const Dashboard = (): JSX.Element => {
                                     {transaction.title}
                                   </div>
                                   <Badge
-                                    className={`${transaction.status.bgColor} ${transaction.status.textColor} inline-flex items-center justify-center gap-[6.6px] px-[9.25px] py-[5.28px] rounded-[528.3px] border-0`}
+                                    className={`${transaction.status.bgColor} ${transaction.status.textColor} hidden xl:flex items-center justify-center gap-[6.6px] px-[9.25px] py-[5.28px] rounded-[528.3px] border-0`}
                                   >
                                     <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[10px] text-center tracking-[0] leading-[9.2px] whitespace-nowrap">
                                       {transaction.status.text}
@@ -459,7 +440,14 @@ export const Dashboard = (): JSX.Element => {
                                 </div>
                               </div>
                             </div>
-                            <div className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-lg leading-7 whitespace-nowrap flex items-center justify-center tracking-[0]">
+                            <div className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-lg leading-7 whitespace-nowrap flex flex-col items-end justify-between gap-1 tracking-[0]">
+                              <Badge
+                                className={`${transaction.status.bgColor} ${transaction.status.textColor} flex xl:hidden items-center justify-center gap-[6.6px] px-[9.25px] py-[5.28px] rounded-[528.3px] border-0`}
+                              >
+                                <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[10px] text-center tracking-[0] leading-[9.2px] whitespace-nowrap">
+                                  {transaction.status.text}
+                                </span>
+                              </Badge>
                               {transaction.amount}
                             </div>
                           </div>
@@ -470,7 +458,7 @@ export const Dashboard = (): JSX.Element => {
                 </Card>
               </div>
 
-              <div className="flex flex-col w-[542px] items-start gap-6">
+              <div className="w-full flex flex-col lg:w-[542px] items-start gap-6">
                 <Card className="bg-[#fcfcfc] rounded-[20px] overflow-hidden border-[0.8px] border-solid border-[#e4e4e4] w-full">
                   <CardContent className="p-6 flex flex-col items-start gap-5">
                     <div className="inline-flex items-center gap-2.5">
@@ -576,13 +564,9 @@ export const Dashboard = (): JSX.Element => {
                       </h2>
                     </div>
 
-                    <div className="flex items-start gap-6 w-full">
-                      <div className="flex items-center justify-center">
-                        <CircularProgress score={trustScore} size={200} strokeWidth={14} starRating = {starRating}/>
-
-                      </div>
-
-                      <div className="flex flex-col items-start gap-[15px] flex-1 pt-[50px]">
+                    <div className="flex items-center justify-around gap-5 w-full mt-5">
+                      <CircularProgress score={trustScore} size={140} strokeWidth={8} starRating = {starRating}/>
+                      <div className="flex flex-col items-start gap-[15px] pt-3">
                         <Badge className="rounded-[50px] overflow-hidden border-[0.8px] border-solid border-transparent bg-[linear-gradient(137deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] px-3 py-1">
                           <span className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-white text-xs leading-4 tracking-[0] whitespace-nowrap">
                             Excellent Rating
@@ -590,21 +574,21 @@ export const Dashboard = (): JSX.Element => {
                         </Badge>
 
                         <div className="flex flex-col items-start gap-[15px] w-full">
-                            <div className="flex items-center gap-[5px]">
-                              <CheckCircle className="w-4 h-4 text-[#00AD69]" />
-                              <div className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm tracking-[0] leading-5 whitespace-nowrap">
+                            <div className="flex items-center gap-0.5 sm:gap-[5px]">
+                              <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-[#00AD69]" />
+                              <div className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm tracking-tight leading-4 whitespace-nowrap">
                                 15 completed transactions
                               </div>
                             </div> 
-                            <div className="flex items-center gap-[5px]">
-                              <Shield className="w-4 h-4 text-[#436CC8]" />
-                              <div className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm tracking-[0] leading-5 whitespace-nowrap">
+                            <div className="flex items-center gap-0.5 sm:gap-[5px]">
+                              <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-[#00AD69]" />
+                              <div className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm tracking-tight leading-4 whitespace-nowrap">
                                 Verified Account
                               </div>
                             </div>
-                            <div className="flex items-center gap-[5px]">
-                              <Users className="w-4 h-4 text-[#D094DD]" />
-                              <div className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm tracking-[0] leading-5 whitespace-nowrap">
+                            <div className="flex items-center gap-0.5 sm:gap-[5px]">
+                              <Users className="w-3 h-3 sm:w-4 sm:h-4 text-[#00AD69]" />
+                              <div className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm tracking-tight leading-4 whitespace-nowrap">
                                 Member since 2024
                               </div>
                             </div>

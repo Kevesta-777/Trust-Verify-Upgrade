@@ -119,111 +119,113 @@ export const ConsumerProtection = (): JSX.Element => {
           alt="Nate shape"
           src="/nate-shape.svg"
         />
-        <div className="flex flex-col max-w-[968px] items-center gap-5">
-        <div className="flex flex-col items-center gap-5 w-full">
-          <Badge
-            variant="secondary"
-            className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-full px-6 py-1.5 [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm tracking-[0] leading-[14px]"
-          >
-            SECURITY SERVICES
-          </Badge>
+        <div className="z-10 flex flex-col max-w-[968px] px-6 md:px-10 items-center gap-5">
+            <div className="flex flex-col items-center gap-5 w-full">
+              <Badge
+                variant="secondary"
+                className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-full px-6 py-1.5 [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm tracking-[0] leading-[14px]"
+              >
+                SECURITY SERVICES
+              </Badge>
 
-          <h2 className="flex items-center justify-center [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px]">
-            <span className="text-[#003d2b]">Personal </span>
-            <span className="text-[#0b3a78]">Security</span>
-            <span className="text-[#003d2b]"> Services</span>
-          </h2>
-        </div>
-
-        <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-center tracking-[-0.20px] leading-7 text-[#808080] text-lg">
-          Comprehensive personal protection solutions. Advanced security for
-          individuals and families.
-        </p>
-      </div>
-
-      <div className="flex flex-col items-start gap-9 w-full max-w-[1324px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 w-full">
-          {services.map((service, index) => (
-            <Card
-              key={index}
-              className="bg-white rounded-[20px] border border-solid border-[#e4e4e4] overflow-hidden"
-            >
-              <CardContent className="p-9">
-                <div className="flex flex-col items-start gap-5">
-                  <div className="flex flex-col items-start gap-5 w-full">
-                    <div className="flex items-start gap-4">
-                      <img
-                        className="w-16 h-16 flex-shrink-0"
-                        alt={service.title}
-                        src={service.icon}
-                      />
-
-                      <div className="flex flex-col items-start gap-[5px] flex-1">
-                        <h3 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-6">
-                          {service.title}
-                        </h3>
-
-                        <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-lg tracking-[0] leading-[27px]">
-                          {service.subtitle}
-                        </p>
-                      </div>
-                    </div>
-
-                    <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-lg tracking-[0] leading-[27px]">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  <div className="flex flex-col items-start gap-[15px] w-full">
-                    <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-app-primary text-lg tracking-[0] leading-[27px]">
-                      Key Features:
-                    </p>
-
-                    <ul className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-lg tracking-[0] leading-[30px] list-none">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex}>{feature}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-
-        <Card className="w-full bg-app-primary rounded-[20px] shadow-[0px_4px_10px_#003d2b1a] border-0 max-w-[1290px] mx-auto mt-24">
-          <CardContent className="flex gap-[54px] p-0">
-            <div className="flex mt-[46.5px] w-full max-w-[825px] h-[228px] ml-[59px] flex-col items-start gap-[31px]">
-              <div className="flex flex-col items-start gap-2.5 w-full">
-                <h2 className="mt-[-1.00px] text-white text-[40px] tracking-[-0.50px] leading-[67px] flex items-center justify-center [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold">
-                  Try Our Consumer Protection Tool
-                </h2>
-
-                <p className="flex items-center justify-center [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-[22px] tracking-[0] leading-[30px]">
-                  Enter any email, phone number, website, or company name to check fraud risk and protect yourself.
-                </p>
-              </div>
-              <div className="flex items-center gap-0 w-full max-w-[637px]">
-                  <Input
-                    type="email"
-                    placeholder="Enter Your Email, phone, website etc..."
-                    className="flex-1 h-[59px] rounded-[10px_0px_0px_10px] border-[#ffffff33] border-r-0 bg-transparent text-white placeholder:text-white placeholder:opacity-80 [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-base opacity-80"
-                  />
-                  <Button className="h-[59px] rounded-[0px_10px_10px_0px] bg-app-secondary hover:bg-app-secondary/90">
-                    <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium">Check for fraud</span>
-                    <img className="w-full h-full" alt="Button" src="/button.svg" />
-                  </Button>
-              </div>
+              <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px]">
+                <span className="text-[#003d2b]">Personal </span>
+                <span className="text-[#0b3a78]">Security</span>
+                <span className="text-[#003d2b]"> Services</span>
+              </h2>
             </div>
 
-            <img
-              className="mt-[29px] w-[293px] h-[263px]"
-              alt="Frame"
-              src="/frame.svg"
-            />
-          </CardContent>
-        </Card>
+            <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-center tracking-[-0.20px] leading-7 text-[#808080] text-lg">
+              Comprehensive personal protection solutions. Advanced security for
+              individuals and families.
+            </p>
+        </div>
+
+        <div className="flex flex-col items-start gap-9 w-full max-w-[1404px] px-6 md:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 w-full">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className="z-10 bg-white rounded-[20px] border border-solid border-[#e4e4e4] overflow-hidden"
+              >
+                <CardContent className="p-9">
+                  <div className="flex flex-col items-start gap-5">
+                    <div className="flex flex-col items-start gap-5 w-full">
+                      <div className="flex items-start gap-4">
+                        <img
+                          className="w-16 h-16 flex-shrink-0"
+                          alt={service.title}
+                          src={service.icon}
+                        />
+
+                        <div className="flex flex-col items-start gap-[5px] flex-1">
+                          <h3 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-6">
+                            {service.title}
+                          </h3>
+
+                          <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-lg tracking-[0] leading-[27px]">
+                            {service.subtitle}
+                          </p>
+                        </div>
+                      </div>
+
+                      <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-lg tracking-[0] leading-[27px]">
+                        {service.description}
+                      </p>
+                    </div>
+
+                    <div className="flex flex-col items-start gap-[15px] w-full">
+                      <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-app-primary text-lg tracking-[0] leading-[27px]">
+                        Key Features:
+                      </p>
+
+                      <ul className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-lg tracking-[0] leading-[30px] list-none">
+                        {service.features.map((feature, featureIndex) => (
+                          <li key={featureIndex}>{feature}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+        <div className="z-10 px-6 md:px-10">
+          <Card className="w-full bg-app-primary rounded-[20px] shadow-[0px_4px_10px_#003d2b1a] border-0 max-w-[1290px] mx-auto mt-24">
+            <CardContent className="flex flex-col lg:flex-row items-center gap-[54px] py-12 px-14">
+              <div className="flex w-full flex-col items-start gap-[31px]">
+                <div className="flex flex-col items-start gap-2.5 w-full">
+                  <h2 className="mt-[-1.00px] text-white text-[40px] tracking-[-0.50px] leading-[67px] flex items-center justify-center [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold">
+                    Try Our Consumer Protection Tool
+                  </h2>
+
+                  <p className="flex items-center justify-center [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-[22px] tracking-[0] leading-[30px]">
+                    Enter any email, phone number, website, or company name to check fraud risk and protect yourself.
+                  </p>
+                </div>
+                <div className="flex items-center gap-0 w-full max-w-[637px]">
+                    <Input
+                      type="email"
+                      placeholder="Enter Your Email, phone, website etc..."
+                      className="flex-1 h-[59px] rounded-[10px_0px_0px_10px] border-[#ffffff33] border-r-0 bg-transparent text-white placeholder:text-white placeholder:opacity-80 [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-base opacity-80"
+                    />
+                    <Button className="h-[59px] rounded-[0px_10px_10px_0px] bg-app-secondary hover:bg-app-secondary/90">
+                      <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium">Check for fraud</span>
+                      <img className="w-full h-full" alt="Button" src="/button.svg" />
+                    </Button>
+                </div>
+              </div>
+
+              <img
+                className="mt-[29px] w-[293px] h-[263px]"
+                alt="Frame"
+                src="/frame.svg"
+              />
+            </CardContent>
+          </Card>
+        </div>
+
       </section>
       <Footer/>
     </main>

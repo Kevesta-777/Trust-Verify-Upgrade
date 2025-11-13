@@ -13,10 +13,10 @@ export const LegalDisclaimer = (): JSX.Element => {
         }}
       />
       <section className="relative w-full flex justify-center pt-20 pb-32">
-        <div className="flex flex-col max-w-[1210px] items-start gap-[60px]">
+        <div className="w-full flex flex-col max-w-[1210px] px-6 md:px-10 items-start gap-[60px]">
           <div className="flex flex-col items-start gap-2.5 px-[31px] py-[27px] w-full bg-[#EAB30824] border border-[#EAB308] rounded-2xl">
             <div className="flex flex-col items-start gap-2.5">
-              <p className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#EAB308] text-[22px] tracking-[-0.20px] leading-7 whitespace-nowrap">
+              <p className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#EAB308] text-[22px] tracking-[-0.20px] leading-7">
                 PLEASE READ THIS DISCLAIMER CAREFULLY BEFORE USING TRUSTVERIFY SERVICES.              
               </p>
               <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#EAB308] text-lg tracking-[-0.20px] leading-7">
@@ -25,32 +25,32 @@ export const LegalDisclaimer = (): JSX.Element => {
             </div>
           </div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 1. No Warranty or Guarantee
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-2xl tracking-[-0.20px] leading-8">
+                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-xl sm:text-2xl tracking-[-0.20px] leading-8">
                   TrustVerify makes no warranties, representations, or guarantees about:              
                 </p>
                 <div className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
-                <p>
-                  - The authenticity, quality, safety, or legality of items or services traded <br />
-                  - The accuracy or completeness of user-provided information <br />
-                  - The reliability or trustworthiness of platform users <br />
-                  - The success or completion of any transactions <br />
-                  - The continuous availability or error-free operation of our services <br />
-                  - The prevention of all fraudulent activities or security breaches 
-                </p>
+                  <p>
+                    - The authenticity, quality, safety, or legality of items or services traded <br />
+                    - The accuracy or completeness of user-provided information <br />
+                    - The reliability or trustworthiness of platform users <br />
+                    - The success or completion of any transactions <br />
+                    - The continuous availability or error-free operation of our services <br />
+                    - The prevention of all fraudulent activities or security breaches 
+                  </p>
                 </div>
               </div>
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
-              2. User Responsibility
+            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
+             2. User Responsibility
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   You are solely responsible for
                 </p>
                 <div className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -67,12 +67,12 @@ export const LegalDisclaimer = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
-              3. Limitation of Liability
+          <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
+            3. Limitation of Liability
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
-                  To the maximum extent permitted law, TrustVerify shall not be liable for:
+              <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
+                To the maximum extent permitted law, TrustVerify shall not be liable for:
                 </p>
                 <div className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
                   <p>
@@ -91,11 +91,11 @@ export const LegalDisclaimer = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
-              4. Risk Acknowledgment
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
+                4. Risk Acknowledgment
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   By using TrustVerify, you acknowledge and accept the following risks:
                 </p>
                 <div className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -112,12 +112,12 @@ export const LegalDisclaimer = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 5. Investment and Financial Advice
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-2xl tracking-[-0.20px] leading-8">
-                TrustVerify does not provide investment, financial, legal, or tax advice. Any information provided on our platform is for informational purposes only and should not be construed as professional advice.              
+                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-xl sm:text-2xl tracking-[-0.20px] leading-8">
+                  TrustVerify does not provide investment, financial, legal, or tax advice. Any information provided on our platform is for informational purposes only and should not be construed as professional advice.              
                 </p>
                 <div className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
                   <p>
@@ -128,11 +128,11 @@ export const LegalDisclaimer = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 6. Regulatory Compliance
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-2xl tracking-[-0.20px] leading-8">
+                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-xl sm:text-2xl tracking-[-0.20px] leading-8">
                   While TrustVerify strives to comply with applicable regulations, you are responsible for ensuring your use of our services complies with all laws and regulations in your jurisdiction.                </p>
                 <div className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
                   <p>
@@ -143,17 +143,17 @@ export const LegalDisclaimer = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 7. Updates to This Disclaimer
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-2xl tracking-[-0.20px] leading-8">
+                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-xl sm:text-2xl tracking-[-0.20px] leading-8">
                 We reserve the right to update this disclaimer at any time without prior notice. Changes will be effective immediately upon posting. Your continued use of our services after changes constitutes acceptance of the updated disclaimer.                </p>
               </div>
           </div>
           <div className="flex flex-col items-start gap-2.5 px-[31px] py-[27px] w-full bg-[#d3203024] border border-[#d32030] rounded-2xl">
             <div className="flex flex-col items-start gap-2.5">
-              <p className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#d32030] text-[22px] tracking-[-0.20px] leading-7 whitespace-nowrap">
+              <p className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#d32030] text-[22px] tracking-[-0.20px] leading-7">
                 IF YOU DO NOT AGREE WITH ANY PART OF THIS DISCLAIMER, DO NOT USE TRUSTVERIFY SERVICES.
               </p>
 

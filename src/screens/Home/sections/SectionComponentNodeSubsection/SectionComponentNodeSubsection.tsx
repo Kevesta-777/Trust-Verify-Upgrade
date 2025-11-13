@@ -74,9 +74,9 @@ const reviewPlatforms = [
 export const SectionComponentNodeSubsection = (): JSX.Element => {
   return (
     <section className="relative w-full pt-[120px] pb-[100px]">
-      <div className="grid grid-cols-1 lg:grid-cols-[370px_370px_1fr] gap-[60px] max-w-[1290px] mx-auto">
-        <div className="relative h-[670px] overflow-hidden">
-          <div className="flex flex-col w-[340px] items-start gap-8 absolute top-[-663px] left-[15px]">
+      <div className="w-full grid grid-cols-1 xl:grid-cols-3 gap-[60px] max-w-[1290px] px-6 md:px-10 mx-auto">
+        <div className="hidden xl:block relative h-[670px] overflow-hidden">
+          <div className="flex flex-col items-center gap-8 absolute top-[-663px] left-[15px]">
             {testimonials.map((testimonial, index) => (
               <Card
                 key={`testimonial-1-${index}`}
@@ -110,8 +110,8 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
           <div className="bottom-[-678px] bg-[linear-gradient(0deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0)_100%)] absolute w-full left-0 h-[100px] pointer-events-none z-10" />
         </div>
 
-        <div className="relative h-[670px] overflow-hidden">
-          <div className="flex flex-col w-[340px] items-start gap-8 absolute top-[15px] left-[15px]">
+        <div className="hidden xl:block relative h-[670px] overflow-hidden">
+          <div className="flex flex-col items-center gap-8 absolute top-[15px] left-[15px]">
             {testimonials2.map((testimonial, index) => (
               <Card
                 key={`testimonial-2-${index}`}
@@ -145,29 +145,21 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
           <div className="top-0 bg-[linear-gradient(0deg,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_100%)] absolute w-full left-0 h-[100px] pointer-events-none z-10" />
         </div>
 
-        <div className="flex flex-col items-start gap-[50px] pt-[41px]">
-          <div className="flex flex-col items-start gap-[29px] w-full max-w-[436.72px]">
+        <div className="flex flex-col items-start gap-[50px] px-0 sm:px-10 md:px-20 xl:px-0 pt-0 lg:pt-10">
+          <div className="flex flex-col items-start gap-[29px] w-full ">
             <div className="flex flex-col items-start gap-[21px] w-full">
               <Badge className="h-[30px] px-[10px] bg-[#003d2b1a] rounded-[800px] hover:bg-[#003d2b1a]">
                 <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm text-center tracking-[0] leading-[14px]">
                   OUR CLIENT FEEDBACK
                 </span>
               </Badge>
-              <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-[52.2px] tracking-[-0.50px] leading-[67px]">
-                Highly rated 4.9
-                <br />
-                out of 5 by 1200+
-                <br />
-                entrepreneurs
-                <br />
-                just like synox
-              </h2>
+              <p className="w-full [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-[52.2px] tracking-[-0.50px] leading-[67px]">
+                Highly rated 4.9 out of 5 by 1200+ entrepreneurs just like synox
+              </p>
             </div>
-            <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#6b6b6b] text-lg tracking-[-0.20px] leading-7 max-w-[427px]">
+            <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#6b6b6b] text-lg tracking-[-0.20px] leading-7">
               Join the ranks of over 1200 entrepreneurs who have
-              <br />
               entrusted us with their insurance needs and our
-              <br />
               exceptional service firsthand.
             </p>
           </div>
@@ -206,6 +198,40 @@ export const SectionComponentNodeSubsection = (): JSX.Element => {
               </div>
             ))}
           </div>
+        </div>
+        <div className="xl:hidden relative h-[670px] overflow-hidden">
+          <div className="flex flex-col w-[340px] items-center gap-8 absolute -top-64 left-1/2 -translate-x-1/2">
+            {testimonials2.map((testimonial, index) => (
+              <Card
+                key={`testimonial-2-${index}`}
+                className="w-full bg-white rounded-[10px] shadow-[0px_4px_10px_#003d2b1a]"
+              >
+                <CardContent className="p-[30px]">
+                  <div className="flex items-start gap-[15px] mb-[31px]">
+                    <Avatar className="w-[50px] h-[50px] bg-[#f3f3f3]">
+                      <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                      <AvatarFallback className="bg-[#f3f3f3]">
+                        {testimonial.name.split(' ').map(n => n[0]).join('')}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className="flex flex-col gap-[7px]">
+                      <div className="[font-family:'Inter',Helvetica] font-normal text-[#003d2b] text-[15.9px] tracking-[0] leading-4">
+                        {testimonial.name}
+                      </div>
+                      <div className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#6b6b6b] text-sm tracking-[0] leading-[21px]">
+                        {testimonial.date}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-lg tracking-[-0.20px] leading-[27px]">
+                    {testimonial.text}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="bottom-[-678px] bg-[linear-gradient(0deg,rgba(255,255,255,1)_0%,rgba(255,255,255,0)_100%)] absolute w-full left-0 h-[100px] pointer-events-none z-10" />
+          <div className="top-0 bg-[linear-gradient(0deg,rgba(255,255,255,0)_0%,rgba(255,255,255,1)_100%)] absolute w-full left-0 h-[100px] pointer-events-none z-10" />
         </div>
       </div>
     </section>

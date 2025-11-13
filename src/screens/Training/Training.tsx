@@ -183,7 +183,7 @@ export const Training = (): JSX.Element => {
         }}
       />
       <section className="w-full flex justify-center py-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9 max-w-[1232px] w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9 max-w-[1312px] px-6 md:px-10 w-full">
           {statsData.map((stat, index) => (
             <Card
               key={index}
@@ -210,8 +210,8 @@ export const Training = (): JSX.Element => {
           ))}
         </div>
       </section>
-      <section className="relative w-full bg-[#f3f3f3] max-h-[1359px] py-20">
-        <div className="container mx-auto max-w-[1270px]">
+      <section className="relative w-full bg-[#f3f3f3] py-20">
+        <div className="container mx-auto max-w-[1350px] px-6 md:px-10 mb-6">
           <div className="flex flex-col w-full items-center gap-5">
             <div className="flex flex-col items-center gap-5 w-full">
               <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] px-6 rounded-[800px] [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
@@ -228,15 +228,12 @@ export const Training = (): JSX.Element => {
               Progressive curriculum designed to take you from beginner to expert in fraud prevention          
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full pt-14">
-      
-          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[18px] max-w-[1446px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[18px] max-w-[1446px] px-6 md:px-10 mx-auto">
             {pricingPlans.map((plan, index) => (
               <Card
                 key={index}
-                className="relative bg-white rounded-[17.28px] overflow-hidden border-[0.86px] border-[#f3f3f3] flex flex-col h-[506px]"
+                className="z-10 relative bg-white rounded-[17.28px] overflow-hidden border-[0.86px] border-[#f3f3f3] flex flex-col h-[506px]"
               >
                 <div
                   className={`absolute top-[27px] right-[-52px] w-[190px] h-[35px] flex items-center justify-center ${plan.ribbonColor} rotate-45`}
@@ -347,7 +344,7 @@ export const Training = (): JSX.Element => {
           src="/pattern-1.svg"
         />
       </section>
-      <section className="relative w-full flex flex-col items-center justify-center pt-24 pb-28 gap-24">
+      <section className="relative w-full flex flex-col items-center justify-center px-6 md:px-10 pt-24 pb-28 gap-24">
         <img
           className="absolute top-[228px] left-[144px] w-[30px] h-[30px]"
           alt="Icon star"
@@ -364,29 +361,33 @@ export const Training = (): JSX.Element => {
           src="/shape_nate_31.png"
         />
 
-        <Card className="w-full max-w-[1101px] bg-app-primary rounded-[20px]">
-          <CardContent className="p-8 md:p-12">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-[123px]">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 flex-1">
+        <Card className="z-10 w-full max-w-[1101px] bg-app-primary rounded-lg md:rounded-xl lg:rounded-2xl xl:rounded-[20px]">
+          <CardContent className="py-3 sm:py-4 md:py-5 lg:py-6 px-5 sm:px-7 md:px-10 lg:px-14">
+            <div className="flex items-center justify-between gap-8 lg:gap-[123px]">
+            <div className="flex items-start gap-1 sm:gap-2 md:gap-4 lg:gap-6 w-full">
                 <img
-                  className="w-[88px] h-[88px] flex-shrink-0"
+                  className="w-[30px] h-[30px] sm:w-[40px] sm:h-[40px] md:w-[60px] md:h-[60px] lg:w-[88px] lg:h-[88px] flex-shrink-0"
                   alt="Full Access Pass Icon"
                   src="/education.png"
                 />
 
-                <div className="flex flex-col items-start gap-[31px] w-full sm:w-auto sm:max-w-[458px]">
-                  <div className="flex flex-col items-start gap-[5px] w-full">
-                    <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-white text-[32px] sm:text-[40px] tracking-[-0.50px] leading-[1.2] sm:leading-[67px]">
+                <div className="flex flex-col items-start gap-2 sm:gap-4 md:gap-6 lg:gap-8">
+                  <div className="flex flex-col items-start gap-1 sm:gap-2 md:gap-4 lg:gap-6 w-full">
+                    <p className="mt-2 text-white text-base md:text-xl lg:text-3xl xl:text-[40px] tracking-tighter sm:tracking-[-0.50px] leading-2 sm:leading-4 md:leading-6 lg:leading-[30px] xl:leading-[47px] flex items-center justify-center [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold">
                       Full Access Pass
-                    </h2>
+                    </p>
 
-                    <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-[18px] sm:text-[22px] tracking-[0] leading-[1.4] sm:leading-[30px]">
+                    <p className="flex items-center justify-center [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-[8px] md:text-[12px] lg:text-lg xl:text-[22px] tracking-[0]  leading-[4px] sm:leading-[8px] md:leading-[16px] lg:leading-[30px]">
                       Get access to all courses for one year
                     </p>
                   </div>
 
-                  <Button className="h-[60px] px-8 bg-white hover:bg-white/90 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-app-primary text-lg tracking-[-0.20px] leading-[18px]">
-                    Get Full Access
+                  <Button 
+                    size="none"
+                    className="bg-white rounded-[4px] sm:rounded-[6px] md:rounded-[8px] lg:rounded-[10px] hover:bg-white/90 px-3 py-0 sm:px-6 sm:py-2 md:px-8 md:py-4  lg:px-10 lg:py-5">
+                    <p className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-app-primary text-[7px] sm:text-[10px] md:text-sm lg:text-lg text-center tracking-[-0.20px]">
+                      Get Full Access
+                    </p>
                   </Button>
                 </div>
               </div>
@@ -394,21 +395,21 @@ export const Training = (): JSX.Element => {
               <div className="flex flex-col items-center gap-[5px] w-full sm:w-auto sm:min-w-[321px]">
                 <div className="flex flex-col items-center">
                   <div className="flex items-baseline gap-[5px]">
-                    <span className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-white text-[60.4px] tracking-[0] leading-[1]">
+                    <span className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-white text-[30px] sm:text-[40px] md:text-[50px] lg:text-[60.4px] tracking-[0] leading-[1]">
                       £
                     </span>
 
-                    <span className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-white text-[92.6px] tracking-[0] leading-[1]">
+                    <span className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-white text-[46px] sm:text-[60px] md:text-[76px] lg:text-[92.6px] tracking-[0] leading-[1]">
                       199
                     </span>
 
-                    <span className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-[32px] tracking-[0] leading-[1.5]">
+                    <span className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-[16px] sm:text-[20px] md:text-[26px] lg:text-[32px] tracking-[0] leading-[1.5]">
                       /year
                     </span>
                   </div>
                 </div>
 
-                <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#d8d8d8] text-[13.8px] tracking-[0] leading-[23.5px] text-center max-w-[321px]">
+                <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#d8d8d8] text-[6px] sm:text-[8px] md:text-[10px] lg:text-[13.8px] tracking-[0] leading-[23.5px] text-center max-w-[321px]">
                   Save Up To £300 Compared To Individual Courses
                 </p>
               </div>
@@ -416,7 +417,7 @@ export const Training = (): JSX.Element => {
           </CardContent>
         </Card>
         <div className="flex w-full max-w-[1260px] items-center">
-          <div className="flex flex-col max-w-[558px] items-start justify-center gap-5">
+          <div className="z-10 flex flex-col max-w-[558px] items-start justify-center gap-5">
             <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] px-4 rounded-full">
               <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
                 TRAINING PLANS
@@ -440,7 +441,7 @@ export const Training = (): JSX.Element => {
               key={index}
               className={`${plan.cardBg} ${
                 plan.isPopular ? "border-[#f3f3f3]" : "border-[#e4e4e4]"
-              } w-full max-w-[403px] min-h-[560px] rounded-[20px] border relative overflow-hidden`}
+              } z-10 w-full max-w-[403px] min-h-[560px] rounded-[20px] border relative overflow-hidden`}
             >
               {plan.isPopular && (
                 <div className="absolute top-9 -right-11 w-[190px] h-[35px] flex items-center justify-center bg-white rotate-45 z-10">
@@ -526,31 +527,37 @@ export const Training = (): JSX.Element => {
             </Card>
           ))}
         </div>
-        <div className="w-full max-w-[1290px] mx-auto flex items-center justify-center bg-app-primary rounded-[20px] shadow-[0px_4px_10px_#003d2b1a] py-14 px-16">
-          <div className="flex items-center gap-[76px] max-w-[1153px] w-full">
-            <div className="flex flex-col items-start gap-[31px] flex-1">
-              <div className="flex flex-col items-start gap-2.5 w-full">
-                <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-white text-[40px] tracking-[-0.50px] leading-[67px]">
-                  Ready to Become Fraud-Resilient?
-                </h2>
+        <div className="z-10">
+          <Card className="bg-app-primary rounded-lg md:rounded-xl lg:rounded-2xl xl:rounded-[20px] shadow-[0px_4px_10px_#003d2b1a] border-0 max-w-[1370px]">
+            <CardContent className="flex items-center gap-0 sm:gap-4 md:gap-9 lg:gap-14 py-3 sm:py-4 md:py-5 lg:py-6 px-5 sm:px-7 md:px-10 lg:px-14">
+              <div className="flex w-full mt-0 sm:mt-2 md:mt-4 lg:mt-7 flex-col items-start gap-2 sm:gap-4 md:gap-6 lg:gap-8">
+                <div className="flex flex-col items-start gap-1 sm:gap-2 md:gap-4 lg:gap-6 w-full">
+                  <p className="mt-[-1.00px] text-white text-base md:text-xl lg:text-3xl xl:text-[40px] tracking-tighter sm:tracking-[-0.50px] leading-6 sm:leading-8 md:leading-10 lg:leading-[50px] xl:leading-[67px] flex items-center justify-center [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold">
+                    Ready to Become Fraud-Resilient?
+                  </p>
 
-                <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-[22px] tracking-[0] leading-[30px]">
+                  <p className="flex items-center justify-center [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-[8px] md:text-[12px] lg:text-lg xl:text-[22px] tracking-[0]  leading-[10px] sm:leading-[15px] md:leading-[21px] lg:leading-[30px]">
                   Join thousands of professionals who trust TrustVerify for their
                   fraud prevention education
-                </p>
+                  </p>
+                </div>
+                <Button 
+                  size="none"
+                  className="w-2/5 bg-white rounded-[4px] sm:rounded-[6px] md:rounded-[8px] lg:rounded-[10px] hover:bg-white/90 px-3 py-0 sm:px-6 sm:py-2 md:px-8 md:py-4  lg:px-10 lg:py-5">
+                  <p className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-app-primary text-[7px] sm:text-[10px] md:text-sm lg:text-lg text-center tracking-[-0.20px]">
+                    Contact Us
+                  </p>
+                </Button>
               </div>
+              
+              <img
+                className="w-[111px] h-[88px] sm:w-[168px] sm:h-[132px] md:h-[224px] md:w-[176px] lg:w-[335px] lg:h-[264px] bg-blend-color-dodge flex-shrink-0"
+                alt="Element illustration data"
+                src="/group-5.png"
+              />
 
-              <Button className="h-[60px] w-[234px] bg-white hover:bg-white/90 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-app-primary text-lg tracking-[-0.20px] leading-[18px]">
-                Contact Us
-              </Button>
-            </div>
-
-            <img
-              className="w-[335px] h-[264px] flex-shrink-0"
-              alt="Element illustration data"
-              src="/group-5.png"
-            />
-          </div>
+            </CardContent>
+          </Card>
         </div>
 
         

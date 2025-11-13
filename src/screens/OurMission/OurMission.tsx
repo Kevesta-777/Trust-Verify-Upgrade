@@ -183,21 +183,21 @@ const processSteps = [
 const arrows = [
   {
     src: "/arrow.png",
-    className: "absolute w-[8.59%] h-[5.64%] top-0 left-[19.63%]",
+    className: "absolute w-[8.59%] h-[5.64%] top-0 left-[19.63%] hidden xl:block",
   },
   {
     src: "/arrow.png",
-    className: "absolute w-[8.59%] h-[5.64%] top-0 left-[71.37%]",
+    className: "absolute w-[8.59%] h-[5.64%] top-0 left-[71.37%] hidden xl:block",
   },
   {
     src: "/arrow1.png",
-    className: "absolute w-[8.59%] h-[5.64%] top-[94.09%] left-[45.62%]",
+    className: "absolute w-[8.59%] h-[5.64%] top-[94.06%] left-[45.62%] hidden xl:block",
   },
 ];
 
 export const OurMission = (): JSX.Element => {
   return (
-    <main className="bg-white overflow-hidden w-full relative min-w-[1920px] flex flex-col">
+    <main className="bg-white overflow-hidden w-full relative flex flex-col">
       <Header 
         backgroundImage = '/Header_Mission.png'
         content={{
@@ -275,14 +275,14 @@ export const OurMission = (): JSX.Element => {
             src="/icon-star-3.svg"
           />
   
-          <div className="relative flex flex-col max-w-[1270px] mx-auto items-center gap-[60px] px-4">
+          <div className="relative flex flex-col max-w-[1270px] mx-auto items-center gap-[60px] px-6 md:px-10">
             <header className="flex flex-col max-w-[1129px] items-center gap-[19px]">
               <Badge className="bg-[#ffffff1a] text-white text-sm font-medium [font-family:'DM_Sans_18pt-Medium',Helvetica] tracking-[0] leading-[14px] h-[30px] px-6 rounded-[800px] border-0 hover:bg-[#ffffff1a]">
                 BENEFITS
               </Badge>
 
               <div className="flex flex-col items-center gap-5 w-full">
-                <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px] whitespace-nowrap">
+                <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px]">
                   <span className="text-white">Exclusive </span>
                   <span className="text-[#27ae60]">Benefits &amp; Perks</span>
                   <span className="text-white"> with TrustVerify</span>
@@ -296,7 +296,7 @@ export const OurMission = (): JSX.Element => {
               </div>
             </header>
 
-            <div className="grid grid-cols-3 gap-0 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 sm:gap-4 lg:gap-0 w-full">
               {benefitsData.map((benefit, index) => (
                 <Card
                   key={index}
@@ -340,8 +340,8 @@ export const OurMission = (): JSX.Element => {
           alt="Nate shape"
           src="/nate-shape-1.svg"
         />
-        <div className="flex items-start gap-[50px] w-full max-w-[1326px] mx-auto px-4 py-24">
-          <div className="flex flex-col w-full max-w-[620px] items-start gap-[41px]">
+        <div className="flex flex-col lg:flex-row items-start gap-[50px] w-full max-w-[1326px] mx-auto px-6 md:px-10 py-24">
+          <div className="flex flex-col w-full items-start gap-[41px]">
             <header className="flex flex-col items-start gap-5 w-full">
               <Badge className="h-[30px] px-6 bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-full [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
                 JOIN US NOW
@@ -366,7 +366,7 @@ export const OurMission = (): JSX.Element => {
                 />            
             </div>
           </div>
-          <ScrollArea className="w-full max-w-[656px] h-[798px]">
+          <ScrollArea className="w-full h-[798px]">
             <div className="flex flex-col w-full items-start gap-[23px] pr-4">
               {jobPositions.map((job) => (
                 <Card
@@ -382,7 +382,7 @@ export const OurMission = (): JSX.Element => {
                       <div className="flex flex-col items-start gap-3.5 w-full">
                         <div className="flex flex-col w-full max-w-[448px] items-start gap-4">
                           <div className="flex items-center gap-[15px] w-full flex-wrap">
-                            <h3 className="flex items-center justify-center [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-6 whitespace-nowrap">
+                            <h3 className="flex items-center justify-center [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-6">
                               {job.title}
                             </h3>
 
@@ -438,9 +438,9 @@ export const OurMission = (): JSX.Element => {
       </section>
       
       <section className="relative w-full bg-[#f4f4f4] py-16">
-        <div className="container mx-auto px-8 max-w-[1270px]">
+        <div className="container mx-auto px-6 md:px-10 max-w-[1270px]">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="flex flex-col w-full lg:w-[620px] items-start gap-6">
+            <div className="flex flex-col w-full items-start gap-6">
               <div className="flex flex-col items-start gap-5 w-full">
                 <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-full px-4 py-2 h-auto">
                   <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
@@ -514,7 +514,7 @@ export const OurMission = (): JSX.Element => {
               </div>
             </div>
 
-            <div className="w-1/2">
+            <div className="z-10 w-full">
               <img className="w-full h-full object-cover" alt="Group" src="/subsection-image3.png" />
             </div>
           </div>
@@ -539,29 +539,29 @@ export const OurMission = (): JSX.Element => {
           alt="shape"
           src="/shape_nate_32.png"
         />
-        <div className="flex flex-col w-full items-center gap-[50px] py-12">
-          <div className="flex flex-col max-w-[1129px] items-center gap-[19px]">
-            <Badge className="h-[30px] px-4 bg-[#003d2b1a] hover:bg-[#003d2b1a] text-[#003d2b] rounded-[800px]">
-              <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm tracking-[0] leading-[14px]">
+        <div className="flex flex-col w-full items-center gap-[50px] py-12 px-6 md:px-10">
+          <div className="flex flex-col items-center gap-[19px]">
+            <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-full px-4 py-2 h-auto">
+              <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
                 HIRING PROCESS
               </span>
             </Badge>
 
             <div className="flex flex-col items-center gap-5 w-full">
-              <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px] whitespace-nowrap">
+              <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px]">
                 <span className="text-[#003d2b]">Our Application </span>
                 <span className="text-[#0b3a78]">Process</span>
               </h2>
 
-              <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg text-center tracking-[-0.20px] leading-7 whitespace-nowrap">
+              <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg text-center tracking-[-0.20px] leading-7">
                 Our streamlined hiring process is designed to be transparent and
                 respectful of your time
               </p>
             </div>
           </div>
 
-          <div className="relative w-full max-w-[1177px] h-[362.43px]">
-            <div className="inline-flex items-center gap-[50px] absolute top-[41px] left-0">
+          <div className="relative w-full max-w-[1177px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 justify-items-center gap-[50px] py-10">
               {processSteps.map((step, index) => (
                 <Card
                   key={index}

@@ -26,12 +26,12 @@ export const TermsOfServices = (): JSX.Element => {
         }}
       />
       <section className="relative w-full flex justify-center pt-20 pb-32">
-        <div className="flex flex-col max-w-[1210px] items-start gap-[60px]">
+        <div className="flex flex-col max-w-[1210px] px-6 md:px-10 items-start gap-[60px]">
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 Important Legal Notice              
               </p>
-              <div className="grid grid-cols-2 grid-rows-2 items-start gap-4 w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 items-start gap-4 w-full">
               {importantLegalData.map((item, index) => (
                 <div 
                   key={index}
@@ -53,7 +53,7 @@ export const TermsOfServices = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 1. Acceptance of Terms
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
@@ -64,11 +64,11 @@ export const TermsOfServices = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
-              2. Nature of Services
+          <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
+          2. Nature of Services
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-2xl tracking-[-0.20px] leading-8">
+                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-xl sm:text-2xl tracking-[-0.20px] leading-8">
                   TrustVerify provides a verification and scoring service, allowing users to: 
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -91,11 +91,11 @@ export const TermsOfServices = (): JSX.Element => {
 
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
-              3. Limitation of Liability
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
+                3. Limitation of Liability
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-2xl tracking-[-0.20px] leading-8">
+                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-xl sm:text-2xl tracking-[-0.20px] leading-8">
                   TrustVerify does not endorse, verify, or certify any user or business listed or connected through our system.
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -108,11 +108,11 @@ export const TermsOfServices = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
-              4. Dispute Resolution
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
+                4. Dispute Resolution
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-2xl tracking-[-0.20px] leading-8">
+                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-xl sm:text-2xl tracking-[-0.20px] leading-8">
                   In the event there is a dispute within the defined buffer period, TrustVerify will freeze the relevant logs if integrated with a payment/escrow provider.                
                 </p>
                 <div className="flex flex-col items-start gap-2.5 px-[31px] py-[27px] w-full bg-[#2885FF24] rounded-2xl">
@@ -129,11 +129,11 @@ export const TermsOfServices = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 5. User Responsibilities
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   Mandatory Requirements 
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -141,7 +141,7 @@ export const TermsOfServices = (): JSX.Element => {
                   - Users are prohibited from misusing the platform for illegal, abusive, or deceptive purposes <br />
                   - Any suspicious behavior may result in account restriction, reporting to authorities, or platform bans
                 </p>
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   Verification Requirements                
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -151,7 +151,7 @@ export const TermsOfServices = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 6. Data Protection (UK GDPR / AML)
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
@@ -165,11 +165,11 @@ export const TermsOfServices = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 7. Global Sanctions Compliance
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-2xl tracking-[-0.20px] leading-8">
+                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-xl sm:text-2xl tracking-[-0.20px] leading-8">
                   We reserve the right to terminate or suspend access without notice in case of:
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -181,8 +181,8 @@ export const TermsOfServices = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
-               8. Governing Law
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
+                8. Governing Law
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
                 <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-2xl tracking-[-0.20px] leading-8">
@@ -192,16 +192,16 @@ export const TermsOfServices = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 9. Contact Compliance Team
               </p>
-              <div className="grid grid-cols-2 grid-rows-2 items-start gap-10 w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 grid-rows-2 items-start gap-10 w-full">
               {contactMetaData.map((item, index) => (
                 <div 
                   key={index}
                   className="flex flex-col gap-7"
                 >
-                  <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                  <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                     {item.title}
                   </p>
                   <div>                      

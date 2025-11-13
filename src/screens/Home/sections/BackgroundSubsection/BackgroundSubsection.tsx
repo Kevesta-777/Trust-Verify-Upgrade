@@ -53,10 +53,10 @@ const integrationItems = [
 
 export const BackgroundSubsection = (): JSX.Element => {
   return (
-    <section className="relative w-full bg-[#f3f3f3] max-h-[1445px] py-20">
-      <div className="container mx-auto max-w-[1326px]  px-4">
+    <section className="relative w-full bg-[#f3f3f3] xl:max-h-[1345px] py-20">
+      <div className="container mx-auto max-w-[1406px]  px-6 md:px-10">
         <div className="flex flex-col gap-10">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-[125px]">
+          <div className="z-10 flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-[125px]">
             <div className="flex flex-col gap-[15px] w-full lg:w-[660px]">
               <Badge className="w-fit bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] rounded-[800px] px-[10px]">
                 <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
@@ -79,61 +79,14 @@ export const BackgroundSubsection = (): JSX.Element => {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-[116px]">
-            <div className="w-full lg:w-[639px] h-[559px] relative">
-              <img className="w-full h-full object-contain" alt="Group" src="/subsection-image.png" />
+          <div className="z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-16 xl:gap-24">
+            <div className="w-full lg:w-1/2 flex justify-center">
+              <img className="object-contain" alt="Group" src="/subsection-image.png" />
             </div>
-
-            <div className="w-full lg:w-[555.5px] relative">
-              <div className="flex flex-col lg:flex-row gap-8 lg:gap-[37px] mb-[54px]">
-                <div className="flex flex-col gap-[11px] w-full lg:w-[228px]">
-                  <img className="w-[60px] h-[60px]" alt="Group" src="/icon-2.svg" />
-                  <h3 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-[21.8px] leading-8">
-                    Global Detection
-                  </h3>
-                  <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base leading-6">
-                    Worldwide fraud intelligence covering all payment methods,
-                    digital transactions, and emerging threat patterns
-                  </p>
-                </div>
-
-                <div className="hidden lg:flex items-center justify-center">
-                  <img
-                    className="w-[67.5px] h-[14.73px]"
-                    alt="Vector"
-                    src="/vector-1.svg"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-[11px] w-full lg:w-[228px]">
-                  <img className="w-[60px] h-[60px]" alt="Group" src="/icon-1.svg" />
-                  <h3 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-[21.7px] leading-8">
-                    Escrow Protection
-                  </h3>
-                  <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base leading-6">
-                    Funds hold securirty with payment partners until fraud
-                    verification completes
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-col lg:flex-row items-start gap-8">
-                <div className="flex flex-col gap-[11px] w-full lg:w-[228px]">
-                  <img className="w-[60px] h-[60px]" alt="Group" src="/icon-3.svg" />
-                  <h3 className="[font-family:'Inter',Helvetica] font-normal text-[#003d2b] text-[21.3px] leading-8">
-                    Internal Settlement
-                  </h3>
-                  <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base leading-6">
-                    72-hour internal settlement process for swift transaction
-                    resolution and dispute handling
-                  </p>
-                </div>
-
-                <div className="absolute top-[236px] right-[123px] hidden lg:block w-44 h-[197px] ">
-                  <img className="w-full h-full" alt="Group" src="/vector-2.svg" />
-                </div>
-              </div>
+            <div className="w-full lg:w-1/2 flex justify-center">
+              <img className="object-contain" alt="Group" src="/subsection-right-image.png" />
             </div>
+        
           </div>
         </div>
 
@@ -162,7 +115,7 @@ export const BackgroundSubsection = (): JSX.Element => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[37px] w-full">
+          <div className="z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[37px] w-full">
             <Card className="rounded-[20px] shadow-[0px_8px_20px_#00000024] bg-white border-0">
               <CardContent className="p-10">
                 <div className="flex flex-col gap-[21px]">
@@ -243,7 +196,7 @@ export const BackgroundSubsection = (): JSX.Element => {
                           <Badge
                             className={`${item.bgColor} ${item.textColor} hover:${item.bgColor} h-6 rounded-[800px] px-3`}
                           >
-                            <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-xs">
+                            <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-xs whitespace-nowrap">
                               {item.risk}
                             </span>
                           </Badge>

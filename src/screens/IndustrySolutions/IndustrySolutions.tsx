@@ -264,33 +264,33 @@ export const IndustrySolutions = (): JSX.Element => {
           className="absolute top-28 right-28 w-[30px] h-[30px]"
           src="/icon-star-1.svg"
         />
-        <div className="flex items-center justify-center gap-[50px] w-full px-4 pt-20 pb-24">
-        {intelligenceData.map((item, index) => (
-          <Card
-            key={index}
-            className="w-full max-w-[407px] h-[121px] bg-[#f3f3f3] rounded-[20px] border-0 shadow-none"
-          >
-            <CardContent className="flex items-center justify-center h-full p-0">
-              <div className="inline-flex items-center gap-[18px]">
-                <img
-                  className="w-16 h-16 flex-shrink-0"
-                  alt={item.title}
-                  src={item.icon}
-                />
+        <div className="flex flex-col xl:flex-row items-center justify-center gap-[50px] w-full max-w-[1401px] mx-auto px-6 md:px-10 pt-20 pb-24">
+          {intelligenceData.map((item, index) => (
+            <Card
+              key={index}
+              className="w-full md:w-1/2 lg:w-1/3 px-4 h-[121px] bg-[#f3f3f3] rounded-[20px] border-0 shadow-none"
+            >
+              <CardContent className="flex items-center justify-center h-full p-0">
+                <div className="inline-flex items-center gap-[18px]">
+                  <img
+                    className="w-16 h-16 flex-shrink-0"
+                    alt={item.title}
+                    src={item.icon}
+                  />
 
-                <div className="flex flex-col w-[284px] items-start gap-0.5">
-                  <h3 className="self-stretch [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-7">
-                    {item.title}
-                  </h3>
+                  <div className="flex flex-col items-start gap-0.5">
+                    <h3 className="self-stretch [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-7">
+                      {item.title}
+                    </h3>
 
-                  <p className="self-stretch [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base tracking-[0] leading-[27px]">
-                    {item.description}
-                  </p>
+                    <p className="self-stretch [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base tracking-[0] leading-[27px]">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </section>
 
@@ -308,7 +308,7 @@ export const IndustrySolutions = (): JSX.Element => {
             src="/pattern-1.svg"
           />
 
-          <div className="container mx-auto px-4 max-w-[1324px]">
+          <div className="container px-6 md:px-10 mx-auto max-w-[1404px]">
             <div className="flex flex-col items-center gap-14">
               <header className="flex flex-col items-center gap-[19px] max-w-[1129px]">
                 <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] px-4 rounded-[800px] [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm tracking-[0] leading-[14px]">
@@ -316,12 +316,12 @@ export const IndustrySolutions = (): JSX.Element => {
                 </Badge>
 
                 <div className="flex flex-col items-center gap-5 w-full">
-                  <h1 className="text-[54px] text-center leading-[67px] whitespace-nowrap [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold tracking-[-0.27px]">
+                  <h1 className="text-[54px] text-center leading-[67px] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold tracking-[-0.27px]">
                     <span className="text-[#003d2b]">Industry </span>
                     <span className="text-[#0b3a78]">Solutions</span>
                   </h1>
 
-                  <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg text-center tracking-[-0.20px] leading-7 whitespace-nowrap">
+                  <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg text-center tracking-[-0.20px] leading-7">
                     Tailored fraud prevention and trust verification solutions for
                     every industry and business size
                   </p>
@@ -329,35 +329,35 @@ export const IndustrySolutions = (): JSX.Element => {
               </header>
 
               <div className="flex flex-col items-center gap-9 w-full">
-                <div className="grid grid-cols-3 gap-9 w-full">
+                <div className="grid gird-cols-1 lg:grid-cols-3 gap-9 w-full">
                   {solutionCards.slice(0, 3).map((card, index) => (
                     <Card
                       key={index}
                       className="bg-white rounded-[20px] border border-solid border-[#e4e4e4] overflow-hidden"
                     >
                       <CardContent className="p-9 flex flex-col gap-[22px] justify-between items-center h-full">
-                        <div className="flex flex-col gap-5 h-[65%]">
+                        <div className="flex flex-col gap-5">
                           <div className="flex items-center gap-4">
                             <img
                               className="w-16 h-16"
                               alt={card.title}
                               src={card.icon}
                             />
-                            <h3 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-6">
+                            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-6">
                               {card.title}
-                            </h3>
+                            </p>
                           </div>
 
-                          <div className="flex flex-col gap-5 h-[77%]">
-                            <p className="h-[45%] [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-lg tracking-[0] leading-[27px]">
+                          <div className="flex flex-col gap-5">
+                            <p className="h-24 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-lg tracking-[0] leading-[27px]">
                               {card.description}
                             </p>
 
-                            <div className="h-[50%] flex flex-col gap-2.5">
-                              <h4 className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-app-primary text-lg tracking-[0] leading-[27px]">
+                            <div className="flex flex-col gap-2.5">
+                              <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-app-primary text-lg tracking-[0] leading-[27px]">
                                 Key Features:
-                              </h4>
-                              <p className="h-32 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-lg leading-[30px] tracking-[0]">
+                              </p>
+                              <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-lg leading-[30px] tracking-[0]">
                                 {card.features.join("\n")}
                               </p>
                             </div>
@@ -403,7 +403,7 @@ export const IndustrySolutions = (): JSX.Element => {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-2 gap-9 w-full max-w-[854px]">
+                <div className="grid gird-cols-1 lg:grid-cols-2 gap-9 w-full max-w-[854px]">
                   {solutionCards.slice(3, 5).map((card, index) => (
                     <Card
                       key={index}
@@ -477,7 +477,7 @@ export const IndustrySolutions = (): JSX.Element => {
           alt="Nate shape"
           src="/nate-shape.svg"
         />
-        <div className="flex flex-col w-full items-center gap-[60px] pt-24 pb-36">
+        <div className="flex flex-col w-full items-center gap-[60px] px-6 md:px-10 pt-24 pb-36">
           <div className="flex flex-col max-w-[893px] items-center gap-5">
             <div className="flex flex-col items-center gap-5 w-full">
               <Badge
@@ -489,11 +489,11 @@ export const IndustrySolutions = (): JSX.Element => {
                 </span>
               </Badge>
 
-              <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px]">
                 <span className="text-[#003d2b]">Why Businesses Choose </span>
                 <span className="text-[#0b3a78]">Trust</span>
                 <span className="text-[#27ae60]">Verify</span>
-              </h2>
+              </p>
             </div>
 
             <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg text-center tracking-[-0.20px] leading-7">
@@ -527,7 +527,7 @@ export const IndustrySolutions = (): JSX.Element => {
       </section>
 
       <section className="w-full relative">
-        <div className="relative w-full bg-[#f4f4f4] py-20">
+        <div className="relative w-full px-6 md:px-10 bg-[#f4f4f4] py-20">
           <div className="w-full mx-auto max-w-[1270px]">
             <div className="flex flex-col gap-[50px]">
               <header className="flex items-center justify-between gap-4">
@@ -536,10 +536,10 @@ export const IndustrySolutions = (): JSX.Element => {
                     PRICING PLAN
                   </Badge>
 
-                  <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[46px] leading-[55.2px] tracking-[-0.92px]">
+                  <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[46px] leading-[55.2px] tracking-[-0.92px]">
                     <span className="text-[#003d2b]">Business </span>
                     <span className="text-[#0b3a78]">Pricing</span>
-                  </h2>
+                  </p>
 
                   <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg leading-[27.2px]">
                     Flexible pricing plans designed to scale with your business
@@ -557,13 +557,11 @@ export const IndustrySolutions = (): JSX.Element => {
                 </Button>
               </header>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-[30px]">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-[30px]">
                 {pricingPlans.map((plan, index) => (
                   <Card
                     key={index}
-                    className={`${plan.bgColor} border-[#f3f3f3] rounded-[20px] overflow-hidden relative ${
-                      plan.featured ? "h-[619px]" : "h-full"
-                    }`}
+                    className={`${plan.bgColor} border-[#f3f3f3] rounded-[20px] overflow-hidden relative h-full`}
                   >
                     {plan.featured && (
                       <div className="absolute top-9 -right-11 w-[190px] h-[35px] bg-white rotate-45 flex items-center justify-center">
@@ -621,11 +619,11 @@ export const IndustrySolutions = (): JSX.Element => {
                         </div>
 
                         <div className="flex flex-col gap-5 mt-5">
-                          <h4
+                          <p
                             className={`[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-xl ${plan.textColor}`}
                           >
                             What's Included?
-                          </h4>
+                          </p>
 
                           <div className="flex flex-col gap-2.5">
                             {plan.features.map((feature, featureIndex) => (
@@ -684,7 +682,7 @@ export const IndustrySolutions = (): JSX.Element => {
             alt="Nate shape"
             src="/nate-shape-1.svg"
         />
-        <div className="flex flex-col w-full items-center gap-[74px]">
+        <div className="flex flex-col w-full items-center gap-[74px] px-6 md:px-10">
           <div className="flex flex-col max-w-[982px] items-center gap-5">
             <div className="flex flex-col items-center gap-5 w-full">
               <Badge
@@ -696,13 +694,13 @@ export const IndustrySolutions = (): JSX.Element => {
                 </span>
               </Badge>
 
-              <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px]">
                 <span className="text-[#003d2b]">Global </span>
                 <span className="text-[#27ae60]">Transaction</span>
                 <span className="text-[#003d2b]"> &amp; </span>
                 <span className="text-[#0b3a78]">Fraud</span>
                 <span className="text-[#003d2b]"> Intelligence</span>
-              </h2>
+              </p>
             </div>
 
             <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-lg text-center tracking-[-0.20px] leading-7 text-[#808080]">
@@ -711,7 +709,7 @@ export const IndustrySolutions = (): JSX.Element => {
             </p>
           </div>
 
-          <div className="flex flex-col lg:flex-row items-start gap-[37px] w-full max-w-[1291px] px-4">
+          <div className="flex flex-col lg:flex-row items-center gap-[37px] w-full max-w-[1291px] px-4">
             <Card className="flex-1 min-w-0 bg-white border border-[#e4e4e4] shadow-[0px_8px_20px_#00000024] rounded-[20px]">
               <CardContent className="p-10">
                 <div className="flex flex-col items-start gap-[30px]">
@@ -810,30 +808,30 @@ export const IndustrySolutions = (): JSX.Element => {
 
       </section>
       <section className="w-full relative">
-        <div className="w-full flex items-center justify-center py-28">
-        <Card className="w-full max-w-[1290px] bg-app-primary rounded-[20px] shadow-[0px_4px_10px_#003d2b1a] border-0">
-          <CardContent className="p-8">
-            <div className="flex items-center gap-[35px]">
-              <div className="flex flex-col w-full max-w-[825px] items-start gap-[31px]">
+        <div className="w-full flex items-center justify-center px-6 md:px-10 py-28">
+        <Card className="w-full max-w-[1290px] bg-app-primary rounded-[6px] md:rounded-[12px] lg:rounded-[20px] shadow-[0px_4px_10px_#003d2b1a] border-0">
+          <CardContent className="px-3 py-4 sm:p-8">
+            <div className="flex items-center justify-between gap-2 md:gap-6 lg:gap-[35px]">
+              <div className="flex flex-col w-full max-w-[825px] items-start gap-2 md:gap-4 lg:gap-8">
                 <div className="flex flex-col items-start gap-2.5 w-full">
-                  <h2 className="text-white text-[40px] leading-[54px] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold tracking-[-0.50px]">
+                  <p className="text-white text-lg md:text-[29px] xl:text-[40px] text-start leading-5 md:leading-9 xl:leading-[54px] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold tracking-[-0.50px]">
                     Global Transaction Security &amp; Fraud Intelligence
-                  </h2>
+                  </p>
 
-                  <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-[22px] tracking-[0] leading-[30px]">
+                  <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-[10px] md:text-base xl:text-[22px] tracking-[0] leading-4 md:leading-5 xl:leading-7 ">
                     Advanced fraud detection and prevention with global
                     intelligence networks. AI-powered fraud intelligence for
                     maximum protection across all business sectors.
                   </p>
                 </div>
 
-                <Button className="w-[234px] h-[60px] bg-white hover:bg-white/90 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-app-primary text-lg tracking-[-0.20px] leading-[18px]">
+                <Button className="w-20 h-5 md:w-36 md:h-9 xl:h-14 xl:w-56 bg-white hover:bg-white/90 rounded-sm md:rounded-[6px] xl:rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-app-primary text-[7px] md:text-sm xl:text-lg tracking-[-0.20px]">
                   Access Dashboard
                 </Button>
               </div>
 
               <img
-                className="w-[323.55px] h-[308.76px] flex-shrink-0"
+                className="w-[102px] h-24 md:w-52 md:h-48 xl:w-[323.55px] xl:h-[308.76px] flex-shrink-0"
                 alt="Group"
                 src="/group-2.png"
               />

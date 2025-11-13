@@ -50,13 +50,13 @@ const buttons = [
     label: "Enterprise Sales",
     variant: "default" as const,
     className:
-      "w-[234px] h-[60px] bg-white text-app-primary hover:bg-white/90 [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-lg tracking-[-0.20px] rounded-lg",
+      "bg-white text-app-primary hover:bg-white/90 [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[10px] sm:text-sm md:text-base lg:text-lg tracking-[-0.20px] rounded-lg",
   },
   {
     label: "Partnership Opportunities",
     variant: "outline" as const,
     className:
-      "w-[272px] h-[60px] border-white text-white hover:bg-white/10 [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-lg tracking-[-0.20px] bg-transparent rounded-lg",
+      "border-white text-white hover:bg-white/10 [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[10px] sm:text-sm md:text-base lg:text-lg tracking-[-0.20px] bg-transparent rounded-lg",
   },
 ];
 
@@ -108,18 +108,18 @@ export const ContactUS = (): JSX.Element => {
           alt="Icon star"
           src="/icon-star.svg"
         />
-        <div className="flex items-center gap-6 py-24 w-full max-w-[1328px] mx-auto justify-between">
+        <div className="flex flex-col xl:flex-row items-center gap-6 py-24 w-full px-6 md:px-10 max-w-[1408px] mx-auto justify-between">
           {contactCards.map((card) => (
             <Card
               key={card.id}
-              className="relative w-full max-w-[422px] h-[469px] bg-white rounded-[20px] overflow-hidden border border-solid border-[#e4e4e4]"
+              className="relative w-full max-w-[382px] h-[424.5px] bg-white rounded-[20px] overflow-hidden border border-solid border-[#e4e4e4]"
             >
               <div
                 className="absolute w-full top-0 left-0 h-[237px] bg-cover bg-[50%_50%]"
                 style={{ backgroundImage: `url(${card.backgroundImage})` }}
               />
 
-              <CardContent className="flex flex-col w-[314px] items-center gap-[22px] absolute top-[196px] left-[54px] p-0">
+              <CardContent className="w-full flex flex-col items-center gap-[22px] absolute top-[196px]">
                 <img
                   className="relative w-[74px] h-[74px]"
                   alt={card.title}
@@ -177,10 +177,10 @@ export const ContactUS = (): JSX.Element => {
           alt="Line flow"
           src="/line-flow.svg"
         />
-        <div className="relative w-full flex justify-between bg-[#f4f4f4] py-[69px]">
-          <div className="container mx-auto px-4 flex items-center gap-[97px] max-w-[1370px]">
+        <div className="relative w-full px-6 md:px-10 flex justify-between bg-[#f4f4f4] py-[69px]">
+          <div className="div mx-auto  flex flex-col xl:flex-row items-center gap-[97px] max-w-[1370px]">
             <img
-              className="w-[638px] h-[598px] object-cover rounded-lg"
+              className="w-full object-cover rounded-lg"
               alt="Contact us representative"
               src="/group-form.png"
             />
@@ -219,25 +219,25 @@ export const ContactUS = (): JSX.Element => {
                 </div>
 
                 <div className="flex flex-col gap-[21px] max-w-[610px]">
-                  <div className="flex gap-[30px]">
+                  <div className="flex flex-col sm:flex-row gap-[30px]">
                     <Input
                       placeholder="First name"
-                      className="flex-1 h-[51px] bg-white rounded-md [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base"
+                      className="flex h-[51px] bg-white rounded-md [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base"
                     />
                     <Input
                       placeholder="Last name"
-                      className="flex-1 h-[51px] bg-white rounded-md [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base"
+                      className="flex h-[51px] bg-white rounded-md [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base"
                     />
                   </div>
 
-                  <div className="flex gap-[30px]">
+                  <div className="flex flex-col sm:flex-row gap-[30px]">
                     <Input
                       placeholder="Phone No."
-                      className="flex-1 h-[51px] bg-white rounded-md [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base"
+                      className="flex h-[51px] bg-white rounded-md [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base"
                     />
                     <Input
                       placeholder="E-mail Address"
-                      className="flex-1 h-[51px] bg-white rounded-md [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base"
+                      className="flex h-[51px] bg-white rounded-md [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base"
                     />
                   </div>
 
@@ -267,7 +267,7 @@ export const ContactUS = (): JSX.Element => {
       </section>
 
       <section className="relative w-full overflow-hidden">
-        <div className="max-w-[1326px] mx-auto py-24">
+        <div className="max-w-[1406px] mx-auto px-6 md:px-10 py-24">
           <Card className="relative w-full bg-app-primary rounded-[20px] shadow-[0px_4px_10px_#003d2b1a] border-0 overflow-hidden">
             <img
               className="absolute top-0 left-0 w-full h-full object-cover"
@@ -275,12 +275,12 @@ export const ContactUS = (): JSX.Element => {
               src="/message-form.png"
             />
             <CardContent className="relative flex flex-col items-center justify-center gap-[31px] px-4 py-[57px]">
-              <div className="flex flex-col w-full max-w-[1053px] items-start gap-2.5">
-                <h2 className="w-full [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-white text-[40px] text-center tracking-[-0.50px] leading-[67px]">
+              <div className="flex flex-col w-full max-w-[1053px] items-start gap-5">
+                <p className="w-full [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-white text-2xl lg:text-[40px] text-center tracking-[-0.50px] leading-[20px] md:leading-[67px]">
                   Enterprise &amp; Partnership Opportunities
-                </h2>
+                </p>
 
-                <p className="w-full [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-[22px] text-center tracking-[0] leading-[30px]">
+                <p className="w-full [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-sm md:text-base lg:text-[22px] text-center tracking-[0] md:leading-[30px]">
                   Looking for enterprise solutions or interested in partnering with
                   TrustVerify? Our Business development team is ready to discuss
                   custom solutions.
@@ -320,7 +320,7 @@ export const ContactUS = (): JSX.Element => {
           alt="shape"
           src="/shape_nate_32.png"
         />
-        <div className="flex flex-col w-full items-center gap-9 px-4">
+        <div className="flex flex-col w-full items-center gap-9 px-6 md:px-10">
           <header className="flex flex-col max-w-[1129px] items-center gap-5">
             <div className="flex flex-col max-w-[710px] items-center gap-[19px]">
               <Badge
@@ -332,7 +332,7 @@ export const ContactUS = (): JSX.Element => {
                 </span>
               </Badge>
 
-              <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.92px] leading-[67px] whitespace-nowrap">
+              <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.92px] leading-[67px]">
                 <span className="text-[#003d2b] tracking-[-0.50px]">
                   Additional{" "}
                 </span>

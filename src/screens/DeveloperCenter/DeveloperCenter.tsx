@@ -17,6 +17,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "../../components/ui/tabs";
+import { HeaderDemo } from "../../components/HeaderDemo";
 
 const topNavigationItems = [
   { label: "Demo", isActive: true },
@@ -298,33 +299,8 @@ export const DeveloperCenter = (): JSX.Element => {
   const [activeTab, setActiveTab] = useState("nodejs");
 
   return (
-    <div className="bg-[#f6f6f6] overflow-hidden w-full min-w-full lg:min-w-[1920px] flex flex-col">
-      <div className="flex w-full relative flex-col items-start gap-2.5 px-[110px] py-[17px] bg-[linear-gradient(169deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)]">
-        <header className="relative w-full bg-transparent">
-          <div className="flex items-center justify-between w-full h-20">
-            <img className="w-[184px] h-[38px]" alt="Group" src="/group.png" />
-
-            <NavigationMenu className="flex-1 flex justify-center">
-              <NavigationMenuList className="flex items-center gap-16">
-                {topNavigationItems.map((item, index) => (
-                  <NavigationMenuItem key={index}>
-                    <NavigationMenuLink
-                      className={`flex items-center justify-center cursor-pointer ${item.isActive
-                        ? "[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#d8d8d8] text-lg"
-                        : "[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#d8d8d8] text-[17.7px]"
-                        } tracking-[0] leading-[18px] whitespace-nowrap`}
-                    >
-                      {item.label}
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
-
-            <div className="w-[184px]" />
-          </div>
-        </header>
-      </div>
+    <main className="bg-[#f6f6f6] overflow-hidden w-full min-w-full lg:min-w-[1920px] flex flex-col">
+      <HeaderDemo />
       <section className="flex flex-col items-start gap-[30px] w-full px-4 sm:px-6 lg:px-[110px]">
         <header className="flex flex-col items-start gap-2.5 w-full">
           <h1 className="flex items-center justify-center w-full [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl sm:text-4xl lg:text-5xl tracking-[0] leading-[normal] text-center">
@@ -1118,6 +1094,6 @@ export const DeveloperCenter = (): JSX.Element => {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 };

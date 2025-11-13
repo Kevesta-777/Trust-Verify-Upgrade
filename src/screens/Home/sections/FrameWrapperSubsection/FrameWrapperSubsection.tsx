@@ -22,8 +22,8 @@ const features = [
 
 export const FrameWrapperSubsection = (): JSX.Element => {
   return (
-    <section className="w-full flex items-center justify-center gap-[50px] py-32 px-4">
-      <div className="flex flex-col w-full max-w-[582px] items-start gap-9">
+    <section className="w-full flex flex-col xl:flex-row items-center justify-center gap-[50px] py-32  px-6 md:px-10">
+      <div className="z-10 flex flex-col w-full xl:w-1/2 items-start gap-9">
         <div className="flex flex-col items-start gap-[30px] w-full">
           <div className="flex flex-col items-start gap-[19px] w-full">
             <div className="flex flex-col items-start gap-5 w-full">
@@ -40,13 +40,8 @@ export const FrameWrapperSubsection = (): JSX.Element => {
                 </span>
                 <span className="text-[#003d2b] tracking-[-0.27px]">
                   {" "}
-                  Platform
-                </span>
-                <span className="text-[#0b3a78] tracking-[-0.27px]">
-                  &nbsp;
-                </span>
-                <span className="text-[#003d2b] tracking-[-0.27px]">
-                  Protect Your{" "}
+                  Platform Protect Your
+                  {" "}
                 </span>
                 <span className="text-[#27ae60] tracking-[-0.27px]">
                   Business
@@ -82,22 +77,22 @@ export const FrameWrapperSubsection = (): JSX.Element => {
           </div>
         </div>
 
-        <div className="flex items-center gap-5">
-          <Button className="w-[223px] h-14 bg-app-primary hover:bg-app-primary/90 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-white text-lg tracking-[-0.20px]">
+        <div className="flex items-center gap-3 sm:gap-5">
+          <Button className="px-6 h-14 bg-app-primary hover:bg-app-primary/90 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-white text-sm sm:text-lg tracking-[-0.20px]">
             Start Free Trial
-            <TrendingUp className="ml-2 w-[30px] h-[30px]" />
+            <TrendingUp className="ml-1 sm:ml-2 w-[20px] h-[20px] sm:w-[30px] sm:h-[30px]" />
           </Button>
 
           <Button
             variant="outline"
-            className="w-[198px] h-14 border-[#27ae60] text-app-secondary hover:bg-[#27ae60]/10 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-lg tracking-[-0.20px]"
+            className="px-6 h-14 border-[#27ae60] text-app-secondary hover:bg-[#27ae60]/10 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-sm sm:text-lg tracking-[-0.20px]"
           >
             Schedule Demo
           </Button>
         </div>
       </div>
 
-      <div className="w-full max-w-[694px] h-[601px] flex-shrink-0">
+      <div className="w-full xl:w-1/2 flex-shrink-0">
         <img className="w-full h-full object-cover" alt="Container" src="/container.png" />
       </div>
     </section>

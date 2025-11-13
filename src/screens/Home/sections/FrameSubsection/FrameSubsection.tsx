@@ -26,8 +26,8 @@ export const FrameSubsection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col w-full max-w-[1326px] mx-auto items-center gap-[60px] pt-20 justify-center">
-      <div className="flex flex-col w-full max-w-[1129px] items-center gap-[19px]">
+    <section className="flex flex-col w-full px-6 md:px-10 mx-auto items-center gap-[60px] pt-20 justify-center">
+      <div className="z-10 flex flex-col w-full max-w-[1129px]  items-center gap-[19px]">
         <Badge
           variant="secondary"
           className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-[800px] h-[30px] px-4 [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm tracking-[0] leading-[14px]"

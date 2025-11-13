@@ -164,9 +164,9 @@ const contactPrivacy = [
 ];
 
 const policyChangesNotifications = [
-  "Email notification to your registered email address",
-  "Prominent notice on our website and mobile application",
-  "In-app notifications for significant changes",
+  "- Email notification to your registered email address",
+  "- Prominent notice on our website and mobile application",
+  "- In-app notifications for significant changes",
 ];
 
 const tableOfContents = [
@@ -206,10 +206,40 @@ export const PrivacyPolicy = (): JSX.Element => {
           description: "We are committed to protecting your privacy and ensuring transparency about how we collect, use, and safeguard your personal information. This policy explains our practices in clear, understandable terms.",
         }}
       />
-      <section className="flex items-start gap-[73px] w-full justify-center pt-20 pb-28">
-        <div className="flex flex-col max-w-[1075px] items-start gap-[59px]">
+      <section className="flex flex-col xl:flex-row items-center xl:items-start gap-[73px] w-full justify-center px-6 md:px-10 pt-20 pb-28">
+        <Card className="block xl:hidden bg-white rounded-[20px] border border-solid border-[#e4e4e4]">
+          <CardContent className="p-0">
+            <div className="flex flex-col items-start gap-5 p-[31px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl tracking-[0] leading-6">
+                Table Of Contents
+              </p>
+
+              <div className="w-full h-px bg-[#e4e4e4]"></div>
+            </div>
+
+            <div className="flex flex-col items-start gap-4 px-[30px] pb-[31px]">
+              {tableOfContents.map((item, index) => (
+                <div
+                  key={index}
+                  className={`[font-family:'DM_Sans_18pt-Regular',Helvetica] text-base tracking-[0] ${
+                    item.indent ? "leading-8 text-[#808080]" : "leading-[27.2px]"
+                  } ${
+                    index === 0
+                      ? "[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b]"
+                      : "font-normal text-[#808080]"
+                  }`}
+                >
+                  {item.indent && "\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0"}
+                  {item.title}
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className="w-full flex flex-col items-start gap-[59px]">
           <div className="flex flex-col items-start gap-[30px] w-full">
-            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
               1. Data Protection &amp; Privacy Notice
             </p>
 
@@ -261,13 +291,13 @@ export const PrivacyPolicy = (): JSX.Element => {
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           
           <div className="flex flex-col items-start gap-[30px] w-full">
-            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
               2. Information We Collect
             </p>
 
             <div className="flex flex-col items-start gap-[34px] w-full">
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   2.1 Personal Information
                 </p>
 
@@ -282,7 +312,7 @@ export const PrivacyPolicy = (): JSX.Element => {
               </div>
 
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   2.2 Automatically Collected Data
                 </p>
 
@@ -301,18 +331,18 @@ export const PrivacyPolicy = (): JSX.Element => {
           <div className="w-full h-px bg-[#e4e4e4]"></div>
 
           <div className="flex flex-col items-start gap-[30px] w-full">
-            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
               3. Legal Basis for Processing
             </p>
 
             <div className="flex flex-col items-start gap-6 w-full">
               <div className="w-full bg-[#2885ff24] rounded-2xl p-7">
                 <div className="flex flex-col items-start gap-2.5">
-                  <div className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#2785ff] text-[22px] tracking-[-0.20px] leading-7">
+                  <div className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#2785ff] text-xl sm:text-[22px] tracking-[-0.20px] leading-7">
                     UK GDPR Compliance
                   </div>
 
-                  <div className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#2785ff] text-lg tracking-[-0.20px] leading-7">
+                  <div className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#2785ff] text-base sm:text-lg tracking-[-0.20px] leading-7">
                     We process data under the following legal bases
                   </div>
                 </div>
@@ -338,13 +368,13 @@ export const PrivacyPolicy = (): JSX.Element => {
           <div className="w-full h-px bg-[#e4e4e4]"></div>
 
           <div className="flex flex-col items-start gap-[30px] w-full">
-            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
               4. How We Use Your Information
             </p>
 
             <div className="flex flex-col items-start gap-[34px] w-full">
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   4.1 Primary Uses
                 </p>
 
@@ -359,7 +389,7 @@ export const PrivacyPolicy = (): JSX.Element => {
               </div>
 
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   4.2 Secondary Uses
                 </p>
 
@@ -378,18 +408,18 @@ export const PrivacyPolicy = (): JSX.Element => {
           <div className="w-full h-px bg-[#e4e4e4]"></div>
 
           <div className="flex flex-col items-start gap-[30px] w-full">
-            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
               5. Data Sharing and Third Parties
             </p>
 
             <div className="flex flex-col items-start gap-6 w-full">
               <div className="w-full bg-[#2885ff24] rounded-2xl p-7">
                 <div className="flex flex-col items-start gap-2.5">
-                  <div className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#2785ff] text-[22px] tracking-[-0.20px] leading-7">
+                  <div className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#2785ff] text-xl sm:text-[22px] tracking-[-0.20px] leading-7">
                     Important Notice
                   </div>
 
-                  <div className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#2785ff] text-lg tracking-[-0.20px] leading-7">
+                  <div className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#2785ff] text-base sm:text-lg tracking-[-0.20px] leading-7">
                     We do not sell or rent your personal information to third
                     parties for their marketing purposes.
                   </div>
@@ -397,7 +427,7 @@ export const PrivacyPolicy = (): JSX.Element => {
               </div>
 
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   Authorized Third Parties
                 </p>
 
@@ -422,12 +452,12 @@ export const PrivacyPolicy = (): JSX.Element => {
           <div className="w-full h-px bg-[#e4e4e4]"></div>
 
           <div className="flex flex-col items-start gap-[30px] w-full">
-            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
               6. International Data Transfers
             </p>
 
             <div className="flex flex-col items-start gap-5 w-full">
-              <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-2xl tracking-[-0.20px] leading-8">
+              <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-xl sm:text-2xl tracking-[-0.20px] leading-8">
                 Your data may be transferred outside the UK/EU to provide service.
                 We ensure adequate protection through:
               </p>
@@ -446,13 +476,13 @@ export const PrivacyPolicy = (): JSX.Element => {
           <div className="w-full h-px bg-[#e4e4e4]"></div>
 
           <div className="flex flex-col items-start gap-[30px] w-full">
-            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
               7. Data Retention
             </p>
 
             <div className="flex flex-col items-start gap-6 w-full">
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   Retention Periods
                 </p>
 
@@ -489,14 +519,14 @@ export const PrivacyPolicy = (): JSX.Element => {
 
           <div className="w-full h-px bg-[#e4e4e4]"></div>
 
-          <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
-           8. Your Rights (UK GDPR)
+          <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
+            8. Your Rights (UK GDPR)
           </p>
 
           <div className="flex flex-col items-start gap-6 w-full">
             <div className="flex flex-col items-start gap-5 w-full">
-              <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
-                Individual Rights
+            <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
+            Individual Rights
               </p>
 
               <div className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-normal text-xl tracking-[0] leading-8">
@@ -537,13 +567,13 @@ export const PrivacyPolicy = (): JSX.Element => {
           <div className="w-full h-px bg-[#e4e4e4]"></div>
 
           <div className="flex flex-col items-start gap-[30px] w-full">
-            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
-             9. Security Measures
+            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
+              9. Security Measures
             </p>
 
             <div className="flex flex-col items-start gap-[34px] w-full">
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   9.1 Technical Safeguards
                 </p>
 
@@ -558,7 +588,7 @@ export const PrivacyPolicy = (): JSX.Element => {
               </div>
 
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   9.2 Organizational Measures
                 </p>
 
@@ -577,13 +607,13 @@ export const PrivacyPolicy = (): JSX.Element => {
           <div className="w-full h-px bg-[#e4e4e4]"></div>
 
           <div className="flex flex-col items-start gap-[30px] w-full">
-            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
-             10. CCPA Rights (California Residents)
+            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
+              10. CCPA Rights (California Residents)
             </p>
 
             <div className="flex flex-col items-start gap-6 w-full">
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-2xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-xl sm:text-2xl tracking-[-0.20px] leading-7">
                   California residents have additional rights under the California
                   Consumer Privacy Act (CCPA):
                 </p>
@@ -616,14 +646,14 @@ export const PrivacyPolicy = (): JSX.Element => {
           <div className="w-full h-px bg-[#e4e4e4]"></div>
 
           <div className="flex flex-col items-start gap-[30px] w-full">
-            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
-             11. Contact Information
+            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
+              11. Contact Information
             </p>
 
             <div className="flex flex-col items-start gap-5 w-full">
-              <div className="flex items-start justify-between w-full gap-4 flex-wrap">
+              <div className="flex items-start justify-between w-full gap-8 sm:gap-4 flex-wrap">
                 <div className="flex flex-col w-[330px] items-start gap-7">
-                  <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                  <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                     Data Protection Officer
                   </p>
 
@@ -646,7 +676,7 @@ export const PrivacyPolicy = (): JSX.Element => {
                 </div>
 
                 <div className="flex flex-col w-[368px] items-start gap-7">
-                  <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                  <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                     Privacy Team
                   </p>
 
@@ -687,13 +717,13 @@ export const PrivacyPolicy = (): JSX.Element => {
           <div className="w-full h-px bg-[#e4e4e4]"></div>
 
           <div className="flex flex-col items-start gap-[30px] w-full">
-            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+            <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
               12. Changes to This Policy
             </p>
 
             <div className="flex flex-col items-start gap-6 w-full">
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-2xl tracking-[-0.20px] leading-8">
+                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-xl sm:text-2xl tracking-[-0.20px] leading-8">
                   We may update this Privacy Policy to reflect changes in our
                   practices, applicable laws, or regulatory requirements. We will
                   notify you of any material changes through:
@@ -712,7 +742,7 @@ export const PrivacyPolicy = (): JSX.Element => {
           </div>
         </div>
 
-        <Card className="w-[426px] min-w-[426px] bg-white rounded-[20px] border border-solid border-[#e4e4e4]">
+        <Card className="hidden xl:block min-w-[326px] bg-white rounded-[20px] border border-solid border-[#e4e4e4]">
           <CardContent className="p-0">
             <div className="flex flex-col items-start gap-5 p-[31px]">
               <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl tracking-[0] leading-6">

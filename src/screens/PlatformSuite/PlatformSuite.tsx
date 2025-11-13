@@ -220,8 +220,7 @@ export const PlatformSuite = (): JSX.Element => {
           alt="Shape nate"
           src="/shape-nate-30-svg-fill.svg"
         />
-
-        <div className="flex flex-col w-full max-w-[1115px] mx-auto items-center gap-[60px]">
+        <div className="flex flex-col w-full max-w-[1195px] mx-auto px-6 md:px-10 items-center gap-[60px]">
           <div className="flex flex-col w-full max-w-[893px] items-center gap-5">
             <div className="flex flex-col items-center gap-5 w-full">
               <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-[800px] px-4 py-1.5 h-auto">
@@ -246,12 +245,11 @@ export const PlatformSuite = (): JSX.Element => {
 
           <div className="flex flex-col items-center gap-[47px] w-full">
             <img
-              className="w-full max-w-[852px] h-[11px]"
+              className="hidden md:block w-full max-w-[852px] h-[11px]"
               alt="Group"
               src="/group-63.png"
             />
-
-            <div className="flex items-start justify-center gap-[145px] w-full flex-wrap">
+            <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-12 md:gap-36 w-full">
               {features.map((feature, index) => (
                 <div
                   key={index}

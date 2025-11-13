@@ -73,125 +73,120 @@ const industrySolutions = [
 
 export const DivWrapperSubsection = (): JSX.Element => {
   return (
-    <section className="flex items-start gap-[86px] w-full max-w-[1326px] mx-auto pt-[265px]">
-      <div className="flex flex-col w-[620px] items-start gap-11">
-        <header className="flex flex-col items-start gap-[21px] w-full">
-          <Badge className="h-[30px] bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-[800px] px-4">
-            <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm tracking-[0] leading-[14px]">
-              PREVENTION SOLUTIONS
-            </span>
-          </Badge>
+    <section className="w-full relative overflow-hidden pt-24 xl:pt-[265px]">
+      <div className="flex flex-col lg:flex-row items-start gap-[50px] w-full max-w-[1326px] mx-auto px-6 md:px-10">
+        <div className="flex flex-col w-full gap-[41px]">
+          <header className="flex flex-col items-start gap-5 w-full">
+              <Badge className="h-[30px] px-6 bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-full [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
+                <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm tracking-[0] leading-[14px]">
+                  PREVENTION SOLUTIONS
+                </span>
+              </Badge>
 
-          <h2 className="w-full font-semibold text-[46px] tracking-[-0.92px] leading-[55.2px] [font-family:'Suisse_Intl-SemiBold',Helvetica]">
-            <span className="text-[#003d2b] tracking-[-0.42px]">Industry </span>
-            <span className="text-[#1e357e] tracking-[-0.42px]">Solutions</span>
-          </h2>
+              <h2 className="flex items-center justify-center w-full [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[46px] tracking-[-0.92px] leading-[55.2px]">
+                <span className="text-[#003d2b] tracking-[-0.42px]">Industry </span>
+                <span className="text-[#0b3a78] tracking-[-0.42px]">Solutions</span>
+              </h2>
 
-          <p className="w-full [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg tracking-[0] leading-[27.2px]">
-            Tailored fraud prevention solutions designed for every industry,
-            combining advanced technology with stunning visual protection to
-            safeguard your business at every step.
-          </p>
-        </header>
+              <p className="flex items-center justify-center w-full [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg tracking-[0] leading-[27.2px]">
+                Tailored fraud prevention solutions designed for every industry,
+                combining advanced technology with stunning visual protection to
+                safeguard your business at every step.
+              </p>
+          </header>
 
-        <div className="relative w-[620px] h-[536px]">
-          <div className="absolute top-0 left-[15px] w-[calc(100%_-_95px)] h-[436px] rounded-[20px] overflow-hidden">
-            <img
-              className="w-[525px] h-[435px] object-cover"
-              alt="Industry solutions showcase"
-              src="/industry-solutions-showcase.png"
-            />
-          </div>
+          <div className="relative">
+            <div className="relative w-full pl-4">
+                <img
+                  className="w-full h-full object-cover"
+                  alt="Office workspace"
+                  src="/subsection-image4.png"
+                />            
+            </div>
 
-          <div className="absolute top-[319px] left-80 w-[calc(100%_-_320px)] h-[217px] rounded-[20px] overflow-hidden border-[9px] border-solid border-white">
-            <img
-              className="w-[300px] h-[217px] object-cover"
-              alt="Industry detail"
-              src="/industry-details.png"
-            />
-          </div>
-
-          <Card className="absolute left-0 bottom-[45px] w-[44.35%] h-[90px] bg-white rounded-[5px] border-l-2 border-[#1e357e] shadow-[0px_2px_14px_#00000024]">
-            <CardContent className="flex items-center gap-[22.2px] p-0 h-full">
-              <div className="ml-[17px] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#1e357e] text-[46px] tracking-[-0.92px] leading-[normal] whitespace-nowrap">
-                19+
-              </div>
-              <div className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base tracking-[0] leading-[27.2px]">
-                Years of experience
-                <br />
-                in Industry
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-
-      <ScrollArea className="w-[620px] h-[908px]">
-        <div className="flex flex-col gap-[17px]">
-          {industrySolutions.map((solution, index) => (
-            <Card
-              key={solution.id}
-              className="w-[620px] h-[258px] bg-[#f6f6f6] rounded-[20px] border-0 overflow-hidden relative"
-            >
-              <CardContent className="p-0 h-full">
-                <div className="absolute top-[172px] left-[457px] [-webkit-text-stroke:1px_#808080] opacity-15 [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-transparent text-[100px] tracking-[3.00px] leading-[120px] whitespace-nowrap">
-                  {solution.id}
+            <Card className="absolute left-0 bottom-[45px] w-[44.35%] h-[90px] bg-white rounded-[5px] border-l-2 border-[#1e357e] shadow-[0px_2px_14px_#00000024]">
+              <CardContent className="flex items-center gap-[14px] sm:gap-[22.2px] p-0 h-full">
+                <div className="ml-[12px] sm:ml-[17px] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#1e357e] text-[30px] sm:text-[46px] tracking-[-0.92px] leading-[normal] whitespace-nowrap">
+                  19+
                 </div>
-
-                <div className="flex items-center gap-6 absolute top-[35px] left-10">
-                  <img
-                    className="w-[43px] h-[43px]"
-                    alt={`${solution.title} icon`}
-                    src={solution.icon}
-                  />
-                  <h3 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-6">
-                    {solution.title}
-                  </h3>
-                </div>
-
-                <div className="flex flex-col items-start gap-5 absolute top-[82px] left-[107px] w-[490px]">
-                  <p className="h-12 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base tracking-[0] leading-6">
-                    {solution.description}
-                  </p>
-
-                  {solution.features && (
-                    <div className="flex items-center gap-[15px] w-full">
-                      {solution.features.map((feature, featureIndex) => (
-                        <div
-                          key={featureIndex}
-                          className="inline-flex items-center gap-[5px]"
-                        >
-                          <img
-                            className="w-5 h-5"
-                            alt={feature.label}
-                            src={feature.icon}
-                          />
-                          <span className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-[13px] tracking-[0] leading-[normal]">
-                            {feature.label}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  <div className="inline-flex items-center gap-2.5">
-                    {solution.badges.map((badge, badgeIndex) => (
-                      <Badge
-                        key={badgeIndex}
-                        className={`h-[30px] ${badge.color} hover:${badge.color} rounded-[800px] px-4`}
-                      >
-                        <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm text-center tracking-[0] leading-[14px]">
-                          {badge.label}
-                        </span>
-                      </Badge>
-                    ))}
-                  </div>
+                <div className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-[10px] sm:text-base tracking-[0] leading-5 sm:leading-[27.2px]">
+                  Years of experience
+                  <br />
+                  in Industry
                 </div>
               </CardContent>
             </Card>
-          ))}
+          </div>
         </div>
-      </ScrollArea>
+
+        <ScrollArea className="w-full h-[908px]">
+          <div className="flex flex-col w-full items-start gap-[23px] pr-0 sm:pr-4">
+            {industrySolutions.map((solution, index) => (
+              <Card
+                key={index}
+                className="w-full bg-[#f6f6f6] rounded-[20px] border-0 overflow-hidden"
+              >
+                <CardContent className="relative p-0">
+                  <div className="absolute -bottom-[35px] right-[27px] [-webkit-text-stroke:1px_#808080] opacity-15 [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-transparent text-[100px] tracking-[3.00px] leading-[120px] whitespace-nowrap">
+                    {solution.id}
+                  </div>
+                  <div className="w-full flex flex-col max-w-[560px] items-start p-6 sm:p-8 gap-1">
+                    <div className="flex items-center gap-6">
+                      <img
+                        className="w-[27px] h-[27px] sm:w-[43px] sm:h-[43px]"
+                        alt={`${solution.title} icon`}
+                        src={solution.icon}
+                      />
+                      <h3 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-lg sm:text-xl tracking-[0] leading-6">
+                        {solution.title}
+                      </h3>
+                    </div>
+
+                    <div className="flex flex-col items-start justify-between gap-5 pl-[50px] sm:pl-16">
+                      <p className="w-full [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-[12px] sm:text-base tracking-[0] leading-6">
+                        {solution.description}
+                      </p>
+
+                      {solution.features && (
+                        <div className="flex items-start gap-2 sm:gap-[15px] w-full">
+                          {solution.features.map((feature, featureIndex) => (
+                            <div
+                              key={featureIndex}
+                              className="inline-flex items-start gap-[5px]"
+                            >
+                              <img
+                                className="w-3 h-3 sm:w-5 sm:h-5"
+                                alt={feature.label}
+                                src={feature.icon}
+                              />
+                              <span className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-[9px] sm:text-[13px] tracking-[0] leading-[normal]">
+                                {feature.label}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+
+                      <div className="inline-flex items-center gap-2.5">
+                        {solution.badges.map((badge, badgeIndex) => (
+                          <Badge
+                            key={badgeIndex}
+                            className={`${badge.color} hover:${badge.color} rounded-[800px] px-4 py-2`}
+                          >
+                            <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[10px] sm:text-sm text-center tracking-[0] leading-[8px] sm:leading-[14px]">
+                              {badge.label}
+                            </span>
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </ScrollArea>
+      </div>
     </section>
   );
 };

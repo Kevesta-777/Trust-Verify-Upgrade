@@ -158,17 +158,17 @@ export const HelpCenter = (): JSX.Element => {
           src="/icon-star-1.svg"
         />
         <img
-          className="absolute top-[56px] left-[-227px] w-[399px] h-[528px] z-10 pointer-events-none"
+          className="absolute top-[56px] left-[-227px] w-[399px] h-[528px] pointer-events-none"
           alt="Nate shape"
           src="/nate-shape.svg"
         />
-        <div className="max-w-[1117px] grid grid-cols-4 mx-auto gap-7 py-24">
+        <div className="max-w-[1197px] px-6 md:px-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-auto gap-7 py-24">
           {supportOptions.map((option, index) => (
             <Card
               key={index}
               className="bg-[#f3f3f3] rounded-[10px] border-0 shadow-none"
             >
-              <CardContent className="p-[26px] flex flex-col h-[244px]">
+              <CardContent className="p-[26px] flex flex-col h-full">
                 <img
                   className="w-[38px] h-[38px] mb-[22px]"
                   alt={option.title}
@@ -183,9 +183,9 @@ export const HelpCenter = (): JSX.Element => {
                   {option.description}
                 </p>
 
-                <button className="flex items-center gap-2.5 mt-[17px] text-app-secondary [font-family:'Inter',Helvetica] font-medium text-[17.4px] tracking-[0] leading-[18px] hover:opacity-80 transition-opacity">
+                <button className="flex items-center gap-1 sm:gap-2.5 mt-[17px] text-app-secondary [font-family:'Inter',Helvetica] font-medium text-[15px] sm:text-[17.4px] tracking-[0] leading-[18px] hover:opacity-80 transition-opacity">
                   {option.linkText}
-                  <ArrowRightIcon className="w-[11.25px] h-[18px]" />
+                  <ChevronRight className="w-[11.25px] h-[18px]" />
                 </button>
               </CardContent>
             </Card>
@@ -234,15 +234,15 @@ export const HelpCenter = (): JSX.Element => {
               {articles.map((article, index) => (
                 <article
                   key={index}
-                  className="flex flex-col sm:flex-row gap-[30px] w-full"
+                  className="flex flex-col sm:flex-row items-center gap-[30px] w-full"
                 >
                   <div
                     className="w-full sm:w-[295px] h-[251px] rounded-[20px] bg-cover bg-center flex-shrink-0"
                     style={{ backgroundImage: `url(${article.image})` }}
                   />
 
-                  <div className="flex flex-col justify-between flex-1 py-9">
-                    <div className="flex flex-col gap-5">
+                  <div className="w-full flex flex-col justify-between flex-1 py-9">
+                    <div className="w-full flex flex-col gap-5">
                       <div className="flex items-center gap-[4.6px]">
                         <CalendarIcon className="w-[14.36px] h-4 text-[#808080]" />
                         <span className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base tracking-[0] leading-[27.2px]">
@@ -250,9 +250,9 @@ export const HelpCenter = (): JSX.Element => {
                         </span>
                       </div>
 
-                      <h3 className="[font-family:'Suisse_Intl-Medium',Helvetica] font-medium text-[#040303] text-xl tracking-[0] leading-7 whitespace-pre-line">
+                      <p className="[font-family:'Suisse_Intl-Medium',Helvetica] font-medium text-[#040303] text-xl tracking-[0] leading-7">
                         {article.title}
-                      </h3>
+                      </p>
                     </div>
 
                     <div className="flex items-start justify-start gap-3 mt-6">
@@ -269,13 +269,13 @@ export const HelpCenter = (): JSX.Element => {
         </div>
 
         <img
-          className="absolute left-0 bottom-0 w-[307px] h-[310px]"
+          className="absolute left-0 bottom-0 w-[153px] h-[153px] md:w-[200px] md:h-[200px] xl:w-[307px] xl:h-[310px]"
           alt="Pattern"
           src="/pattern-1.svg"
         />
 
         <img
-          className="absolute right-0 bottom-0 w-[307px] h-[310px]"
+          className="absolute right-0 bottom-0  w-[153px] h-[153px] md:w-[200px] md:h-[200px] xl:w-[307px] xl:h-[310px]"
           alt="Pattern"
           src="/pattern.svg"
         />
@@ -292,11 +292,11 @@ export const HelpCenter = (): JSX.Element => {
           alt="shape"
           src="/shape_nate_31.png"
         />
-        <div className="flex items-center justify-center gap-9 w-full py-12">
+        <div className="flex flex-col xl:flex-row px-6 md:px-10 items-center justify-center gap-9 w-full py-12">
         {insightsData.map((insight, index) => (
           <Card
             key={index}
-            className="w-full max-w-[417px] h-[328px] bg-white rounded-[20px] overflow-hidden border border-solid border-[#e4e4e4]"
+            className="w-full max-w-[417px] h-[328px] bg-white rounded-[20px] overflow-hidden border border-solid border-[#e4e4e4] z-20"
           >
             <CardContent className="flex flex-col items-start gap-[22px] h-full justify-center px-9">
               <div className="flex flex-col items-start gap-[23px] w-full">
@@ -329,100 +329,100 @@ export const HelpCenter = (): JSX.Element => {
         </div>
       </section>
       <section className="relative w-full pb-24">
-        <div className="flex flex-col w-full items-center gap-[60px] py-12">
-        <header className="flex flex-col max-w-[1129px] items-center gap-[19px]">
-          <Badge
-            variant="secondary"
-            className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-full px-4 py-1.5 h-[30px]"
-          >
-            <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm tracking-[0] leading-[14px]">
-              FAQS
-            </span>
-          </Badge>
+        <div className="flex flex-col w-full items-center px-6 md:px-10 gap-[60px] py-12">
+          <header className="flex flex-col max-w-[1129px] items-center gap-[19px]">
+            <Badge
+              variant="secondary"
+              className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-full px-4 py-1.5 h-[30px]"
+            >
+              <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm tracking-[0] leading-[14px]">
+                FAQS
+              </span>
+            </Badge>
 
-          <div className="flex flex-col items-center gap-5 w-full">
-            <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px] whitespace-nowrap">
-              <span className="text-[#003d2b]">Your Most Frequently Asked </span>
-              <span className="text-[#0b3a78]">Questions</span>
-            </h2>
+            <div className="flex flex-col items-center gap-5 w-full">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px]">
+                <span className="text-[#003d2b]">Your Most Frequently Asked </span>
+                <span className="text-[#0b3a78]">Questions</span>
+              </p>
 
-            <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg text-center tracking-[-0.20px] leading-7 whitespace-nowrap">
-              Find quick answers to common questions about TrustVerify.
-            </p>
-          </div>
-        </header>
+              <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg text-center tracking-[-0.20px] leading-7">
+                Find quick answers to common questions about TrustVerify.
+              </p>
+            </div>
+          </header>
 
-        <div className="flex items-start gap-[30px] w-full max-w-[1270px]">
-          <div className="relative w-[620px] h-[585.75px] flex-shrink-0">
-            <div className="w-[550px] h-[586px] rounded-[20px] bg-[url(/faq_image.png)] bg-cover bg-center" />
+          <div className="flex flex-col lg:flex-row items-center gap-[30px] w-full max-w-[1270px]">
+            <div className="relative w-full lg:w-1/2 flex-shrink-0">
+              <div className="w-11/12 h-[400px] sm:h-[586px] rounded-[20px] bg-[url(/faq_image.png)] bg-cover bg-center" />
 
-            <div className="absolute right-0 bottom-10 w-[210px] bg-app-primary rounded-[10px] p-5 flex flex-col gap-5">
-              <div className="flex flex-col items-center">
-                <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-white tracking-[0] leading-[30.6px]">
-                  100+ Client
-                </span>
-
-                <div className="flex items-center gap-1">
-                  <StarIcon className="w-4 h-4 text-white fill-white" />
-                  <span className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-base tracking-[0] leading-[30.6px] opacity-80">
-                    5.0 (250 Reviews)
+              <div className="absolute right-0 bottom-10 w-[140px] lg:w-[210px] bg-app-primary rounded-[10px] p-5 flex flex-col gap-5">
+                <div className="flex flex-col items-center">
+                  <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm lg:text-base text-white tracking-[0] leading-[30.6px]">
+                    100+ Client
                   </span>
-                </div>
-              </div>
 
-              <div className="flex items-center">
-                {clientImages.map((client, index) => (
-                  <div
-                    key={index}
-                    className={`w-8 h-8 rounded-full border border-[#004050] overflow-hidden flex items-center justify-center ${
-                      index > 0 ? '-ml-2' : ''
-                    }`}
-                  >
-                    <div
-                      className="w-[30px] h-[30px] bg-cover bg-center"
-                      style={{ backgroundImage: `url(${client.src})` }}
-                    />
+                  <div className="flex items-center gap-0.5 lg:gap-1">
+                    <StarIcon className="w-4 h-4 text-white fill-white" />
+                    <span className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-[10px] lg:text-base tracking-tighter leading-[20px] lg:leading-[30.6px] opacity-80">
+                      5.0 (250 Reviews)
+                    </span>
                   </div>
-                ))}
-                <div className="w-8 h-8 rounded-full border border-[#004050] bg-white overflow-hidden flex items-center justify-center -ml-2">
-                  <span className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#040303] text-xs tracking-[0] leading-[20.4px]">
-                    17+
-                  </span>
+                </div>
+
+                <div className="flex items-center">
+                  {clientImages.map((client, index) => (
+                    <div
+                      key={index}
+                      className={`w-8 h-8 rounded-full border border-[#004050] overflow-hidden flex items-center justify-center ${
+                        index > 0 ? '-ml-2' : ''
+                      }`}
+                    >
+                      <div
+                        className="w-[30px] h-[30px] bg-cover bg-center"
+                        style={{ backgroundImage: `url(${client.src})` }}
+                      />
+                    </div>
+                  ))}
+                  <div className="w-8 h-8 rounded-full border border-[#004050] bg-white overflow-hidden flex items-center justify-center -ml-2">
+                    <span className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#040303] text-xs tracking-[0] leading-[20.4px]">
+                      17+
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="flex flex-col w-[620px] flex-shrink-0">
-            <Accordion
-              type="single"
-              collapsible
-              defaultValue="item-2"
-              className="flex flex-col gap-[30px]"
-            >
-              {faqItems.map((item) => (
-                <AccordionItem
-                  key={item.id}
-                  value={item.id}
-                  className="rounded-[10px] border border-[#e4e4e4] overflow-hidden data-[state=open]:border-app-primary"
-                >
-                  <AccordionTrigger className="px-5 py-4 hover:no-underline data-[state=open]:bg-app-primary data-[state=open]:text-white data-[state=open]:border-b data-[state=open]:border-[#ffffff1a]">
-                    <span className="[font-family:'Suisse_Intl-Medium',Helvetica] font-medium text-xl tracking-[0] leading-6 text-left">
-                      {item.question}
-                    </span>
-                  </AccordionTrigger>
-                  {item.answer && (
-                    <AccordionContent className="px-5 py-5 bg-app-primary">
-                      <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-base tracking-[0] leading-[27.2px] opacity-80">
-                        {item.answer}
-                      </p>
-                    </AccordionContent>
-                  )}
-                </AccordionItem>
-              ))}
-            </Accordion>
+            <div className="flex flex-col w-full lg:w-1/2 flex-shrink-0">
+              <Accordion
+                type="single"
+                collapsible
+                defaultValue="item-2"
+                className="flex flex-col gap-[30px]"
+              >
+                {faqItems.map((item) => (
+                  <AccordionItem
+                    key={item.id}
+                    value={item.id}
+                    className="rounded-[10px] border border-[#e4e4e4] overflow-hidden data-[state=open]:border-app-primary"
+                  >
+                    <AccordionTrigger className="px-5 py-4 hover:no-underline data-[state=open]:bg-app-primary data-[state=open]:text-white data-[state=open]:border-b data-[state=open]:border-[#ffffff1a]">
+                      <span className="[font-family:'Suisse_Intl-Medium',Helvetica] font-medium text-xl tracking-[0] leading-6 text-left">
+                        {item.question}
+                      </span>
+                    </AccordionTrigger>
+                    {item.answer && (
+                      <AccordionContent className="px-5 py-5 bg-app-primary">
+                        <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-base tracking-[0] leading-[27.2px] opacity-80">
+                          {item.answer}
+                        </p>
+                      </AccordionContent>
+                    )}
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
-        </div>
         </div>
       </section>
 

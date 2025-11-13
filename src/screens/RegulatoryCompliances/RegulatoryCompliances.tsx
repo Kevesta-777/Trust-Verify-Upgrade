@@ -18,7 +18,7 @@ export const RegulatoryCompliances = (): JSX.Element => {
         }}
       />
       <section className="relative w-full flex justify-center pt-20 pb-32">
-        <div className="flex flex-col max-w-[1210px] items-start gap-[60px]">
+        <div className="flex flex-col max-w-[1210px] px-6 md:px-10 items-start gap-[60px]">
           <div className="flex flex-col items-start gap-2.5 px-[31px] py-[27px] w-full bg-[#27AE6024] border border-[#27AE60] rounded-2xl">
             <div className="flex flex-col items-start gap-2.5">
                 <p className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#27AE60] text-[22px] tracking-[-0.20px] leading-7 whitespace-nowrap">
@@ -30,11 +30,11 @@ export const RegulatoryCompliances = (): JSX.Element => {
             </div>
           </div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 1. Anti-Money Laundering (AML) Compliance
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   AMLD5 Fifth Anti-Money Laundering Directive                
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -43,7 +43,7 @@ export const RegulatoryCompliances = (): JSX.Element => {
                     - Beneficial ownership identification and verification <br />
                     - Suspicious activity reporting and documentation
                 </p>
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   Transaction Monitoring
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -56,11 +56,11 @@ export const RegulatoryCompliances = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
-              2. Know Your Customer (KYC) Standards
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
+                2. Know Your Customer (KYC) Standards
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   Identity Verification Levels                
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -83,11 +83,11 @@ export const RegulatoryCompliances = (): JSX.Element => {
 
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
-              3. Data Protection Regulations
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
+                3. Data Protection Regulations
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   GDPR Compliance
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -97,8 +97,8 @@ export const RegulatoryCompliances = (): JSX.Element => {
                   - Data Protection Impact Assessments (DPIAs) <br />  
                   - Breach notification procedures (72-hour requirement)
                 </p>
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
-                  CCPA Compliance
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
+                    CCPA Compliance
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
                   - Consumer rights transparency and response <br />
@@ -109,11 +109,11 @@ export const RegulatoryCompliances = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
-              4. Financial Services Regulations
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
+                4. Financial Services Regulations
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   FCA Compliance (UK)
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -122,7 +122,7 @@ export const RegulatoryCompliances = (): JSX.Element => {
                   - Operational resilience requirements <br />
                   - Senior Managers and Certification Regime (SMCR)
                 </p>
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   PCI DSS Compliance
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -135,11 +135,11 @@ export const RegulatoryCompliances = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 5. Security Certifications
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   SOC 2 Type II 
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -149,7 +149,7 @@ export const RegulatoryCompliances = (): JSX.Element => {
                   - Business continuity and system development lifecycle <br />
                   - Vendor management and due diligence
                 </p>
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   ISO 27001
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -158,11 +158,11 @@ export const RegulatoryCompliances = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 6. Reporting and Transparency
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   Regulatory Reporting
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -171,7 +171,7 @@ export const RegulatoryCompliances = (): JSX.Element => {
                   - Data breach notifications to supervisory authorities <br />
                   - Annual compliance attestations and filings
                 </p>
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   Transparency Reports
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -184,11 +184,11 @@ export const RegulatoryCompliances = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 7. Global Sanctions Compliance
               </p>
               <div className="flex flex-col items-start gap-5 w-full">
-                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                   Sanctions Screening
                 </p>
                 <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-xl tracking-[0] leading-8">
@@ -212,7 +212,7 @@ export const RegulatoryCompliances = (): JSX.Element => {
           </div>
           <div className="w-full h-px bg-[#e4e4e4]"></div>
           <div className="flex flex-col items-start gap-[30px] w-full">
-              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-5xl tracking-[-0.50px] leading-[67px]">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-4xl sm:text-5xl tracking-[-0.50px] leading-[49px] sm:leading-[67px]">
                 8. Contact Compliance Team
               </p>
               <div className="grid grid-cols-2 grid-rows-2 items-start gap-10 w-full">
@@ -221,7 +221,7 @@ export const RegulatoryCompliances = (): JSX.Element => {
                   key={index}
                   className="flex flex-col gap-7"
                 >
-                  <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl tracking-[-0.20px] leading-7">
+                  <p className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#003d2b] text-2xl sm:text-3xl tracking-[-0.20px] leading-7">
                     {item.title}
                   </p>
                   <div>                      

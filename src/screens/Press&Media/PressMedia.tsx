@@ -181,7 +181,7 @@ export const PressMedia = (): JSX.Element => {
         }}
       />
     <section className="w-full flex justify-center py-8">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9 max-w-[1232px] w-full px-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-9 max-w-[1312px] w-full px-6 md:px-10">
         {statsData.map((stat, index) => (
           <Card
             key={index}
@@ -208,17 +208,17 @@ export const PressMedia = (): JSX.Element => {
         ))}
       </div>
     </section>
-    <section className="relative w-full bg-[#f3f3f3] max-h-[1359px] py-16">
-      <div className="container mx-auto max-w-[1270px] px-4">
+    <section className="relative w-full bg-[#f3f3f3] py-16 ">
+      <div className="container max-w-[1350px] -mb-[450px] lg:-mb-[300px] xl:-mb-[280px] px-6 md:px-10">
         <div className="flex flex-col items-center gap-[50px]">
-          <header className="flex items-start justify-between w-full gap-8">
+          <header className="flex flex-col lg:flex-row items-start justify-between w-full gap-8">
             <div className="flex flex-col max-w-[645px] gap-5">
               <div className="flex flex-col gap-5">
                 <Badge className="w-fit bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-full px-4 py-2 h-[30px] [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
                   PRESS RELEASES
                 </Badge>
 
-                <h2 className="text-[54px] leading-[67px] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold tracking-[-0.92px] whitespace-nowrap">
+                <h2 className="text-[54px] leading-[67px] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold tracking-[-0.92px]">
                   <span className="text-[#003d2b] tracking-[-0.50px]">
                     Recent Press{" "}
                   </span>
@@ -245,15 +245,15 @@ export const PressMedia = (): JSX.Element => {
             </Button>
           </header>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-[30px] w-full">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-[30px] w-full">
             {pressReleases.map((release, index) => (
-              <article key={index} className="flex gap-[30px] h-[251px]">
+              <article key={index} className="flex flex-col sm:flex-row items-center gap-[30px] w-full">
                 <div
-                  className="w-[295px] h-full rounded-[20px] bg-cover bg-center flex-shrink-0"
+                  className="w-full sm:w-[295px] h-[251px] rounded-[20px] bg-cover bg-center flex-shrink-0"
                   style={{ backgroundImage: `url(${release.image})` }}
                 />
 
-                <div className="flex flex-col justify-between py-9 flex-1">
+                <div className="flex flex-col justify-between py-9">
                   <div className="flex flex-col gap-5">
                     <div className="flex items-center gap-1">
                       <CalendarIcon className="w-4 h-4 text-[#808080]" />
@@ -293,32 +293,32 @@ export const PressMedia = (): JSX.Element => {
             Industry recognition for our innovative fraud prevention solutions
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full pt-14">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full pt-14">
           {awardsData.map((award, index) => (
             <Card
               key={index}
-              className="bg-white rounded-[20px] shadow-[0px_8px_20px_#00000024] border-0"
+              className="bg-white rounded-[20px] shadow-[0px_8px_20px_#00000024] border-0 z-10"
             >
-              <CardContent className="flex flex-col gap-5 p-[37px]">
-                <div className="flex items-center gap-5">
+              <CardContent className="flex flex-col gap-3 sm:gap-5 p-5 sm:p-[37px]">
+                <div className="flex items-start gap-5">
                   <img
-                    className="w-[50px] h-[50px] flex-shrink-0"
+                    className="w-8 h-8 sm:w-[50px] sm:h-[50px] flex-shrink-0"
                     alt="Award icon"
                     src={award.icon}
                   />
 
                   <div className="flex flex-col gap-[5px] flex-1">
-                    <h3 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl tracking-[0] leading-6">
+                    <h3 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-sm sm:text-xl tracking-[0] leading-4 sm:leading-6">
                       {award.title}
                     </h3>
 
-                    <p className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#1e357e] text-base tracking-[0] leading-[normal]">
+                    <p className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#1e357e] text-[11px] sm:text-base tracking-[0] leading-[normal]">
                       {award.organization}
                     </p>
                   </div>
                 </div>
 
-                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-base tracking-[0] leading-[27.2px]">
+                <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-[11px] sm:text-base tracking-[0] leading-4 sm:leading-[27.2px]">
                   {award.description}
                 </p>
               </CardContent>
@@ -351,8 +351,8 @@ export const PressMedia = (): JSX.Element => {
         src="/pattern-1.svg"
       />
     </section>
-    <section className="flex flex-col w-full items-center gap-[60px] pt-80 pb-24">
-      <div className="flex flex-col max-w-[968px] items-center gap-5">
+    <section className="flex flex-col w-full items-center gap-[60px] pt-[520px] lg:pt-80 pb-24">
+      <div className="flex flex-col max-w-[968px] px-6 md:px-10 items-center gap-5">
         <div className="flex flex-col items-center gap-5 w-full">
           <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] px-6 rounded-full">
             <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm tracking-[0] leading-[14px]">
@@ -360,7 +360,7 @@ export const PressMedia = (): JSX.Element => {
             </span>
           </Badge>
 
-          <h2 className="text-[54px] text-center whitespace-nowrap [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold tracking-[-0.50px] leading-[67px]">
+          <h2 className="text-[54px] text-center [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold tracking-[-0.50px] leading-[67px]">
             <span className="text-[#003d2b] tracking-[-0.27px]">Press </span>
             <span className="text-[#0b3a78] tracking-[-0.27px]">Contacts</span>
           </h2>
@@ -374,7 +374,7 @@ export const PressMedia = (): JSX.Element => {
         </p>
       </div>
 
-      <div className="flex flex-wrap items-start justify-center gap-[30px] w-full max-w-[1326px]">
+      <div className="flex flex-wrap items-start justify-center gap-[30px] w-full px-6 md:px-10 max-w-[1326px]">
         {contactCards.map((card) => (
           <Card
             key={card.id}
@@ -433,35 +433,34 @@ export const PressMedia = (): JSX.Element => {
         ))}
       </div>
     </section>
-    <section className="w-full flex items-center justify-center pb-28">
-      <div className="w-full max-w-[1290px] bg-app-primary rounded-[20px] shadow-[0px_4px_10px_#003d2b1a] p-8">
-        <div className="flex items-end justify-between gap-8">
-          <div className="flex flex-col gap-[31px] flex-1 max-w-[825px]">
-            <div className="flex flex-col gap-2.5">
-              <h2 className="text-white text-[40px] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold tracking-[-0.50px] leading-[67px]">
+    <section className="w-full flex items-center justify-center px-6 md:px-10 pb-28">
+      <div className="w-full max-w-[1290px] bg-app-primary rounded-lg md:rounded-xl lg:rounded-2xl xl:rounded-[20px] shadow-[0px_4px_10px_#003d2b1a] p-3 sm:p-4 md:p-5 lg:p-6 xl:p-8">
+        <div className="flex items-center justify-between gap-8">
+        <div className="flex flex-col items-start gap-2 sm:gap-4 w-full">
+          <div className="flex flex-col items-start gap-1 sm:gap-2 md:gap-4 lg:gap-6">
+              <p className="mt-[-1.00px] text-white text-base md:text-xl lg:text-3xl xl:text-[40px] tracking-tighter sm:tracking-[-0.50px] leading-2 sm:leading-4 md:leading-6 lg:leading-[30px] xl:leading-[47px] flex items-center justify-center [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold">
                 Stay Updated
-              </h2>
+              </p>
 
-              <p className="text-white [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[22px] tracking-[0] leading-[30px] max-w-[786px]">
-                Subscribe to our press newsletter for the latest announcements
-                and company news
+              <p className="flex items-center justify-center [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-[8px] sm:text-[12px] md:text-sm lg:text-lg xl:text-[22px] tracking-[0]  leading-[10px] sm:leading-[15px] md:leading-[21px] lg:leading-[30px]">
+                Subscribe to our press newsletter for the latest announcements and company news
               </p>
             </div>
 
-            <div className="flex items-center gap-0 max-w-[500px]">
+            <div className="flex items-center gap-0 w-4/5 max-w-[500px]">
               <Input
                 type="email"
                 placeholder="Enter Your Email"
-                className="flex-1 h-[59px] rounded-[10px_0px_0px_10px] border-[#ffffff33] border-r-0 bg-transparent text-white placeholder:text-white placeholder:opacity-80 [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-base opacity-80"
+                className="flex-1 h-6 sm:h-8 md:h-10 lg:h-12 xl:h-[59px] rounded-[10px_0px_0px_10px] border-[#ffffff33] border-r-0 bg-transparent text-white placeholder:text-white placeholder:opacity-80 [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[10px] md:text-sm xl:text-base opacity-80"
               />
-              <Button className="h-[59px] w-[75px] rounded-[0px_10px_10px_0px] bg-white hover:bg-white/90 p-0">
+              <Button className="h-6 sm:h-8 md:h-10 lg:h-12 xl:h-[59px] rounded-[0px_10px_10px_0px] bg-white hover:bg-white/90 p-0">
                 <img className="w-full h-full" alt="Button" src="/button.svg" />
               </Button>
             </div>
           </div>
 
           <img
-            className="w-[351px] h-[244px] flex-shrink-0"
+            className="w-[103px] h-[72.25px] sm:w-[150px] sm:h-[105px] md:w-[230px] md:h-[160px] lg:w-[351px] lg:h-[244px] flex-shrink-0"
             alt="Newsletter illustration"
             src="/group-3.png"
           />
@@ -469,9 +468,9 @@ export const PressMedia = (): JSX.Element => {
       </div>
     </section>
     <section className="w-full bg-[#f4f4f4] py-20 relative">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 md:px-10">
         <div className="flex flex-col lg:flex-row items-center gap-[30px] justify-center max-w-[1270px] mx-auto">
-          <div className="flex flex-col w-full lg:w-[620px] items-start gap-6">
+          <div className="flex flex-col w-full lg:w-1/2 items-start gap-6  z-10">
             <div className="flex flex-col items-start gap-5 w-full">
               <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-[800px] px-6 py-2 h-[30px]">
                 <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm tracking-[0] leading-[14px]">
@@ -479,7 +478,7 @@ export const PressMedia = (): JSX.Element => {
                 </span>
               </Badge>
 
-              <h2 className="text-[46px] leading-[55.2px] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold tracking-[-0.92px] whitespace-nowrap">
+              <h2 className="text-[46px] leading-[55.2px] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold tracking-[-0.92px]">
                 <span className="text-[#003d2b] tracking-[-0.42px]">
                   Press{" "}
                 </span>
@@ -548,24 +547,11 @@ export const PressMedia = (): JSX.Element => {
               </div>
             </div>
           </div>
-
-          <div className="relative w-full lg:w-[620px] h-[584.64px] hidden lg:block">
-            <div className="absolute top-0 right-0 w-[385px] h-[420px] rounded-[20px] overflow-hidden">
-              <img
-                className="w-full h-full object-cover"
-                alt="Press Guidelines Image 1"
-                src="/image-18.png"
-              />
-            </div>
-
-            <div className="absolute bottom-0 left-0 w-[374px] h-[408px] border-[10px] border-solid border-[#f4f4f4] rounded-[20px] overflow-hidden">
-              <img
-                className="w-full h-full object-cover"
-                alt="Press Guidelines Image 2"
-                src="/image-17.png"
-              />
-            </div>
-          </div>
+          <img
+            className="w-full lg:w-1/2 object-cover z-10"
+            alt="Press Guidelines Image 2"
+            src="/image-17.png"
+          />
         </div>
       </div>
 

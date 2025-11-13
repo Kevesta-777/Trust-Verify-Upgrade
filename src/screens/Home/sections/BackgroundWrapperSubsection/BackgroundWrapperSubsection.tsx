@@ -24,18 +24,15 @@ const features = [
 export const BackgroundWrapperSubsection = (): JSX.Element => {
   return (
     <section className="relative w-full bg-[#f3f3f3] py-20">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center justify-center gap-[71px] max-w-[1324px] mx-auto">
-          <div className="relative w-full max-w-[654px] h-[623px]">
-            <div className="relative w-[575px] h-[543px] rounded-[20px] overflow-hidden">
+      <div className="container mx-auto px-6 md:px-10">
+        <div className="flex flex-col xl:flex-row items-center justify-center gap-[71px] max-w-[1324px] mx-auto">
+          <div className="relative w-full rounded-[20px]">
               <img
                 className="w-full h-full object-cover"
                 alt="Enterprise solutions"
                 src="/sub-image5.png"
               />
-            </div>
-
-            <Card className="absolute bottom-0 left-[245px] w-[409px] bg-[#1e357e] border-0 rounded-[14px]">
+            {/* <Card className="absolute bottom-0 left-[245px] w-[409px] bg-[#1e357e] border-0 rounded-[14px]">
               <CardContent className="p-6">
                 <img
                   className="absolute top-0 left-0 w-96 h-[186px] pointer-events-none"
@@ -60,10 +57,10 @@ export const BackgroundWrapperSubsection = (): JSX.Element => {
                   </div>
                 </div>
               </CardContent>
-            </Card>
+            </Card> */}
           </div>
 
-          <div className="flex flex-col w-full max-w-[600px] gap-[50px]">
+          <div className="z-10 flex flex-col w-full max-w-[600px] gap-[50px]">
             <div className="flex flex-col gap-5">
               <Badge className="w-fit bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm px-4 py-1.5 rounded-[800px]">
                 ENTERPRISE

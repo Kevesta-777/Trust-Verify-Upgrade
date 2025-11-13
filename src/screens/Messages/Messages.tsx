@@ -5,7 +5,7 @@ import { Input } from "../../components/ui/input";
 import { SearchIcon } from "lucide-react";
 import { useState } from "react";
 import { MessagesChat } from "../MessagesChat/MessagesChat";
-
+import { HeaderDemo } from "../../components/HeaderDemo";
 const navigationItems = [
     { label: "Demo", active: true },
     { label: "Business", active: false },

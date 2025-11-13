@@ -156,7 +156,7 @@ export const Frame1Subsection = (): JSX.Element => {
                 </div>
 
                 <div className="flex flex-col gap-6">
-                  <div className="grid grid-cols-2 gap-[43px]">
+                  <div className="grid gird-cols-1 sm:grid-cols-2 gap-[43px]">
                     {personalFeatures.slice(0, 2).map((feature, index) => (
                       <div key={index} className="flex items-center gap-3.5">
                         <img
@@ -258,8 +258,8 @@ export const Frame1Subsection = (): JSX.Element => {
                   )}
                 </div>
                 <div className="flex flex-col gap-6">
-                  <div className="grid grid-cols-2 gap-4">
-                    {businessFeatures.slice(0, 2).map((feature, index) => (
+                <div className="grid gird-cols-1 sm:grid-cols-2 gap-[43px]">
+                {businessFeatures.slice(0, 2).map((feature, index) => (
                       <div key={index} className="flex items-center gap-3.5">
                         <img
                           className="w-8 h-8 flex-shrink-0"

@@ -1,7 +1,9 @@
-import { ChevronDownIcon } from "lucide-react";
+import { useState } from "react";
+import { ChevronDownIcon, MenuIcon, XIcon, User2 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
+import { motion, AnimatePresence } from "framer-motion";
 
 export interface HeaderContentProps {
   badge?: {
@@ -66,7 +68,8 @@ const getWidthClass = (width?: string, maxWidth?: string) => {
 
 export const Header = ({ backgroundImage, content }: HeaderProps): JSX.Element => {
   const location = useLocation();
-  
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const headerStyle = backgroundImage 
     ? {
         backgroundImage: `url(${backgroundImage}), linear-gradient(37deg, rgba(39,174,96,1) 0%, rgba(0,82,204,1) 100%)`,
@@ -83,7 +86,9 @@ export const Header = ({ backgroundImage, content }: HeaderProps): JSX.Element =
       className="flex flex-col w-full items-start gap-2.5 border-b-2 [border-bottom-style:solid] border-[#ffffff1a]"
       style={headerStyle}
     >
-      <header className="w-full relative h-20 bg-transparent px-28 my-4 flex justify-between items-center">
+      <header className="w-full relative bg-transparent">
+      <div className="max-w-[1488px]  mx-auto relative flex items-center justify-between my-4 px-6 xl:px-10 2xl:px-0 h-16 sm:h-20">
+
         <Link to="/">
           <img
             className="w-[184px] h-[38px] cursor-pointer"
@@ -92,7 +97,8 @@ export const Header = ({ backgroundImage, content }: HeaderProps): JSX.Element =
           />
         </Link>
 
-        <nav className="flex items-center justify-between gap-10 absolute top-[29px] left-1/2 -translate-x-1/2">
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center justify-center gap-3 xl:gap-8 absolute top-[29px] left-1/2 -translate-x-1/2">
           {navigationItems.map((item, index) => (
             <div key={index} className="relative">
               {item.hasDropdown ? (
@@ -123,23 +129,90 @@ export const Header = ({ backgroundImage, content }: HeaderProps): JSX.Element =
           ))}
         </nav>
 
-        <div className="flex items-center gap-2.5 ">
+        <div className="hidden lg:flex items-center gap-2.5">
           <Button
             variant="outline"
-            className="h-auto inline-flex items-center justify-center gap-2.5 px-[50px] py-[18px] relative flex-[0_0_auto] rounded-[10px] border border-solid border-white bg-transparent hover:bg-white/10"
+            className="h-auto inline-flex items-center justify-center gap-2.5 lg:px-6 2xl:px-12 py-4 relative flex-[0_0_auto] rounded-[10px] border border-solid border-white bg-transparent hover:bg-white/10"
           >
             <span className="relative w-fit mt-[-1.00px] [font-family:'Suisse_Intl-Medium',Helvetica] font-medium text-white text-lg text-center leading-[18px] whitespace-nowrap flex items-center justify-center tracking-[0]">
               Register
             </span>
           </Button>
 
-          <Button className="h-auto inline-flex items-center justify-center gap-2.5 px-[60px] py-[18px] relative flex-[0_0_auto] bg-app-secondary hover:bg-app-secondary/90 rounded-[10px]">
+          <Button className="h-auto inline-flex items-center justify-center gap-2.5 lg:px-8 2xl:px-14 py-4 relative flex-[0_0_auto] bg-app-secondary hover:bg-app-secondary/90 rounded-[10px]">
             <span className="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-white text-lg text-center tracking-[0] leading-[18px] whitespace-nowrap">
               Login
             </span>
           </Button>
         </div>
-      </header>
+
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="lg:hidden flex items-center justify-center w-10 h-10 rounded-md bg-[#27ae60] text-white"
+        >
+          {isMenuOpen ? (
+            <XIcon className="w-6 h-6" />
+          ) : (
+            <MenuIcon className="w-6 h-6" />
+          )}
+        </button>
+      </div>
+        
+      {/* Mobile Drawer Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="lg:hidden bg-app-secondary border-t border-white/10 overflow-hidden"
+          >
+            <div className="flex flex-col gap-16 items-start p-6 pb-10 space-y-3">
+              <div className="w-full flex flex-col gap-6">
+              {navigationItems.map((item, index) =>
+               item.hasDropdown ? (
+                <button className={`w-full text-left text-white text-lg font-medium ${
+                      location.pathname === item.path ? "opacity-100" : "opacity-80"
+                    }`}>
+                  <div className="flex items-center justify-between">
+                    <span className="whitespace-nowrap">
+                      {item.label}
+                    </span>
+                    <ChevronDownIcon className="w-5 h-5 text-white" />
+                  </div>
+                </button>
+               ) : item.path ? (
+                  <Link
+                    key={index}
+                    to={item.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`w-full text-left text-white text-lg font-medium ${
+                      location.pathname === item.path ? "opacity-100" : "opacity-80"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={index}
+                    className="w-full text-left text-white/80 text-lg font-medium"
+                  >
+                    {item.label}
+                  </button>
+                )
+              )}
+              </div>
+              <button className="w-full flex items-center gap-3 text-left text-white/80 text-lg font-medium">
+                <User2 className="w-7 h-7"/>
+                Login
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
       
       {/* Content Section */}
       {content && (

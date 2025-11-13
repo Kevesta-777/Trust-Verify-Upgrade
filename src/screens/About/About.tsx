@@ -75,7 +75,7 @@ export const About = (): JSX.Element => {
       />
       <section className="relative w-full overflow-hidden">
         <img
-          className="absolute top-[367px] left-[-227px] w-[399px] h-[528px] z-10 pointer-events-none"
+          className="absolute top-[367px] left-[-227px] w-[399px] h-[528px] z-0 pointer-events-none"
           alt="Nate shape"
           src="/nate-shape.svg"
         />
@@ -84,9 +84,9 @@ export const About = (): JSX.Element => {
           alt="Icon star"
           src="/icon-star-1.svg"
         />
-        <div className="flex flex-col items-center justify-between gap-5 py-[100px] mx-auto max-w-[1326px]">
-          <div className="flex items-center justify-between">
-           <div className="flex flex-col gap-5 w-1/2">
+        <div className="flex flex-col items-center justify-between gap-12 md:gap-10 py-[100px] px-6 sm:px-10  mx-auto max-w-[1406px]">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
+           <div className="flex flex-col gap-5 w-full  md:w-1/2 ">
             <Badge className="w-fit bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] rounded-[800px] px-[10px]">
               <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
                 OUR APPROACH
@@ -97,7 +97,7 @@ export const About = (): JSX.Element => {
               <span className="text-[#0b3a78]"> Fraud Prevention. </span>
             </h2>
            </div>
-           <div className="flex flex-col items-end justify-between gap-5 w-1/2">
+           <div className="flex flex-col items-start md:items-end justify-between gap-5 w-full md:w-1/2 ">
             <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg tracking-[-0.20px] leading-7">
               Tailored solutions designed to address unique risks, empowering businesses with smarter protection.
             </p>
@@ -106,13 +106,13 @@ export const About = (): JSX.Element => {
             </Button>
            </div>
           </div>
-          <div className="grid grid-cols-3 gap-8 max-w-[1326px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 md:gap-8 max-w-[1326px]">
           {missionVisionValues.map((item, index) => (
             <Card               
               key={index}            
               className="flex bg-white rounded-[20px] overflow-hidden border border-solid border-[#e4e4e4]"
             >
-              <CardContentReverse className="flex flex-col justify-between">
+              <CardContentReverse className="flex flex-col justify-between h-full ">
                 <div className="px-8 pt-10 pb-7 flex flex-col gap-4">
                   <div className="flex flex-col items-start gap-5">
                     <img
@@ -129,30 +129,28 @@ export const About = (): JSX.Element => {
                   </p>
                 </div>
                 <img
-                  className="w-full h-[45%] "
+                  className="w-full"
                   src={item.image}
                   alt={item.title}
                 />
               </CardContentReverse>
             </Card>
           ))}
-
           </div>
         </div>
       </section>
-
       <section className="relative w-full bg-[#f3f3f3] py-20">
         <img
           className="absolute bottom-[169px] left-[100px] w-[30px] h-[30px]"
           alt="Icon star"
           src="/icon-star.svg"
         />
-        <div className="mx-auto max-w-[1326px]">
-        <div className="flex flex-row gap-24 justify-between">
-            <div className="w-1/2">
+        <div className="mx-auto px-6 sm:px-10 max-w-[1406px]">
+        <div className="flex flex-col xl:flex-row items-center xl:items-start gap-24 justify-between">
+            <div className="w-full  xl:w-1/2">
               <img className="w-full h-full object-cover" alt="Group" src="/subsection-image1.png" />
             </div>
-            <div className="flex flex-col items-start gap-8 w-1/2">
+            <div className="flex flex-col items-start gap-8 w-full xl:w-1/2">
               <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] rounded-[800px] px-[10px]">
                 <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
                   TRUST PAGES
@@ -200,7 +198,7 @@ export const About = (): JSX.Element => {
         />
       </section>
 
-      <section className="relative w-full overflow-hidden pt-24">
+      <section className="relative w-full pt-24">
         <img
           className="absolute top-[345px] right-[-200px] w-[399px] h-[528px]"
           alt="Nate shape"
@@ -210,97 +208,81 @@ export const About = (): JSX.Element => {
           className="absolute top-[1320px] right-0 w-[287px] h-[682px]"
           alt="Nate shape"
           src="/nate-shape-2.png"
-        />        <div className="flex flex-col gap-5 items-center justify-between">
-          <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] rounded-[800px] px-[10px]">
-            <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
-              OUR GOALS
-            </span>
-          </Badge>
-          <div className="flex flex-col items-center gap-5">
-            <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px] whitespace-nowrap">
-              <span className="text-[#003d2b]">Our </span>
-              <span className="text-[#0b3a78]">Goals</span>
-              <span className="text-[#003d2b]"> And </span>
-              <span className="text-[#27ae60]">Vision</span>
-            </h2>
+        />    
+        <div className="mx-auto px-6 md:px-10 max-w-[1210px]">    
+          <div className="w-full flex flex-col gap-5 items-center justify-between">
+            <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] rounded-[800px] px-[10px]">
+              <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
+                OUR GOALS
+              </span>
+            </Badge>
+            <div className="w-full flex flex-col items-center gap-5">
+              <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px]">
+                <span className="text-[#003d2b]">Our </span>
+                <span className="text-[#0b3a78]">Goals</span>
+                <span className="text-[#003d2b]"> And </span>
+                <span className="text-[#27ae60]">Vision</span>
+              </h2>
 
-            <p className="max-w-5xl text-center [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg tracking-[-0.20px] leading-7">
-              Driving innovation to eliminate fraud and build digital trust,
-              while shaping a secure future for global intelligence and fraud
-              prevention.
-            </p>
+              <p className="max-w-5xl text-center [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg tracking-[-0.20px] leading-7">
+                Driving innovation to eliminate fraud and build digital trust,
+                while shaping a secure future for global intelligence and fraud
+                prevention.
+              </p>
 
-          <div className="grid grid-cols-4 gap-[17px] w-full mt-8">
-            {goalsData.map((goal, index) => (
-              <Card
-                key={index}
-                className="bg-[#f6f6f6] rounded-[20px] border-0 shadow-none"
-              >
-                <CardContent className="flex items-center gap-[17px] p-6">
-                  <img className="w-16 h-16" alt={goal.title} src={goal.icon} />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[17px] w-full mt-8">
+                {goalsData.map((goal, index) => (
+                  <Card
+                    key={index}
+                    className="bg-[#f6f6f6] rounded-[20px] border-0 shadow-none"
+                  >
+                    <CardContent className="flex items-center gap-[17px] p-6">
+                      <img className="w-16 h-16" alt={goal.title} src={goal.icon} />
 
-                  <div className="flex flex-col gap-[5px]">
-                    <h3 className="[font-family:'DM_Sans_18pt-ExtraBold',Helvetica] font-extrabold text-[#040303] text-xl tracking-[0] leading-6">
-                      {goal.title}
-                    </h3>
-                    <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base tracking-[0] leading-6">
-                      {goal.subtitle}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                      <div className="flex flex-col gap-[5px]">
+                        <h3 className="[font-family:'DM_Sans_18pt-ExtraBold',Helvetica] font-extrabold text-[#040303] text-xl tracking-[0] leading-6">
+                          {goal.title}
+                        </h3>
+                        <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base tracking-[0] leading-6">
+                          {goal.subtitle}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-        <div className="relative flex flex-col items-center gap-[19px] py-24 max-w-[1352px]  mx-auto">
+        <div className="w-full relative flex flex-col items-center gap-[19px] py-24 px-6 md:px-10 max-w-[1432px] mx-auto">
           <img
-            className="absolute top-48 right-20 w-36 h-[191px]"
+            className="absolute top-56 md:top-48 right-0 md:right-20 w-20 h-[107px] md:w-36 md:h-[191px]"
             alt="Vector"
             src="/Vector.png"
           />
             <Badge className="bg-[#003d2b1a] text-[#003d2b] px-6 py-2 rounded-full [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
               OUR GOALS
             </Badge>
-            <div className="flex flex-col items-center gap-5">
-              <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px] whitespace-nowrap">
+            <div className="w-full flex flex-col items-center gap-5">
+              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px] md:whitespace-nowrap">
                 <span className="text-[#003d2b]">We'd Love To </span>
                 <span className="text-[#0b3a78]">Hear</span>
                 <span className="text-[#003d2b]"> From </span>
                 <span className="text-[#27ae60]">You</span>
-              </h2>
+              </p>
               <p className="text-center [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg tracking-[-0.20px] leading-7">
                 We have offices and teams from all around the world.
               </p>
             </div>
-            <div className="relative pt-24">
+            <div className="pt-24">
               <img className="w-full bg-cover" alt="World map" src="/Map.png" />
-              <div className="absolute bottom-32 right-2 transform -translate-x-1/2 -translate-y-1/2">
-                <Card className="bg-white rounded-lg shadow-lg border-0">
-                  <CardContent className="flex flex-col items-center gap-2 p-4">
-                    <img
-                      className="w-8 h-8"
-                      alt="Location"
-                      src="/flag.png"
-                    />
-                    <div className="flex flex-col items-center gap-1">
-                      <p className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-[#040303] text-xs text-center">
-                        Melbourne, Aus
-                      </p>
-                      <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-[8px] text-center leading-[13px]">
-                        100 Smith Street Collingwood Vic 3066 Au
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
             </div>
         </div>
       </section>
       <section className="relative w-full py-20">
-        <div className="mx-auto max-w-[1326px]">
-          <div className="flex flex-row gap-24 justify-between">
-            <div className="flex flex-col items-start gap-8 w-1/2">
+        <div className="mx-auto px-6 md:px-10 max-w-[1406px]">
+          <div className="flex flex-col xl:flex-row gap-24 justify-between">
+            <div className="flex flex-col items-start gap-8 w-full xl:w-1/2">
               <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] rounded-[800px] px-[10px]">
                 <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
                   TRUST PAGES
@@ -327,7 +309,7 @@ export const About = (): JSX.Element => {
               </div>
 
             </div>
-            <div className="w-1/2">
+            <div className="w-full xl:w-1/2">
                 <img className="w-full h-full object-cover" alt="Group" src="/subsection-image2.png" />
             </div>
           </div>
