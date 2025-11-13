@@ -17,6 +17,7 @@ import {
     SelectValue,
 } from "../../components/ui/select";
 import { Textarea } from "../../components/ui/textarea";
+import { HeaderDemo } from "../../components/HeaderDemo";
 
 const navigationItems = [
     { label: "Demo", isActive: true },
@@ -69,34 +70,7 @@ const safetyTips = [
 export const ReportScam = (): JSX.Element => {
     return (
         <div className="bg-[#f6f6f6] w-full flex flex-col">
-            <div className="flex w-full flex-col items-start gap-2.5 px-4 sm:px-8 lg:px-[110px] py-[17px] bg-[linear-gradient(169deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] sticky top-0 z-20">
-                <header className="w-full bg-transparent">
-                    <nav className="flex items-center justify-between h-auto sm:h-20">
-                        <img
-                            className="w-32 sm:w-[140px] md:w-[184px] h-auto sm:h-[30px] md:h-[38px]"
-                            alt="TrustVerify Logo"
-                            src="/group.png"
-                        />
-
-                        <div className="hidden lg:flex items-center gap-8 xl:gap-16">
-                            {navigationItems.map((item, index) => (
-                                <button
-                                    key={index}
-                                    aria-label={`Navigate to ${item.label}`}
-                                    className={`flex items-center justify-center w-fit ${item.isActive
-                                        ? "[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-lg"
-                                        : "[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[17.7px]"
-                                        } text-[#d8d8d8] tracking-[0] leading-[18px] whitespace-nowrap hover:opacity-80 transition-opacity`}
-                                >
-                                    {item.label}
-                                </button>
-                            ))}
-                        </div>
-
-                        <div className="hidden lg:block w-[184px]"></div>
-                    </nav>
-                </header>
-            </div>
+            <HeaderDemo />
             <section className="flex flex-col w-full gap-4 sm:gap-6 md:gap-[30px] px-4 sm:px-8 lg:px-[107px] py-4 sm:py-6 md:py-[72px]">
                 <div className="flex flex-col gap-4 sm:gap-6 w-full">
                     <button className="inline-flex items-center gap-2.5 w-fit" aria-label="Return to Homepage">

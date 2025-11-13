@@ -7,6 +7,7 @@ import { Button } from "../../components/ui/button";
 import { useState } from "react";
 import { MessagesChat } from "../MessagesChat/MessagesChat";
 import { HeaderDemo } from "../../components/HeaderDemo";
+import { Header } from "@radix-ui/react-accordion";
 const navigationItems = [
     { label: "Demo", active: true },
     { label: "Business", active: false },
@@ -103,36 +104,7 @@ export const Messages = (): JSX.Element => {
 
     return (
         <main className="bg-[#f6f6f6] w-full flex flex-col">
-            <div className="flex w-full relative flex-col items-start gap-2.5 px-4 sm:px-8 lg:px-[107px] py-[17px] bg-[linear-gradient(169deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] sticky top-0 z-20">
-                <header className="relative w-full bg-transparent">
-                    <nav className="flex items-center justify-between w-full">
-                        <div className="flex items-center gap-2">
-                            <img
-                                className="w-32 sm:w-[140px] md:w-[184px] h-auto sm:h-[30px] md:h-[38px]"
-                                alt="TrustVerify Logo"
-                                src="/group.png"
-                            />
-                        </div>
-
-                        <div className="hidden lg:flex items-center gap-8 xl:gap-16">
-                            {navigationItems.map((item, index) => (
-                                <button
-                                    key={index}
-                                    aria-label={`Navigate to ${item.label}`}
-                                    className={`relative flex items-center justify-center w-fit ${item.active
-                                        ? "[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#d8d8d8]"
-                                        : "[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#d8d8d8]"
-                                        } ${item.active ? "text-base lg:text-lg" : "text-sm lg:text-[17.7px]"} tracking-[0] leading-[18px] whitespace-nowrap hover:opacity-80 transition-opacity`}
-                                >
-                                    {item.label}
-                                </button>
-                            ))}
-                        </div>
-
-                        <div className="hidden lg:block w-[184px]"></div>
-                    </nav>
-                </header>
-            </div>
+            <HeaderDemo />
 
             {/* Mobile: Show conversation view when chat is selected */}
             {selectedChat !== null && (

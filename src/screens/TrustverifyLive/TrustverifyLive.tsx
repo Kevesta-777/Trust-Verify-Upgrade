@@ -11,14 +11,8 @@ import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Progress } from "../../components/ui/progress";
+import { HeaderDemo } from "../../components/HeaderDemo";
 
-const navigationItems = [
-  { label: "Demo", isActive: true },
-  { label: "Business", isActive: false },
-  { label: "Developers", isActive: false },
-  { label: "Pricing", isActive: false },
-  { label: "Support", isActive: false },
-];
 
 const demoSteps = [
   { id: 1, label: "Transaction Initiation", active: true },
@@ -32,9 +26,9 @@ const demoSteps = [
 
 export const TrustverifyLive = (): JSX.Element => {
   return (
-    <div className="bg-[#f6f6f6] w-full flex flex-col md:min-w-[1920px]">
-      <APIHeader navigationItems={navigationItems} />
-
+    <div className="bg-[#f6f6f6] w-full flex flex-col  mx-auto">
+      {/* <APIHeader navigationItems={navigationItems} /> */}
+      <HeaderDemo />
       <section className="flex flex-col items-end gap-4 md:gap-[31px] w-full p-4 md:p-14">
         <header className="flex flex-col items-start gap-4 md:gap-6 w-full">
           <button className="inline-flex items-center gap-2.5">

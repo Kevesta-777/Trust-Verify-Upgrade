@@ -1,3 +1,4 @@
+import { HeaderDemo } from "../../components/HeaderDemo";
 import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
@@ -66,43 +67,11 @@ const supportHours = [
     },
 ];
 
-const navigationItems = [
-    { label: "Demo", active: true },
-    { label: "Business", active: false },
-    { label: "Developers", active: false },
-    { label: "Pricing", active: false },
-    { label: "Support", active: false },
-];
 
 export const SupportCenter = (): JSX.Element => {
     return (
         <div className="bg-[#f6f6f6] overflow-hidden w-full flex flex-col">
-            <header className="flex w-full relative flex-col items-start gap-2.5 px-4 sm:px-8 lg:px-[110px] py-[17px] bg-[linear-gradient(169deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] sticky top-0 z-20">
-                <div className="relative w-full flex items-center justify-between">
-                    <img
-                        className="w-32 sm:w-[140px] md:w-[184px] h-auto sm:h-[30px] md:h-[38px]"
-                        alt="TrustVerify Logo"
-                        src="/group.png"
-                    />
-
-                    <nav className="hidden lg:flex items-center gap-8 xl:gap-16">
-                        {navigationItems.map((item, index) => (
-                            <button
-                                key={index}
-                                aria-label={`Navigate to ${item.label}`}
-                                className={`flex items-center justify-center ${item.active
-                                    ? "[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#d8d8d8] text-lg"
-                                    : "[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#d8d8d8] text-[17.7px]"
-                                    } tracking-[0] leading-[18px] whitespace-nowrap hover:opacity-80 transition-opacity`}
-                            >
-                                {item.label}
-                            </button>
-                        ))}
-                    </nav>
-
-                    <div className="hidden lg:block w-[184px]"></div>
-                </div>
-            </header>
+            <HeaderDemo />
             <section className="flex flex-col items-start gap-4 sm:gap-6 md:gap-[30px] w-full mt-8 sm:mt-10 md:mt-[72px] px-4 sm:px-8 lg:px-[110px] py-4 sm:py-6">
                 <header className="flex flex-col items-start gap-4 sm:gap-6 w-full">
                     <button className="inline-flex items-center gap-2.5" aria-label="Return to Homepage">

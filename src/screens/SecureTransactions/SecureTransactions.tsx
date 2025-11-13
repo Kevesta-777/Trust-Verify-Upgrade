@@ -14,14 +14,7 @@ import { Badge } from "../../components/ui/badge";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { Input } from "../../components/ui/input";
-
-const navigationItems = [
-    { label: "Demo", isActive: true },
-    { label: "Business", isActive: false },
-    { label: "Developers", isActive: false },
-    { label: "Pricing", isActive: false },
-    { label: "Support", isActive: false },
-];
+import { HeaderDemo } from "../../components/HeaderDemo";
 
 const transactions = [
     {
@@ -66,31 +59,7 @@ const transactions = [
 export const SecureTransactions = (): JSX.Element => {
     return (
         <main className="bg-[#f6f6f6] w-full flex flex-col">
-            <div className="flex w-full flex-col items-start gap-2.5 px-4 md:px-[110px] py-[17px] bg-[linear-gradient(169deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)]">
-                <header className="w-full bg-transparent">
-                    <nav className="flex items-center justify-between h-16 md:h-20">
-                        <img
-                            className="w-[120px] md:w-[184px] h-[25px] md:h-[38px]"
-                            alt="TrustVerify Logo"
-                            src="/group.png"
-                        />
-
-                        <div className="hidden md:flex items-center gap-16">
-                            {navigationItems.map((item, index) => (
-                                <button
-                                    key={index}
-                                    className={`flex items-center justify-center w-fit ${item.isActive
-                                        ? "[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-lg"
-                                        : "[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[17.7px]"
-                                        } text-[#d8d8d8] tracking-[0] leading-[18px] whitespace-nowrap`}
-                                >
-                                    {item.label}
-                                </button>
-                            ))}
-                        </div>
-                    </nav>
-                </header>
-            </div>
+           <HeaderDemo />
             <section className="flex flex-col items-start gap-4 md:gap-[30px] w-full p-4 md:p-8">
                 <header className="flex flex-col md:flex-row items-start md:items-center justify-between w-full gap-4 md:gap-0">
                     <div className="flex flex-col items-start gap-2.5 w-full md:max-w-[601px]">

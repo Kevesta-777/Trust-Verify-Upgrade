@@ -14,6 +14,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "../../components/ui/navigation-menu";
+import { HeaderDemo } from "../../components/HeaderDemo";
 
 interface MessagesChatProps {
     onBack?: () => void;
@@ -127,33 +128,7 @@ export const MessagesChat = ({ onBack }: MessagesChatProps = {}): JSX.Element =>
 
     return (
         <div className="bg-[#f6f6f6] w-full flex flex-col">
-            <section className="flex z-[1] w-full h-auto relative flex-col items-start gap-2.5 px-4 sm:px-8 md:px-[110px] py-[17px] bg-[linear-gradient(169deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)]">
-                <header className="relative w-full h-auto sm:h-20 bg-transparent">
-                    <img
-                        className="absolute top-[calc(50.00%_-_19px)] left-0 w-32 sm:w-[140px] md:w-[184px] h-auto sm:h-[30px] md:h-[38px]"
-                        alt="Group"
-                        src="/group.png"
-                    />
-
-                    <NavigationMenu className="hidden lg:block absolute top-[29px] left-[calc(50.00%_-_297px)]">
-                        <NavigationMenuList className="flex items-center gap-8 xl:gap-16">
-                            {navigationItems.map((item, index) => (
-                                <NavigationMenuItem key={index}>
-                                    <NavigationMenuLink
-                                        className={`relative flex items-center justify-center w-fit mt-[-1.00px] ${item.isActive
-                                                ? "[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-base lg:text-lg"
-                                                : "[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-sm lg:text-[17.7px]"
-                                            } text-[#d8d8d8] tracking-[0] leading-[18px] whitespace-nowrap cursor-pointer hover:text-white transition-colors`}
-                                    >
-                                        {item.label}
-                                    </NavigationMenuLink>
-                                </NavigationMenuItem>
-                            ))}
-                        </NavigationMenuList>
-                    </NavigationMenu>
-                </header>
-            </section>
-            <Separator className="w-full" />
+            <HeaderDemo />
             
             {/* Mobile: Show chat list view when no chat is selected */}
             <section className={`flex flex-col items-start gap-4 md:gap-6 md:gap-[30px] w-full px-4 md:px-8 md:px-[110px] py-4 md:py-6 ${selectedChatId !== null ? 'hidden lg:flex' : ''}`}>

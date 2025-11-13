@@ -10,20 +10,8 @@ import {
 } from "../../components/ui/select";
 import { Separator } from "../../components/ui/separator";
 import { Textarea } from "../../components/ui/textarea";
-import {
-    NavigationMenu,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-} from "../../components/ui/navigation-menu";
+import { HeaderDemo } from "../../components/HeaderDemo";
 
-const navigationItems = [
-    { label: "Demo", active: true },
-    { label: "Business", active: false },
-    { label: "Developers", active: false },
-    { label: "Pricing", active: false },
-    { label: "Support", active: false },
-];
 
 const costBreakdownItems = [
     { label: "Subtotal", value: "$0.00" },
@@ -40,32 +28,7 @@ const securityFeatures = [
 export const CreateNewTransaction = (): JSX.Element => {
     return (
         <div className="bg-[#f6f6f6] overflow-hidden w-full flex flex-col">
-            <div className="flex w-full relative flex-col items-start gap-2.5 px-4 sm:px-8 md:px-[110px] py-[17px] bg-[linear-gradient(169deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)]">
-                <header className="relative w-full h-20 bg-transparent">
-                    <img
-                        className="absolute top-[calc(50.00%_-_19px)] left-0 w-[140px] h-[30px] md:w-[184px] md:h-[38px]"
-                        alt="Group"
-                        src="/group.png"
-                    />
-
-                    <NavigationMenu className="hidden md:block absolute top-[29px] left-[calc(50.00%_-_297px)]">
-                        <NavigationMenuList className="flex items-center gap-16">
-                            {navigationItems.map((item, index) => (
-                                <NavigationMenuItem key={index}>
-                                    <NavigationMenuLink
-                                        className={`relative flex items-center justify-center w-fit mt-[-1.00px] ${item.active
-                                                ? "[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#d8d8d8] text-lg"
-                                                : "[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#d8d8d8] text-[17.7px]"
-                                            } tracking-[0] leading-[18px] whitespace-nowrap cursor-pointer hover:text-white transition-colors`}
-                                    >
-                                        {item.label}
-                                    </NavigationMenuLink>
-                                </NavigationMenuItem>
-                            ))}
-                        </NavigationMenuList>
-                    </NavigationMenu>
-                </header>
-            </div>
+           <HeaderDemo />
             <section className="flex flex-col items-start gap-6 w-full max-w-[1703px] mx-auto px-4 py-6 mt-6 md:mt-[72px]">
                 <header className="flex flex-col items-start gap-6 w-full">
                     <button className="inline-flex items-center gap-2.5">
