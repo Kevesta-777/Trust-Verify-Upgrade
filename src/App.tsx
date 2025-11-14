@@ -53,7 +53,7 @@ function App() {
         <Route path="/terms" element={<TermsOfServices />} />
         <Route path="/training" element={<Training />} />
         <Route path="/consumer-protection" element={<ConsumerProtection />} />
-        <Route path="/developer-center" element={<DeveloperCenter />} />
+        <Route path="/developer" element={<DeveloperCenter />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/messages-chat" element={<MessagesChat />} />
         <Route path="/support-center" element={<SupportCenter />} />

@@ -248,13 +248,13 @@ export const BackgroundSubsection = (): JSX.Element => {
       </div>
 
       <img
-        className="absolute bottom-0 right-0 w-[307px] h-[310px]"
+        className="absolute bottom-0 right-0 w-[153px] h-[153px] md:w-[200px] md:h-[200px] xl:w-[307px] xl:h-[310px]"
         alt="Pattern"
         src="/pattern.svg"
       />
 
       <img
-        className="absolute bottom-0 left-0 w-[307px] h-[310px]"
+        className="absolute bottom-0 left-0 w-[153px] h-[153px] md:w-[200px] md:h-[200px] xl:w-[307px] xl:h-[310px]"
         alt="Pattern"
         src="/pattern-1.svg"
       />

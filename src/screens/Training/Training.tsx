@@ -333,13 +333,13 @@ export const Training = (): JSX.Element => {
         />
 
         <img
-          className="absolute right-0 bottom-0 w-[307px] h-[310px]"
+          className="absolute right-0 bottom-0 w-[153px] h-[153px] md:w-[200px] md:h-[200px] xl:w-[307px] xl:h-[310px]"
           alt="Pattern"
           src="/pattern.svg"
         />
 
         <img
-          className="absolute left-0 bottom-0 w-[307px] h-[310px]"
+          className="absolute left-0 bottom-0 w-[153px] h-[153px] md:w-[200px] md:h-[200px] xl:w-[307px] xl:h-[310px]"
           alt="Pattern"
           src="/pattern-1.svg"
         />

@@ -216,7 +216,7 @@ export const OurMission = (): JSX.Element => {
           alt="Icon star"
           src="/icon-star-1.svg"
         />
-        <div className="flex flex-col w-full max-w-[418px] items-center gap-5">
+        <div className="z-10 flex flex-col w-full max-w-[418px] items-center gap-5">
           <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] px-4 rounded-[800px] [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm tracking-[0] leading-[14px]">
             WHY CHOOSE US
           </Badge>
@@ -275,7 +275,7 @@ export const OurMission = (): JSX.Element => {
             src="/icon-star-3.svg"
           />
   
-          <div className="relative flex flex-col max-w-[1270px] mx-auto items-center gap-[60px] px-6 md:px-10">
+          <div className="z-10 relative flex flex-col max-w-[1270px] mx-auto items-center gap-[60px] px-6 md:px-10">
             <header className="flex flex-col max-w-[1129px] items-center gap-[19px]">
               <Badge className="bg-[#ffffff1a] text-white text-sm font-medium [font-family:'DM_Sans_18pt-Medium',Helvetica] tracking-[0] leading-[14px] h-[30px] px-6 rounded-[800px] border-0 hover:bg-[#ffffff1a]">
                 BENEFITS
@@ -440,7 +440,7 @@ export const OurMission = (): JSX.Element => {
       <section className="relative w-full bg-[#f4f4f4] py-16">
         <div className="container mx-auto px-6 md:px-10 max-w-[1270px]">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            <div className="flex flex-col w-full items-start gap-6">
+            <div className="z-10 flex flex-col w-full items-start gap-6">
               <div className="flex flex-col items-start gap-5 w-full">
                 <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-full px-4 py-2 h-auto">
                   <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
@@ -521,13 +521,13 @@ export const OurMission = (): JSX.Element => {
         </div>
 
         <img
-          className="absolute left-0 bottom-px w-[307px] h-[310px]"
+          className="absolute left-0 bottom-px w-[153px] h-[153px] md:w-[200px] md:h-[200px] xl:w-[307px] xl:h-[310px]"
           alt="Pattern"
           src="/pattern-1.svg"
         />
 
         <img
-          className="absolute top-0 right-0 w-[307px] h-[310px]"
+          className="absolute top-0 right-0 w-[153px] h-[153px] md:w-[200px] md:h-[200px] xl:w-[307px] xl:h-[310px]"
           alt="Pattern" 
           src="/pattern-2.svg"
         />

@@ -211,7 +211,7 @@ export const PressMedia = (): JSX.Element => {
     <section className="relative w-full bg-[#f3f3f3] py-16 ">
       <div className="container max-w-[1350px] -mb-[450px] lg:-mb-[300px] xl:-mb-[280px] px-6 md:px-10">
         <div className="flex flex-col items-center gap-[50px]">
-          <header className="flex flex-col lg:flex-row items-start justify-between w-full gap-8">
+          <header className="z-10 flex flex-col lg:flex-row items-start justify-between w-full gap-8">
             <div className="flex flex-col max-w-[645px] gap-5">
               <div className="flex flex-col gap-5">
                 <Badge className="w-fit bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-full px-4 py-2 h-[30px] [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
@@ -245,7 +245,7 @@ export const PressMedia = (): JSX.Element => {
             </Button>
           </header>
 
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-[30px] w-full">
+          <div className="z-10 grid grid-cols-1 xl:grid-cols-2 gap-[30px] w-full">
             {pressReleases.map((release, index) => (
               <article key={index} className="flex flex-col sm:flex-row items-center gap-[30px] w-full">
                 <div
@@ -254,7 +254,7 @@ export const PressMedia = (): JSX.Element => {
                 />
 
                 <div className="flex flex-col justify-between py-9">
-                  <div className="flex flex-col gap-5">
+                  <div className="z-10 flex flex-col gap-5">
                     <div className="flex items-center gap-1">
                       <CalendarIcon className="w-4 h-4 text-[#808080]" />
                       <time className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base">
@@ -340,13 +340,13 @@ export const PressMedia = (): JSX.Element => {
       />
 
       <img
-        className="absolute right-0 bottom-0 w-[307px] h-[310px]"
+        className="absolute right-0 bottom-0 w-[153px] h-[153px] md:w-[200px] md:h-[200px] xl:w-[307px] xl:h-[310px]"
         alt="Pattern"
         src="/pattern.svg"
       />
 
       <img
-        className="absolute left-0 bottom-0 w-[307px] h-[310px]"
+        className="absolute left-0 bottom-0 w-[153px] h-[153px] md:w-[200px] md:h-[200px] xl:w-[307px] xl:h-[310px]"
         alt="Pattern"
         src="/pattern-1.svg"
       />
@@ -471,7 +471,7 @@ export const PressMedia = (): JSX.Element => {
       <div className="container mx-auto px-6 md:px-10">
         <div className="flex flex-col lg:flex-row items-center gap-[30px] justify-center max-w-[1270px] mx-auto">
           <div className="flex flex-col w-full lg:w-1/2 items-start gap-6  z-10">
-            <div className="flex flex-col items-start gap-5 w-full">
+            <div className="z-10 flex flex-col items-start gap-5 w-full">
               <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-[800px] px-6 py-2 h-[30px]">
                 <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm tracking-[0] leading-[14px]">
                   INSTRUCTIONS

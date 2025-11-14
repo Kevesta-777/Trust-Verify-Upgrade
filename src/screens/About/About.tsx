@@ -85,7 +85,7 @@ export const About = (): JSX.Element => {
           src="/icon-star-1.svg"
         />
         <div className="flex flex-col items-center justify-between gap-12 md:gap-10 py-[100px] px-6 sm:px-10  mx-auto max-w-[1406px]">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
+          <div className="z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
            <div className="flex flex-col gap-5 w-full  md:w-1/2 ">
             <Badge className="w-fit bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] rounded-[800px] px-[10px]">
               <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
@@ -106,7 +106,7 @@ export const About = (): JSX.Element => {
             </Button>
            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 md:gap-8 max-w-[1326px]">
+          <div className="z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 md:gap-8 max-w-[1326px]">
           {missionVisionValues.map((item, index) => (
             <Card               
               key={index}            
@@ -146,50 +146,50 @@ export const About = (): JSX.Element => {
           src="/icon-star.svg"
         />
         <div className="mx-auto px-6 sm:px-10 max-w-[1406px]">
-        <div className="flex flex-col xl:flex-row items-center xl:items-start gap-24 justify-between">
-            <div className="w-full  xl:w-1/2">
-              <img className="w-full h-full object-cover" alt="Group" src="/subsection-image1.png" />
-            </div>
-            <div className="flex flex-col items-start gap-8 w-full xl:w-1/2">
-              <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] rounded-[800px] px-[10px]">
-                <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
-                  TRUST PAGES
-                </span>
-              </Badge>
-              <div className="flex justify-between gap-4 items-center">
-                <img 
-                className="w-[51px] h-[51px]"
-                  src="/logo1.png"
-                />
-                <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] leading-[67px] tracking-[-0.27px] text-center">
-                  <span className="text-[#003d2b]">Our </span>
-                  <span className="text-[#0b3a78]">Story</span>
-                </h2>
+          <div className="z-10 flex flex-col xl:flex-row items-center xl:items-start gap-24 justify-between">
+              <div className="z-10 w-full  xl:w-1/2">
+                <img className="w-full h-full object-cover" alt="Group" src="/subsection-image1.png" />
               </div>
-              <p className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg tracking-[-0.20px] leading-7">
-                Founded in 2025, TrustVerify was born from a simple observation:
-                traditional fraud prevention methods were failing to keep pace
-                with increasingly sophisticated cyber threats. Our founders,
-                veterans of the cybersecurity and fintech industries, recognized
-                the need for a comprehensive platform that could provide real-time
-                fraud detection, identity verification, and secure transaction
-                management.
-                <br />
-                <br />
-                Starting with a dedicated team of security experts and engineers,
-                we have developed advanced AI-powered fraud detection algorithms.
-                As a newly launched platform, we're building our customer base and
-                preparing to protect businesses globally with cutting-edge
-                security technology.
-                <br />
-                <br />
-                Our platform has evolved to include comprehensive identity
-                verification, secure escrow services, and advanced risk
-                intelligence, making us a one-stop solution for transaction
-                security and trust.
-              </p>
-            </div>
-        </div>
+              <div className="flex flex-col items-start gap-8 w-full xl:w-1/2">
+                <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] rounded-[800px] px-[10px]">
+                  <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
+                    TRUST PAGES
+                  </span>
+                </Badge>
+                <div className="flex justify-between gap-4 items-center">
+                  <img 
+                  className="w-[51px] h-[51px]"
+                    src="/logo1.png"
+                  />
+                  <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] leading-[67px] tracking-[-0.27px] text-center">
+                    <span className="text-[#003d2b]">Our </span>
+                    <span className="text-[#0b3a78]">Story</span>
+                  </h2>
+                </div>
+                <p className="z-10 [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#808080] text-lg tracking-[-0.20px] leading-7">
+                  Founded in 2025, TrustVerify was born from a simple observation:
+                  traditional fraud prevention methods were failing to keep pace
+                  with increasingly sophisticated cyber threats. Our founders,
+                  veterans of the cybersecurity and fintech industries, recognized
+                  the need for a comprehensive platform that could provide real-time
+                  fraud detection, identity verification, and secure transaction
+                  management.
+                  <br />
+                  <br />
+                  Starting with a dedicated team of security experts and engineers,
+                  we have developed advanced AI-powered fraud detection algorithms.
+                  As a newly launched platform, we're building our customer base and
+                  preparing to protect businesses globally with cutting-edge
+                  security technology.
+                  <br />
+                  <br />
+                  Our platform has evolved to include comprehensive identity
+                  verification, secure escrow services, and advanced risk
+                  intelligence, making us a one-stop solution for transaction
+                  security and trust.
+                </p>
+              </div>
+          </div>
         </div>
         <img
           className="absolute bottom-0 right-0 w-[213px] h-[199px]"
@@ -234,7 +234,7 @@ export const About = (): JSX.Element => {
                 {goalsData.map((goal, index) => (
                   <Card
                     key={index}
-                    className="bg-[#f6f6f6] rounded-[20px] border-0 shadow-none"
+                    className="z-10 bg-[#f6f6f6] rounded-[20px] border-0 shadow-none"
                   >
                     <CardContent className="flex items-center gap-[17px] p-6">
                       <img className="w-16 h-16" alt={goal.title} src={goal.icon} />
@@ -263,7 +263,7 @@ export const About = (): JSX.Element => {
             <Badge className="bg-[#003d2b1a] text-[#003d2b] px-6 py-2 rounded-full [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
               OUR GOALS
             </Badge>
-            <div className="w-full flex flex-col items-center gap-5">
+            <div className="z-10 w-full flex flex-col items-center gap-5">
               <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[54px] text-center tracking-[-0.27px] leading-[67px] md:whitespace-nowrap">
                 <span className="text-[#003d2b]">We'd Love To </span>
                 <span className="text-[#0b3a78]">Hear</span>
@@ -274,7 +274,7 @@ export const About = (): JSX.Element => {
                 We have offices and teams from all around the world.
               </p>
             </div>
-            <div className="pt-24">
+            <div className="z-20 pt-24">
               <img className="w-full bg-cover" alt="World map" src="/Map.png" />
             </div>
         </div>
