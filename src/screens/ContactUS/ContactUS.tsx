@@ -218,7 +218,7 @@ export const ContactUS = (): JSX.Element => {
                   </p>
                 </div>
 
-                <div className="flex flex-col gap-[21px] max-w-[610px]">
+                <div className="z-10 flex flex-col gap-[21px] max-w-[610px]">
                   <div className="flex flex-col sm:flex-row gap-[30px]">
                     <Input
                       placeholder="First name"
@@ -321,7 +321,7 @@ export const ContactUS = (): JSX.Element => {
           src="/shape_nate_32.png"
         />
         <div className="flex flex-col w-full items-center gap-9 px-6 md:px-10">
-          <header className="flex flex-col max-w-[1129px] items-center gap-5">
+          <header className="z-10 flex flex-col max-w-[1129px] items-center gap-5">
             <div className="flex flex-col max-w-[710px] items-center gap-[19px]">
               <Badge
                 variant="secondary"
@@ -347,7 +347,7 @@ export const ContactUS = (): JSX.Element => {
             </p>
           </header>
 
-          <div className="flex flex-col lg:flex-row items-start gap-[30px] w-full max-w-[1290px]">
+          <div className="z-10 flex flex-col lg:flex-row items-start gap-[30px] w-full max-w-[1290px]">
             <Card className="flex-1 bg-white rounded-[10px] border-0 shadow-sm">
               <CardContent className="p-[30px]">
                 <img

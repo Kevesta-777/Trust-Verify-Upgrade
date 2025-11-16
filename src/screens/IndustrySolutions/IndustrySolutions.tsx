@@ -268,7 +268,7 @@ export const IndustrySolutions = (): JSX.Element => {
           {intelligenceData.map((item, index) => (
             <Card
               key={index}
-              className="w-full md:w-1/2 lg:w-1/3 px-4 h-[121px] bg-[#f3f3f3] rounded-[20px] border-0 shadow-none"
+              className="z-10 w-full md:w-1/2 lg:w-1/3 px-4 h-[121px] bg-[#f3f3f3] rounded-[20px] border-0 shadow-none"
             >
               <CardContent className="flex items-center justify-center h-full p-0">
                 <div className="inline-flex items-center gap-[18px]">
@@ -297,13 +297,13 @@ export const IndustrySolutions = (): JSX.Element => {
       <section>
         <div className="relative w-full bg-[#f3f3f3] py-20">
           <img
-            className="absolute right-0 bottom-0 w-[307px] h-[310px]"
+            className="absolute right-0 bottom-0 w-[153px] h-[153px] md:w-[200px] md:h-[200px] xl:w-[307px] xl:h-[310px]"
             alt="Pattern"
             src="/pattern.svg"
           />
 
           <img
-            className="absolute left-0 bottom-0 w-[307px] h-[310px]"
+            className="absolute left-0 bottom-0 w-[153px] h-[153px] md:w-[200px] md:h-[200px] xl:w-[307px] xl:h-[310px]"
             alt="Pattern"
             src="/pattern-1.svg"
           />
@@ -333,7 +333,7 @@ export const IndustrySolutions = (): JSX.Element => {
                   {solutionCards.slice(0, 3).map((card, index) => (
                     <Card
                       key={index}
-                      className="bg-white rounded-[20px] border border-solid border-[#e4e4e4] overflow-hidden"
+                      className="z-10 bg-white rounded-[20px] border border-solid border-[#e4e4e4] overflow-hidden"
                     >
                       <CardContent className="p-9 flex flex-col gap-[22px] justify-between items-center h-full">
                         <div className="flex flex-col gap-5">
@@ -407,7 +407,7 @@ export const IndustrySolutions = (): JSX.Element => {
                   {solutionCards.slice(3, 5).map((card, index) => (
                     <Card
                       key={index}
-                      className="bg-white rounded-[20px] border border-solid border-[#e4e4e4] overflow-hidden"
+                      className="z-10 bg-white rounded-[20px] border border-solid border-[#e4e4e4] overflow-hidden"
                     >
                       <CardContent className="p-9 flex flex-col gap-[21px] h-full justify-between">
                         <div className="flex flex-col gap-[47px]">
@@ -479,7 +479,7 @@ export const IndustrySolutions = (): JSX.Element => {
         />
         <div className="flex flex-col w-full items-center gap-[60px] px-6 md:px-10 pt-24 pb-36">
           <div className="flex flex-col max-w-[893px] items-center gap-5">
-            <div className="flex flex-col items-center gap-5 w-full">
+            <div className="z-10 flex flex-col items-center gap-5 w-full">
               <Badge
                 variant="secondary"
                 className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-[800px] px-4 py-1.5 h-[30px]"
@@ -504,7 +504,7 @@ export const IndustrySolutions = (): JSX.Element => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-[1232px] px-4">
             {features.map((feature, index) => (
-              <Card key={index} className="border-0 shadow-none bg-transparent">
+              <Card key={index} className="z-10 border-0 shadow-none bg-transparent">
                 <CardContent className="flex flex-col items-center gap-6 p-0">
                   <img
                     className="w-16 h-16"
@@ -561,7 +561,7 @@ export const IndustrySolutions = (): JSX.Element => {
                 {pricingPlans.map((plan, index) => (
                   <Card
                     key={index}
-                    className={`${plan.bgColor} border-[#f3f3f3] rounded-[20px] overflow-hidden relative h-full`}
+                    className={`${plan.bgColor} z-10 border-[#f3f3f3] rounded-[20px] overflow-hidden relative h-full`}
                   >
                     {plan.featured && (
                       <div className="absolute top-9 -right-11 w-[190px] h-[35px] bg-white rotate-45 flex items-center justify-center">
@@ -683,7 +683,7 @@ export const IndustrySolutions = (): JSX.Element => {
             src="/nate-shape-1.svg"
         />
         <div className="flex flex-col w-full items-center gap-[74px] px-6 md:px-10">
-          <div className="flex flex-col max-w-[982px] items-center gap-5">
+          <div className="z-10 flex flex-col max-w-[982px] items-center gap-5">
             <div className="flex flex-col items-center gap-5 w-full">
               <Badge
                 variant="secondary"
@@ -710,7 +710,7 @@ export const IndustrySolutions = (): JSX.Element => {
           </div>
 
           <div className="flex flex-col lg:flex-row items-center gap-[37px] w-full max-w-[1291px] px-4">
-            <Card className="flex-1 min-w-0 bg-white border border-[#e4e4e4] shadow-[0px_8px_20px_#00000024] rounded-[20px]">
+            <Card className="z-10 flex-1 min-w-0 bg-white border border-[#e4e4e4] shadow-[0px_8px_20px_#00000024] rounded-[20px]">
               <CardContent className="p-10">
                 <div className="flex flex-col items-start gap-[30px]">
                   <div className="flex items-start gap-5">

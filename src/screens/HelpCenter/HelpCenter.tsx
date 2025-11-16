@@ -166,7 +166,7 @@ export const HelpCenter = (): JSX.Element => {
           {supportOptions.map((option, index) => (
             <Card
               key={index}
-              className="bg-[#f3f3f3] rounded-[10px] border-0 shadow-none"
+              className="z-10 bg-[#f3f3f3] rounded-[10px] border-0 shadow-none"
             >
               <CardContent className="p-[26px] flex flex-col h-full">
                 <img
@@ -234,7 +234,7 @@ export const HelpCenter = (): JSX.Element => {
               {articles.map((article, index) => (
                 <article
                   key={index}
-                  className="flex flex-col sm:flex-row items-center gap-[30px] w-full"
+                  className="z-10 flex flex-col sm:flex-row items-center gap-[30px] w-full"
                 >
                   <div
                     className="w-full sm:w-[295px] h-[251px] rounded-[20px] bg-cover bg-center flex-shrink-0"
@@ -330,7 +330,7 @@ export const HelpCenter = (): JSX.Element => {
       </section>
       <section className="relative w-full pb-24">
         <div className="flex flex-col w-full items-center px-6 md:px-10 gap-[60px] py-12">
-          <header className="flex flex-col max-w-[1129px] items-center gap-[19px]">
+          <header className="z-10 flex flex-col max-w-[1129px] items-center gap-[19px]">
             <Badge
               variant="secondary"
               className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] rounded-full px-4 py-1.5 h-[30px]"
@@ -393,7 +393,7 @@ export const HelpCenter = (): JSX.Element => {
               </div>
             </div>
 
-            <div className="flex flex-col w-full lg:w-1/2 flex-shrink-0">
+            <div className="z-10 flex flex-col w-full lg:w-1/2 flex-shrink-0">
               <Accordion
                 type="single"
                 collapsible

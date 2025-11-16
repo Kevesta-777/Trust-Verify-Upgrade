@@ -184,7 +184,7 @@ export const PricingDetail = (): JSX.Element => {
             src="/nate-shape.svg"
         />
         <div className="flex flex-col items-start gap-9 relative mx-auto max-w-[1270px] px-6 md:px-10 py-24">
-          <div className="flex flex-col items-start gap-6 relative">
+          <div className="z-10 flex flex-col items-start gap-6 relative">
             <div className="flex flex-col items-start justify-center gap-5 relative w-full">
               <Badge className="h-[30px] bg-[#003d2b1a] hover:bg-[#003d2b1a] rounded-[800px] px-4">
                 <span className="[font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-[#003d2b] text-sm leading-[14px] tracking-[0]">
@@ -258,7 +258,7 @@ export const PricingDetail = (): JSX.Element => {
           </div>
 
           <div className="flex flex-col xl:flex-row items-center xl:items-start gap-[30px] relative w-full">
-            <Card className="relative w-full max-w-[403px] bg-white rounded-[20px] border border-solid border-[#e4e4e4]">
+            <Card className="z-10 relative w-full max-w-[403px] bg-white rounded-[20px] border border-solid border-[#e4e4e4]">
               <CardContent className="p-[31px] flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[13px]">
                   <h3 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#040303] text-xl tracking-[0] leading-6">

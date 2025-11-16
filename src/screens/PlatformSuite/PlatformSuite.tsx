@@ -161,7 +161,7 @@ export const PlatformSuite = (): JSX.Element => {
           {platformFeatures.map((feature, index) => (
             <Card
               key={index}
-              className="bg-white rounded-[20px] border border-[#e4e4e4] overflow-hidden flex flex-col h-[511px]"
+              className="z-10 bg-white rounded-[20px] border border-[#e4e4e4] overflow-hidden flex flex-col h-[511px]"
             >
               <CardContent className="flex flex-col h-full p-9 gap-5">
                 <div className="flex flex-col gap-5 flex-1">
@@ -253,7 +253,7 @@ export const PlatformSuite = (): JSX.Element => {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="flex flex-col w-[275px] items-center gap-[50px]"
+                  className="z-10 flex flex-col w-[275px] items-center gap-[50px]"
                 >
                   <img
                     className="w-[90px] h-[90px]"

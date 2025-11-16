@@ -22,9 +22,9 @@ const features = [
 
 export const FrameWrapperSubsection = (): JSX.Element => {
   return (
-    <section className="w-full flex flex-col xl:flex-row items-center justify-center gap-[50px] py-32  px-6 md:px-10">
-      <div className="z-10 flex flex-col w-full xl:w-1/2 items-start gap-9">
-        <div className="flex flex-col items-start gap-[30px] w-full">
+    <section className="w-full flex flex-col xl:flex-row items-center justify-center max-w-[1406px] mx-auto gap-[50px] py-32 px-6 md:px-10">
+      <div className="flex flex-col w-full xl:w-1/2 items-start gap-9">
+        <div className="z-10 flex flex-col items-start gap-[30px] w-full">
           <div className="flex flex-col items-start gap-[19px] w-full">
             <div className="flex flex-col items-start gap-5 w-full">
               <Badge className="bg-[#003d2b1a] text-[#003d2b] hover:bg-[#003d2b1a] h-[30px] px-4 rounded-[800px] [font-family:'DM_Sans_18pt-Medium',Helvetica] font-medium text-sm">
@@ -92,7 +92,7 @@ export const FrameWrapperSubsection = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="w-full xl:w-1/2 flex-shrink-0">
+      <div className="z-10 w-full xl:w-1/2 flex-shrink-0">
         <img className="w-full h-full object-cover" alt="Container" src="/container.png" />
       </div>
     </section>
