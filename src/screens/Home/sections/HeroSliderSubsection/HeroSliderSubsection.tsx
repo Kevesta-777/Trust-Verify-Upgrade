@@ -102,7 +102,7 @@ export const HeroSliderSubsection = (): JSX.Element => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="min-w-full h-full flex flex-col gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 bg-cover bg-center px-4 sm:px-6 md:px-12 lg:px-[110px] pt-20 sm:pt-24 md:pt-32 lg:pt-[220px] pb-20 sm:pb-24 md:pb-32 lg:pb-[220px] relative justify-center"
+            className="min-w-full h-full flex flex-col gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 bg-cover bg-center px-4 sm:px-6 md:px-12 lg:px-[110px] pt-0 sm:pt-24 md:pt-32 lg:pt-[220px] pb-20 sm:pb-24 md:pb-32 lg:pb-[220px] relative justify-center"
             style={{ 
               backgroundImage: `url(${slide.backgroundImage})`,
               backgroundPosition: 'center',
