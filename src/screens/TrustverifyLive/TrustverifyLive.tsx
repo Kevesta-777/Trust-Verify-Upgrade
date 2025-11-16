@@ -28,7 +28,7 @@ export const TrustverifyLive = (): JSX.Element => {
     <div className="bg-[#f6f6f6] w-full flex flex-col mx-auto min-h-screen">
       {/* <APIHeader navigationItems={navigationItems} /> */}
       <HeaderDemo />
-      <section className="flex flex-col items-start gap-4 sm:gap-6 md:gap-[31px] w-full p-4 sm:p-6 md:p-10 lg:p-14 max-w-full">
+      <section className="flex flex-col items-start gap-4 sm:gap-6 md:gap-[31px] w-full p-4 sm:p-6 md:p-10 lg:p-10 xl:p-14 max-w-full">
         <header className="flex flex-col items-start gap-4 sm:gap-5 md:gap-6 w-full">
           <button className="inline-flex items-center gap-2.5 hover:opacity-80 transition-opacity">
             <ArrowLeftIcon className="w-5 h-5 sm:w-6 sm:h-6 text-[#808080]" />
@@ -38,8 +38,8 @@ export const TrustverifyLive = (): JSX.Element => {
           </button>
 
           <div className="flex flex-col items-start gap-3 sm:gap-4 md:gap-4 w-full">
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full gap-3 sm:gap-4 md:gap-0">
-              <h1 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl sm:text-2xl md:text-4xl lg:text-5xl tracking-[0] leading-tight sm:leading-tight md:leading-[normal]">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full gap-3 sm:gap-4 md:gap-4 lg:gap-0">
+              <h1 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-xl sm:text-2xl md:text-4xl lg:text-4xl xl:text-5xl tracking-[0] leading-tight sm:leading-tight md:leading-[normal]">
                 TrustVerify Live Demo
               </h1>
 
@@ -53,15 +53,15 @@ export const TrustverifyLive = (): JSX.Element => {
               </Badge>
             </div>
 
-            <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm sm:text-base md:text-lg lg:text-xl tracking-[0] leading-5 sm:leading-6 md:leading-7 lg:leading-8 w-full">
+            <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-sm sm:text-base md:text-lg lg:text-lg xl:text-xl tracking-[0] leading-5 sm:leading-6 md:leading-7 lg:leading-7 xl:leading-8 w-full">
               Experience real-time fraud prevention in action
             </p>
           </div>
         </header>
 
         <div className="flex flex-col items-start gap-4 sm:gap-6 md:gap-[31px] w-full">
-          <div className="flex flex-col lg:flex-row lg:items-start gap-4 sm:gap-6 md:gap-6 w-full">
-            <Card className="w-full lg:w-[538px] lg:flex-shrink-0 bg-white rounded-[14px] border-[0.8px] border-neutral-200 shadow-[0px_0px_0px_transparent,0px_0px_0px_transparent,0px_0px_0px_transparent,0px_0px_0px_transparent,0px_1px_3px_#0000001a,0px_1px_2px_-1px_#0000001a]">
+          <div className="flex flex-col lg:flex-row lg:items-start gap-4 sm:gap-6 md:gap-6 lg:gap-6 w-full lg:items-stretch">
+            <Card className="w-full lg:w-[538px] lg:flex-shrink-0 lg:max-w-[538px] lg:min-w-0 bg-white rounded-[14px] border-[0.8px] border-neutral-200 shadow-[0px_0px_0px_transparent,0px_0px_0px_transparent,0px_0px_0px_transparent,0px_0px_0px_transparent,0px_1px_3px_#0000001a,0px_1px_2px_-1px_#0000001a]">
               <CardContent className="p-4 sm:p-5 md:p-6 lg:p-[25px]">
                 <div className="inline-flex items-center gap-2.5 mb-5 sm:mb-6 md:mb-8 lg:mb-10">
                   <img
@@ -157,7 +157,7 @@ export const TrustverifyLive = (): JSX.Element => {
               </CardContent>
             </Card>
 
-            <div className="flex flex-col lg:flex-1 items-start gap-4 sm:gap-6 md:gap-[25px] w-full min-w-0">
+            <div className="flex flex-col lg:flex-1 lg:min-w-0 items-start gap-4 sm:gap-6 md:gap-[25px] w-full min-w-0">
               <Card className="w-full bg-white rounded-[14px] border-[0.8px] border-neutral-200 shadow-[0px_0px_0px_transparent,0px_0px_0px_transparent,0px_0px_0px_transparent,0px_0px_0px_transparent,0px_1px_3px_#0000001a,0px_1px_2px_-1px_#0000001a]">
                 <CardContent className="p-4 sm:p-5 md:p-6 lg:p-[25px]">
                   <div className="flex flex-col items-start gap-4 sm:gap-6 md:gap-[30px]">
@@ -259,42 +259,44 @@ export const TrustverifyLive = (): JSX.Element => {
               </Card>
 
               <Card className="w-full bg-app-primary rounded-[14px] sm:rounded-[16px] md:rounded-[17.63px] shadow-[0px_3.53px_8.81px_#003d2b1a] border-0 relative overflow-hidden">
-                <CardContent className="p-5 sm:p-6 md:py-[41px] md:px-[52px]">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between relative z-10 gap-5 sm:gap-6 md:gap-8 lg:gap-0">
-                    <div className="flex flex-col items-start gap-3 sm:gap-4 md:gap-[27.32px] max-w-full md:max-w-[727px]">
-                      <div className="flex flex-col items-start gap-2 sm:gap-2 md:gap-[8.81px]">
-                        <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-white text-xl sm:text-2xl md:text-[30px] lg:text-[35.3px] tracking-[-0.44px] leading-6 sm:leading-7 md:leading-[45px] lg:leading-[59.1px]">
+                <CardContent className="p-5 sm:p-6 md:py-[41px] md:px-[52px] lg:py-6 lg:px-6 xl:py-[41px] xl:px-[52px]">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between relative z-10 gap-5 sm:gap-6 md:gap-8 lg:gap-4 xl:gap-8">
+                    <div className="flex flex-col items-start gap-3 sm:gap-4 md:gap-[27.32px] lg:gap-4 xl:gap-[27.32px] max-w-full md:max-w-[727px] lg:max-w-[500px] xl:max-w-[727px] flex-1">
+                      <div className="flex flex-col items-start gap-2 sm:gap-2 md:gap-[8.81px] lg:gap-2 xl:gap-[8.81px]">
+                        <h2 className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-white text-xl sm:text-2xl md:text-[30px] lg:text-2xl xl:text-[35.3px] tracking-[-0.44px] leading-6 sm:leading-7 md:leading-[45px] lg:leading-7 xl:leading-[59.1px]">
                           Ready To Protect Your Business?
                         </h2>
-                        <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-sm sm:text-base md:text-[17px] lg:text-[19.4px] tracking-[0] leading-5 sm:leading-6 md:leading-[24px] lg:leading-[26.4px]">
+                        <p className="[font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white text-sm sm:text-base md:text-[17px] lg:text-base xl:text-[19.4px] tracking-[0] leading-5 sm:leading-6 md:leading-[24px] lg:leading-6 xl:leading-[26.4px]">
                           Join thousands of companies trust TrustVerify to
                           secure their transactions and prevent fraud.
                         </p>
                       </div>
 
-                      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3 md:gap-[17.63px] w-full">
-                        <Button className="w-full sm:w-auto sm:min-w-[180px] md:w-[206.25px] h-11 sm:h-12 md:h-[52.88px] bg-white hover:bg-white/90 rounded-[8.81px] text-app-primary">
-                          <span className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-xs sm:text-sm md:text-[15.9px] text-center tracking-[-0.18px] leading-[15.9px]">
+                      <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3 md:gap-[17.63px] lg:gap-3 xl:gap-[17.63px] w-full">
+                        <Button className="w-full sm:w-auto sm:min-w-[180px] md:w-[206.25px] lg:w-[160px] xl:w-[206.25px] h-11 sm:h-12 md:h-[52.88px] lg:h-11 xl:h-[52.88px] bg-white hover:bg-white/90 rounded-[8.81px] text-app-primary">
+                          <span className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-xs sm:text-sm md:text-[15.9px] lg:text-sm xl:text-[15.9px] text-center tracking-[-0.18px] leading-[15.9px]">
                             Start Free Trial
                           </span>
                         </Button>
 
                         <Button
                           variant="outline"
-                          className="w-full sm:w-auto sm:min-w-[180px] md:w-[203.23px] h-11 sm:h-12 md:h-[52.88px] bg-transparent hover:bg-white/10 rounded-[8.81px] border-[0.88px] border-white text-white"
+                          className="w-full sm:w-auto sm:min-w-[180px] md:w-[203.23px] lg:w-[160px] xl:w-[203.23px] h-11 sm:h-12 md:h-[52.88px] lg:h-11 xl:h-[52.88px] bg-transparent hover:bg-white/10 rounded-[8.81px] border-[0.88px] border-white text-white"
                         >
-                          <span className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-xs sm:text-sm md:text-[15.9px] text-center tracking-[-0.18px] leading-[15.9px]">
+                          <span className="[font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-xs sm:text-sm md:text-[15.9px] lg:text-sm xl:text-[15.9px] text-center tracking-[-0.18px] leading-[15.9px]">
                             Contact Sales
                           </span>
                         </Button>
                       </div>
                     </div>
 
-                    <img
-                      className="w-full max-w-[180px] sm:max-w-[200px] md:max-w-[230px] lg:max-w-[258px] h-auto md:w-[258px] md:h-[232px] mx-auto md:mx-0 flex-shrink-0"
-                      alt="Security Shield"
-                      src="/frame-1.svg"
-                    />
+                    <div className="flex-shrink-0 flex items-center justify-center md:justify-end">
+                      <img
+                        className="w-[180px] h-auto sm:w-[200px] md:w-[230px] lg:w-[180px] lg:h-auto xl:w-[258px] xl:h-[232px] object-contain"
+                        alt="Security Shield"
+                        src="/frame-1.svg"
+                      />
+                    </div>
                   </div>
                 </CardContent>
               </Card>
