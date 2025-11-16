@@ -94,15 +94,15 @@ export const HeroSliderSubsection = (): JSX.Element => {
   };
 
   return (
-    <section className="relative w-full min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:h-[867px] h-auto sm:h-[600px] md:h-[700px] overflow-hidden">
+    <section className="relative w-full h-screen overflow-hidden">
       <div
-        className="flex transition-transform duration-500 ease-in-out h-full min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-0"
+        className="flex transition-transform duration-500 ease-in-out h-full"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="min-w-full h-full min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-0 flex flex-col gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 bg-cover bg-center px-4 sm:px-6 md:px-12 lg:px-[110px] pt-12 sm:pt-20 md:pt-28 lg:pt-[204px] pb-12 sm:pb-10 md:pb-12 lg:pb-0 relative"
+            className="min-w-full h-full flex flex-col gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 bg-cover bg-center px-4 sm:px-6 md:px-12 lg:px-[110px] pt-20 sm:pt-24 md:pt-32 lg:pt-[220px] pb-20 sm:pb-24 md:pb-32 lg:pb-[220px] relative justify-center"
             style={{ 
               backgroundImage: `url(${slide.backgroundImage})`,
               backgroundPosition: 'center',
@@ -110,14 +110,33 @@ export const HeroSliderSubsection = (): JSX.Element => {
               transition: isTransitioning ? 'background-size 0.5s ease-in-out' : 'none',
             }}
           >
-            <div className="flex flex-wrap lg:flex-nowrap items-center gap-2 sm:gap-3 md:gap-4 lg:gap-5 max-w-full lg:w-[471px] lg:h-[50px] h-auto">
-              <img
-                className="w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-[50px] lg:h-[50px] flex-shrink-0"
-                alt="Background"
-                src={slide.badge.icon}
-              />
-              <div className="[font-family:'Suisse_Intl-Medium',Helvetica] font-medium text-white text-[11px] sm:text-sm md:text-base lg:text-base tracking-[0.32px] leading-[14px] sm:leading-5 md:leading-6 lg:leading-6 whitespace-normal lg:whitespace-nowrap">
-                {slide.badge.text}
+            <div className="relative">
+              {/* Pagination dots positioned just above badge */}
+              {index === currentSlide && (
+                <div className="absolute -top-[15px] sm:-top-[25px] md:-top-[25px] lg:-top-[25px] left-1/2 -translate-x-1/2 sm:left-0 sm:translate-x-0 inline-flex items-center gap-2 sm:gap-2.5 lg:gap-2.5 z-10">
+                  {slides.map((_, dotIndex) => (
+                    <button
+                      key={dotIndex}
+                      onClick={() => handleSlideChange(dotIndex)}
+                      className={`h-1 sm:h-1.5 lg:h-1.5 rounded-[50px] transition-all ${
+                        dotIndex === currentSlide
+                          ? "w-8 sm:w-10 lg:w-10 bg-app-secondary"
+                          : "w-4 sm:w-5 lg:w-5 bg-[#7d7d7d] hover:bg-[#9d9d9d]"
+                      }`}
+                      aria-label={`Go to slide ${dotIndex + 1}`}
+                    />
+                  ))}
+                </div>
+              )}
+              <div className="flex flex-nowrap items-center justify-center sm:justify-start gap-2 sm:gap-3 md:gap-4 lg:gap-5 max-w-full lg:w-[471px] lg:h-[50px] h-auto mx-auto sm:mx-0">
+                <img
+                  className="w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-[50px] lg:h-[50px] flex-shrink-0"
+                  alt="Background"
+                  src={slide.badge.icon}
+                />
+                <div className="[font-family:'Suisse_Intl-Medium',Helvetica] font-medium text-white text-[9px] sm:text-sm md:text-base lg:text-base tracking-[0.32px] leading-[12px] sm:leading-5 md:leading-6 lg:leading-6 whitespace-nowrap">
+                  {slide.badge.text}
+                </div>
               </div>
             </div>
             <div className="max-w-full lg:max-w-none">
@@ -135,7 +154,7 @@ export const HeroSliderSubsection = (): JSX.Element => {
                   </p>
                 </div>
 
-                <div className="flex flex-wrap lg:flex-nowrap items-center gap-3 sm:gap-4 md:gap-6 lg:gap-16 w-full">
+                <div className="flex flex-wrap lg:flex-nowrap items-center justify-center sm:justify-start gap-3 sm:gap-4 md:gap-6 lg:gap-16 w-full">
                   {slide.features.map((feature, featureIndex) => (
                     <div
                       key={featureIndex}
@@ -154,15 +173,15 @@ export const HeroSliderSubsection = (): JSX.Element => {
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row lg:inline-flex items-stretch sm:items-center lg:items-center gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 w-full sm:w-auto lg:w-auto pb-2 sm:pb-0">
-                <Button className="w-full sm:w-[180px] md:w-[200px] lg:w-[223px] h-10 sm:h-11 md:h-12 lg:h-14 bg-app-secondary hover:bg-app-secondary/90 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-white text-xs sm:text-sm md:text-base lg:text-lg tracking-[-0.20px] leading-[14px] sm:leading-[16px] md:leading-[17px] lg:leading-[18px]">
+              <div className="flex flex-row items-center justify-center sm:justify-start gap-2.5 sm:gap-3 md:gap-4 lg:gap-5 w-full sm:w-auto lg:w-auto pb-2 sm:pb-0">
+                <Button className="flex-1 sm:flex-none sm:w-[180px] md:w-[200px] lg:w-[223px] h-10 sm:h-11 md:h-12 lg:h-14 bg-app-secondary hover:bg-app-secondary/90 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-white text-xs sm:text-sm md:text-base lg:text-lg tracking-[-0.20px] leading-[14px] sm:leading-[16px] md:leading-[17px] lg:leading-[18px]">
                   Get Started Free
                   <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-[30px] lg:h-[30px] ml-1.5 sm:ml-2 lg:ml-2 flex-shrink-0" />
                 </Button>
 
                 <Button
                   variant="outline"
-                  className="w-full sm:w-[160px] md:w-[180px] lg:w-[198px] h-10 sm:h-11 md:h-12 lg:h-14 border-app-secondary text-app-secondary bg-transparent hover:bg-app-secondary/10 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-xs sm:text-sm md:text-base lg:text-lg tracking-[-0.20px] leading-[14px] sm:leading-[16px] md:leading-[17px] lg:leading-[18px]"
+                  className="flex-1 sm:flex-none sm:w-[160px] md:w-[180px] lg:w-[198px] h-10 sm:h-11 md:h-12 lg:h-14 border-app-secondary text-app-secondary bg-transparent hover:bg-app-secondary/10 rounded-[10px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-xs sm:text-sm md:text-base lg:text-lg tracking-[-0.20px] leading-[14px] sm:leading-[16px] md:leading-[17px] lg:leading-[18px]"
                 >
                   Learn More
                 </Button>
@@ -172,20 +191,6 @@ export const HeroSliderSubsection = (): JSX.Element => {
         ))}
       </div>
 
-      <div className="absolute top-12 sm:top-16 md:top-20 lg:top-[168px] left-4 sm:left-6 md:left-12 lg:left-[110px] inline-flex items-center gap-2 sm:gap-2.5 lg:gap-2.5 z-10">
-        {slides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => handleSlideChange(index)}
-            className={`h-1 sm:h-1.5 lg:h-1.5 rounded-[50px] transition-all ${
-              index === currentSlide
-                ? "w-8 sm:w-10 lg:w-10 bg-app-secondary"
-                : "w-4 sm:w-5 lg:w-5 bg-[#7d7d7d] hover:bg-[#9d9d9d]"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
     </section>
   );
 };
