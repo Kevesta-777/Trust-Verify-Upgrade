@@ -301,12 +301,12 @@ export const DeveloperCenter = (): JSX.Element => {
   return (
     <main className="bg-[#f6f6f6] overflow-hidden w-full min-w-full lg:min-w-[1920px] flex flex-col">
       <HeaderDemo />
-      <section className="flex flex-col items-start gap-[30px] w-full px-4 sm:px-6 lg:px-[110px]">
+      <section className="flex flex-col items-start gap-[30px] w-full px-4 sm:px-6 lg:px-[110px] py-20">
         <header className="flex flex-col items-start gap-2.5 w-full">
-          <h1 className="flex items-center justify-center w-full [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl sm:text-4xl lg:text-5xl tracking-[0] leading-[normal] text-center">
+          <h1 className="flex items-center justify-start w-full [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[#003d2b] text-3xl sm:text-4xl lg:text-5xl tracking-[0] leading-[normal] text-center">
             Developer Center
           </h1>
-          <p className="flex items-center justify-center w-full [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base sm:text-lg lg:text-xl tracking-[0] leading-8 text-center">
+          <p className="flex items-center justify-start w-full [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base sm:text-lg lg:text-xl tracking-[0] leading-8 text-center">
             Build secure transaction systems with our comprehensive API and
             developer tools
           </p>

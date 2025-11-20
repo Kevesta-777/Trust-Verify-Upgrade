@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronDownIcon, MenuIcon, XIcon, User2 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "../ui/button";
@@ -35,12 +35,50 @@ export interface HeaderProps {
   content?: HeaderContentProps;
 }
 
-const navigationItems = [
-  { label: "Platform", hasDropdown: false, path: "/about" },
-  { label: "Solutions", hasDropdown: true, path: null },
-  { label: "Enterprises", hasDropdown: true, path: null },
-  { label: "Developers", hasDropdown: false, path: null },
-  { label: "Pricing", hasDropdown: false, path: null },
+interface SubItem {
+  label: string;
+  path: string;
+  description?: string;
+}
+
+interface NavigationItem {
+  label: string;
+  hasDropdown: boolean;
+  path?: string;
+  subItems?: SubItem[];
+}
+
+const navigationItems: NavigationItem[] = [
+  { label: "Platform",
+    hasDropdown: true, 
+    path: "/platform",
+    subItems: [
+      { label: "Platform Suite", path: "/platform", description: "Tailored solutions for every industry" },
+      { label: "Consumer Protection Suite", path: "/consumer-protection", description: "training" },
+      { label: "Our Mission", path: "/our-mission", description: "Marketplace protection" },
+    ]
+  },
+  { 
+    label: "Solutions", 
+    hasDropdown: true, 
+    path: "/solutions",
+    subItems: [
+      { label: "Industry Solutions", path: "/industry", description: "Tailored solutions for every industry" },
+      { label: "Regulatory Compliances", path: "/compliances", description: "Marketplace protection" },
+    ]
+  },
+  { 
+    label: "Enterprises", 
+    hasDropdown: true, 
+    path: "/Enterprises",
+    subItems: [
+      { label: "Training", path: "/training", description: "Training" },
+      { label: "Help Center", path: "/help", description: "Help Center" },
+      { label: "Contact Us", path: "/contact", description: "Contact US" },
+    ]
+  },
+  { label: "Developers", hasDropdown: false, path: "/developer" },
+  { label: "Pricing", hasDropdown: false, path: "/pricing" },
 ];
 
 // Helper function to get width class and style
@@ -69,6 +107,38 @@ const getWidthClass = (width?: string, maxWidth?: string) => {
 export const Header = ({ backgroundImage, content }: HeaderProps): JSX.Element => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileExpandedItems, setMobileExpandedItems] = useState<Set<string>>(new Set());
+  const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (openDropdown) {
+        const ref = dropdownRefs.current[openDropdown];
+        if (ref && !ref.contains(event.target as Node)) {
+          setOpenDropdown(null);
+        }
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [openDropdown]);
+
+  const toggleMobileDropdown = (label: string) => {
+    setMobileExpandedItems(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(label)) {
+        newSet.delete(label);
+      } else {
+        newSet.add(label);
+      }
+      return newSet;
+    });
+  };
 
   const headerStyle = backgroundImage 
     ? {
@@ -100,29 +170,81 @@ export const Header = ({ backgroundImage, content }: HeaderProps): JSX.Element =
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center justify-center gap-3 xl:gap-8 absolute top-[29px] left-1/2 -translate-x-1/2">
           {navigationItems.map((item, index) => (
-            <div key={index} className="relative">
+            <div 
+              key={index} 
+              className="relative"
+              ref={(el) => {
+                if (item.hasDropdown) {
+                  dropdownRefs.current[item.label] = el;
+                }
+              }}
+              onMouseEnter={() => item.hasDropdown && setOpenDropdown(item.label)}
+              onMouseLeave={() => item.hasDropdown && setOpenDropdown(null)}
+            >
               {item.hasDropdown ? (
-                <button className="inline-flex items-end justify-center gap-[5px] relative flex-[0_0_auto] bg-transparent border-none cursor-pointer">
-                  <span className="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#d8d8d8] text-[17.7px] tracking-[0] leading-[18px] whitespace-nowrap">
-                    {item.label}
-                  </span>
-                  <ChevronDownIcon className="w-[12.59px] h-3.5 text-[#d8d8d8]" />
-                </button>
+                <>
+                  <button 
+                    className="inline-flex items-end justify-center gap-[5px] relative flex-[0_0_auto] bg-transparent border-none cursor-pointer hover:text-white transition-colors"
+                    onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                  >
+                    <span className={`relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[17.7px] tracking-[0] leading-[18px] whitespace-nowrap transition-colors ${
+                      openDropdown === item.label ? 'text-white' : 'text-[#d8d8d8]'
+                    }`}>
+                      {item.label}
+                    </span>
+                    <ChevronDownIcon 
+                      className={`w-[12.59px] h-3.5 transition-transform ${
+                        openDropdown === item.label ? 'text-white rotate-180' : 'text-[#d8d8d8]'
+                      }`} 
+                    />
+                  </button>
+                  
+                  {/* Dropdown Menu */}
+                  <AnimatePresence>
+                    {openDropdown === item.label && item.subItems && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[280px] bg-white rounded-lg shadow-xl border border-gray-100 py-2 z-50"
+                      >
+                        {item.subItems.map((subItem, subIndex) => (
+                          <Link
+                            key={subIndex}
+                            to={subItem.path}
+                            onClick={() => setOpenDropdown(null)}
+                            className="block px-4 py-3 hover:bg-gray-50 transition-colors group"
+                          >
+                            <div className="font-medium text-gray-900 group-hover:text-app-secondary transition-colors [font-family:'DM_Sans_18pt-Medium',Helvetica] text-base">
+                              {subItem.label}
+                            </div>
+                            {subItem.description && (
+                              <div className="text-sm text-gray-500 mt-1 [font-family:'DM_Sans_18pt-Regular',Helvetica]">
+                                {subItem.description}
+                              </div>
+                            )}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </>
               ) : item.path ? (
                 <Link
                   to={item.path}
-                  className={`relative flex items-center justify-center w-fit [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[17.7px] tracking-[0] leading-[18px] whitespace-nowrap bg-transparent border-none cursor-pointer ${
-                    location.pathname === item.path ? 'text-white' : 'text-[#d8d8d8]'
+                  className={`relative flex items-center justify-center w-fit [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[17.7px] tracking-[0] leading-[18px] whitespace-nowrap bg-transparent border-none cursor-pointer transition-colors ${
+                    location.pathname === item.path ? 'text-white' : 'text-[#d8d8d8] hover:text-white'
                   }`}
                 >
                   {item.label}
                 </Link>
               ) : (
-                <button className="relative flex items-center justify-center w-fit [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#d8d8d8] text-[17.7px] tracking-[0] leading-[18px] whitespace-nowrap bg-transparent border-none cursor-pointer">
+                <button className="relative flex items-center justify-center w-fit [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#d8d8d8] text-[17.7px] tracking-[0] leading-[18px] whitespace-nowrap bg-transparent border-none cursor-pointer hover:text-white transition-colors">
                   {item.label}
                 </button>
               )}
-              {location.pathname === item.path && (
+              {location.pathname === item.path && !item.hasDropdown && (
                 <div className="absolute top-[30px] left-[-5px] w-[85px] h-1 bg-white rounded-[30px]" />
               )}
             </div>
@@ -130,20 +252,24 @@ export const Header = ({ backgroundImage, content }: HeaderProps): JSX.Element =
         </nav>
 
         <div className="hidden lg:flex items-center gap-2.5">
-          <Button
-            variant="outline"
-            className="h-auto inline-flex items-center justify-center gap-2.5 lg:px-6 2xl:px-12 py-4 relative flex-[0_0_auto] rounded-[10px] border border-solid border-white bg-transparent hover:bg-white/10"
-          >
-            <span className="relative w-fit mt-[-1.00px] [font-family:'Suisse_Intl-Medium',Helvetica] font-medium text-white text-lg text-center leading-[18px] whitespace-nowrap flex items-center justify-center tracking-[0]">
-              Register
-            </span>
-          </Button>
+          <Link to="/register">
+            <Button
+              variant="outline"
+              className="h-auto inline-flex items-center justify-center gap-2.5 lg:px-6 2xl:px-12 py-4 relative flex-[0_0_auto] rounded-[10px] border border-solid border-white bg-transparent hover:bg-white/10"
+            >
+              <span className="relative w-fit mt-[-1.00px] [font-family:'Suisse_Intl-Medium',Helvetica] font-medium text-white text-lg text-center leading-[18px] whitespace-nowrap flex items-center justify-center tracking-[0]">
+                Register
+              </span>
+            </Button>
+          </Link>
+          <Link to="/login">
+            <Button className="h-auto inline-flex items-center justify-center gap-2.5 lg:px-8 2xl:px-14 py-4 relative flex-[0_0_auto] bg-app-secondary hover:bg-app-secondary/90 rounded-[10px]">
+              <span className="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-white text-lg text-center tracking-[0] leading-[18px] whitespace-nowrap">
+                Login
+              </span>
+            </Button>
+          </Link>
 
-          <Button className="h-auto inline-flex items-center justify-center gap-2.5 lg:px-8 2xl:px-14 py-4 relative flex-[0_0_auto] bg-app-secondary hover:bg-app-secondary/90 rounded-[10px]">
-            <span className="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'DM_Sans_18pt-Bold',Helvetica] font-bold text-white text-lg text-center tracking-[0] leading-[18px] whitespace-nowrap">
-              Login
-            </span>
-          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -173,16 +299,59 @@ export const Header = ({ backgroundImage, content }: HeaderProps): JSX.Element =
               <div className="w-full flex flex-col gap-6">
               {navigationItems.map((item, index) =>
                item.hasDropdown ? (
-                <button className={`w-full text-left text-white text-lg font-medium ${
+                <div key={index} className="w-full">
+                  <button 
+                    onClick={() => toggleMobileDropdown(item.label)}
+                    className={`w-full text-left text-white text-lg font-medium ${
                       location.pathname === item.path ? "opacity-100" : "opacity-80"
-                    }`}>
-                  <div className="flex items-center justify-between">
-                    <span className="whitespace-nowrap">
-                      {item.label}
-                    </span>
-                    <ChevronDownIcon className="w-5 h-5 text-white" />
-                  </div>
-                </button>
+                    }`}
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="whitespace-nowrap">
+                        {item.label}
+                      </span>
+                      <ChevronDownIcon 
+                        className={`w-5 h-5 text-white transition-transform ${
+                          mobileExpandedItems.has(item.label) ? 'rotate-180' : ''
+                        }`} 
+                      />
+                    </div>
+                  </button>
+                  
+                  {/* Mobile Sub-items */}
+                  <AnimatePresence>
+                    {mobileExpandedItems.has(item.label) && item.subItems && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden mt-2 ml-4"
+                      >
+                        <div className="flex flex-col gap-3 border-l-2 border-white/20 pl-4">
+                          {item.subItems.map((subItem, subIndex) => (
+                            <Link
+                              key={subIndex}
+                              to={subItem.path}
+                              onClick={() => {
+                                setIsMenuOpen(false);
+                                setMobileExpandedItems(new Set());
+                              }}
+                              className="text-white/70 text-base font-normal hover:text-white transition-colors [font-family:'DM_Sans_18pt-Regular',Helvetica]"
+                            >
+                              <div className="font-medium">{subItem.label}</div>
+                              {subItem.description && (
+                                <div className="text-sm text-white/50 mt-0.5">
+                                  {subItem.description}
+                                </div>
+                              )}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
                ) : item.path ? (
                   <Link
                     key={index}
@@ -204,10 +373,14 @@ export const Header = ({ backgroundImage, content }: HeaderProps): JSX.Element =
                 )
               )}
               </div>
-              <button className="w-full flex items-center gap-3 text-left text-white/80 text-lg font-medium">
+              <Link 
+                to="/login"
+                onClick={() => setIsMenuOpen(false)}
+                className="w-full flex items-center gap-3 text-left text-white/80 text-lg font-medium"
+              >
                 <User2 className="w-7 h-7"/>
                 Login
-              </button>
+              </Link>
             </div>
           </motion.div>
         )}

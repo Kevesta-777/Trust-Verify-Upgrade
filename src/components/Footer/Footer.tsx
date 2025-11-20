@@ -1,25 +1,31 @@
 import React from "react";
 import { Card, CardContent } from "../ui/card";
 import { Input } from "../ui/input";
-
+import { Link } from "react-router-dom";
 const companyLinks = [
-  { label: "Home" },
-  { label: "About Us" },
-  { label: "Services" },
-  { label: "Blog" },
+  { label: "Home", path: "/" },
+  { label: "About Us", path: "/about" },
+  { label: "Our Mission", path: "/our-mission" },
+  { label: "Press & Media", path: "/press-media" },
 ];
 
 const fraudDetectionLinks = [
-  { label: "Identity Verification" },
-  { label: "Escrow Services" },
-  { label: "Api Documentation" },
+  { label: "Identity Verification", path: "/id-verification" },
+  { label: "Escrow Services", path: "/secure-escrow" },
+  { label: "API Documentation", path: "/api-references" },
 ];
 
 const supportLinks = [
-  { label: "Help" },
-  { label: "Privacy Policy" },
-  { label: "Term & Condition" },
-  { label: "Contact Us" },
+  { label: "Help Center", path: "/help" },
+  { label: "Contact Us", path: "/contact" },
+  { label: "Training", path: "/training" },
+];
+
+const legalLinks = [
+  { label: "Privacy Policy", path: "/policies" },
+  { label: "Legal Disclaimer", path: "/legal" },
+  { label: "Term & Condition", path: "/terms" },
+  { label: "Regulatory Compliances", path: "/compliances" },
 ];
 
 const socialLinks = [
@@ -39,7 +45,7 @@ export const Footer = (): JSX.Element => {
       />
 
       <div className="flex flex-col relative max-w-[1300px] mx-auto pt-12 sm:pt-16 md:pt-20 lg:pt-[100px] px-4 sm:px-6 2xl:px-0">
-        <div className="flex flex-col lg:flex-row lg:justify-between gap-8 lg:gap-0">
+        <div className="flex flex-col xl:flex-row xl:justify-between gap-8 xl:gap-0">
           <div className="pb-8 lg:pb-[60px] w-full lg:w-auto">
             <h2 className="text-2xl sm:text-3xl lg:text-[34px] leading-tight sm:leading-[36px] lg:leading-[40.8px] [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-white mb-6 sm:mb-8 lg:mb-[40px]">
               Don't missed subscribed!
@@ -54,7 +60,7 @@ export const Footer = (): JSX.Element => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 pb-8 lg:pb-[60px] w-full lg:w-auto">
+          <div className="grid grid-rows-2 grid-cols-2 xl:grid-rows-1 xl:grid-cols-4 gap-6 xl:gap-2 pb-8 xl:pb-[60px] w-full xl:w-auto">
             <nav className="flex flex-col gap-4 sm:gap-5 lg:gap-[25px]">
               <h3 className="text-lg sm:text-xl leading-6 [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-white">
                 Fraud Detection
@@ -62,12 +68,12 @@ export const Footer = (): JSX.Element => {
               <ul className="flex flex-col gap-2 sm:gap-[10px]">
                 {fraudDetectionLinks.map((link, index) => (
                   <li key={index}>
-                    <a
-                      href="#"
+                    <Link
+                      to={link.path}
                       className="text-sm sm:text-base leading-[27.2px] [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white opacity-80 hover:opacity-100 transition-opacity"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -79,29 +85,46 @@ export const Footer = (): JSX.Element => {
               <ul className="flex flex-col gap-2 sm:gap-[10px]">
                 {companyLinks.map((link, index) => (
                   <li key={index}>
-                    <a
-                      href="#"
+                    <Link
+                      to={link.path}
                       className="text-sm sm:text-base leading-[27.2px] [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white opacity-80 hover:opacity-100 transition-opacity"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
             </nav>
-            <nav className="flex flex-col gap-4 sm:gap-5 lg:gap-[25px] sm:col-span-2 lg:col-span-1">
+            <nav className="flex flex-col gap-4 sm:gap-5 lg:gap-[25px]">
               <h3 className="text-lg sm:text-xl leading-6 [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-white">
                 Support
               </h3>
               <ul className="flex flex-col gap-2 sm:gap-[10px]">
                 {supportLinks.map((link, index) => (
                   <li key={index}>
-                    <a
-                      href="#"
+                    <Link
+                      to={link.path}
                       className="text-sm sm:text-base leading-[27.2px] [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white opacity-80 hover:opacity-100 transition-opacity"
                     >
                       {link.label}
-                    </a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <nav className="flex flex-col gap-4 sm:gap-5 lg:gap-[25px]">
+              <h3 className="text-lg sm:text-xl leading-6 [font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-white">
+                Legal
+              </h3>
+              <ul className="flex flex-col gap-2 sm:gap-[10px]">
+                {legalLinks.map((link, index) => (
+                  <li key={index}>
+                    <Link
+                      to={link.path}
+                      className="text-sm sm:text-base leading-[27.2px] [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-white opacity-80 hover:opacity-100 transition-opacity"
+                    >
+                      {link.label}
+                    </Link>
                   </li>
                 ))}
               </ul>

@@ -1,4 +1,8 @@
+import { useState, useEffect } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { Button } from "../../components/ui/button";
+import { useAuth } from "@/hooks/use-auth";
+import { useToast } from "@/hooks/use-toast";
 
 const socialLogins = [
   {
@@ -20,18 +24,64 @@ const socialLogins = [
 ];
 
 export const Login = (): JSX.Element => {
+  const navigate = useNavigate();
+  const { user, loginMutation } = useAuth();
+  const { toast } = useToast();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  // Redirect if already logged in
+  useEffect(() => {
+    if (user) {
+      navigate("/dashboard");
+    }
+  }, [user, navigate]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!username || !password) {
+      toast({
+        title: "Error",
+        description: "Please fill in all fields",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      await loginMutation.mutateAsync({ username, password });
+      navigate("/dashboard");
+    } catch (error: any) {
+      toast({
+        title: "Login Failed",
+        description: error.message || "Please check your credentials",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleGoogleLogin = () => {
+    window.location.href = "/auth/google";
+  };
+
   return (
     <main className="bg-white overflow-hidden w-full relative">
       <div className="w-full max-w-[1700px] mx-auto flex items-center justify-between xl:gap-10 2xl:gap-36 px-28 py-16">
         <div className="w-full xl:w-2/5 flex flex-col gap-[72px] items-start justify-between py-36">
           <div className="flex items-center justify-between">
-            <img
-              className="w-60 h-12 cursor-pointer"
-              alt="Group"
-              src="/logo2.png"
-            />
+            <Link to="/">
+              <img
+                className="w-60 h-12 cursor-pointer"
+                alt="Group"
+                src="/logo2.png"
+              />
+            </Link>
           </div>
-          <div className="w-full flex flex-col justify-center items-start">
+          <form onSubmit={handleSubmit} className="w-full flex flex-col justify-center items-start">
              <p className="[font-family:'Suisse_Intl-SemiBold',Helvetica] font-semibold text-[32px] leading-auto text-[#003D2B]">
                 Login To Dashboard
             </p>
@@ -44,6 +94,8 @@ export const Login = (): JSX.Element => {
                 {socialLogins.map((social, index) => (
                   <Button
                     key={index}
+                    type="button"
+                    onClick={index === 0 ? handleGoogleLogin : undefined}
                     className="flex h-11 items-center justify-center gap-2 px-10 py-2.5 relative flex-1 grow bg-[#f6f6f6] rounded-lg"
                   >
                     <img
@@ -80,8 +132,11 @@ export const Login = (): JSX.Element => {
                   <input
                     id="username"
                     type="text"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     placeholder="Enter Your Username"
                     className="w-full ml-6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base focus:outline-none focus:ring-0"
+                    required
                   />
                 </div>
               </div>
@@ -97,25 +152,32 @@ export const Login = (): JSX.Element => {
                     />
                   <input
                     id="password"
-                    type="text"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter Your Password"
                     className="w-full ml-6 [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-[#808080] text-base focus:outline-none focus:ring-0"
+                    required
                   />
                 </div>
               </div>
             </div>
             <div className="flex flex-col items-center gap-5 w-full pt-12">
-              <Button className="w-full h-[51px] rounded-[10px] overflow-hidden bg-[linear-gradient(90deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] hover:opacity-90">
+              <Button 
+                type="submit"
+                disabled={isLoading}
+                className="w-full h-[51px] rounded-[10px] overflow-hidden bg-[linear-gradient(90deg,rgba(39,174,96,1)_0%,rgba(0,82,204,1)_100%)] hover:opacity-90 disabled:opacity-50"
+              >
                 <span className="h-[18px] flex items-center justify-center [font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-white text-base text-center tracking-[0] leading-[18px] whitespace-nowrap">
-                  Sign In
+                  {isLoading ? "Signing In..." : "Sign In"}
                 </span>
               </Button>
               <p className="relative flex items-center justify-center self-stretch [font-family:'DM_Sans_18pt-Regular',Helvetica] font-normal text-transparent text-sm text-center tracking-[0] leading-[14px]">
                 <span className="text-[#808080] leading-[0.1px]">Don&apos;t have an account? </span>
-                <button className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#27ae60] leading-5 hover:underline"> Create Account</button>
+                <Link to="/register" className="[font-family:'DM_Sans_18pt-SemiBold',Helvetica] font-semibold text-[#27ae60] leading-5 hover:underline"> Create Account</Link>
               </p>
             </div>
-          </div>
+          </form>
         </div>
         <div className="hidden xl:block xl:w-3/5">
           <img 

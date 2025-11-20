@@ -1,4 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "./lib/queryClient";
+import { AuthProvider } from "./hooks/use-auth";
+import { TooltipProvider } from "./components/ui/tooltip";
+import { Toaster } from "./components/ui/toaster";
+import { ProtectedRoute } from "./lib/protected-route";
 import { Home } from "./screens/Home";
 import { About } from "./screens/About";
 import { ContactUS } from "./screens/ContactUS";
@@ -33,41 +39,120 @@ import { TrustverifyLive } from "./screens/TrustverifyLive";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Signup />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<ContactUS />} />
-        <Route path="/help" element={<HelpCenter />} />
-        <Route path="/industry" element={<IndustrySolutions />} />
-        <Route path="/legal" element={<LegalDisclaimer />} />
-        <Route path="/our-mission" element={<OurMission />} />
-        <Route path="/platform" element={<PlatformSuite />} />
-        <Route path="/media" element={<PressMedia />} />
-        <Route path="/pricing" element={<PricingDetail />} />
-        <Route path="/policies" element={<PrivacyPolicy />} />
-        <Route path="/compliances" element={<RegulatoryCompliances />} />
-        <Route path="/terms" element={<TermsOfServices />} />
-        <Route path="/training" element={<Training />} />
-        <Route path="/consumer-protection" element={<ConsumerProtection />} />
-        <Route path="/developer" element={<DeveloperCenter />} />
-        <Route path="/messages" element={<Messages />} />
-        <Route path="/messages-chat" element={<MessagesChat />} />
-        <Route path="/support-center" element={<SupportCenter />} />
-        <Route path="/report-scam" element={<ReportScam />} />
-        <Route path="/secure-transaction" element={<SecureTransactions />} />
-        <Route path="/create-new-transaction" element={<CreateNewTransaction />} /> 
-        <Route path="/id-verification" element={<IdVerification />} />
-        <Route path="/api-references" element={<ApiReferences />} />
-        <Route path="/secure-escrow" element={<SecureEscrow />} />
-        <Route path="/fraud-prevention" element={<FraudPrevention />} />
-        <Route path="/developer-portal" element={<DeveloperPortal />} />
-        <Route path="/trustverify-live" element={<TrustverifyLive />} />
-      </Routes>
-    </Router>
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Router>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Signup />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<ContactUS />} />
+              <Route path="/help" element={<HelpCenter />} />
+              <Route path="/industry" element={<IndustrySolutions />} />
+              <Route path="/legal" element={<LegalDisclaimer />} />
+              <Route path="/our-mission" element={<OurMission />} />
+              <Route path="/platform" element={<PlatformSuite />} />
+              <Route path="/media" element={<PressMedia />} />
+              <Route path="/pricing" element={<PricingDetail />} />
+              <Route path="/policies" element={<PrivacyPolicy />} />
+              <Route path="/compliances" element={<RegulatoryCompliances />} />
+              <Route path="/terms" element={<TermsOfServices />} />
+              <Route path="/training" element={<Training />} />
+              <Route path="/consumer-protection" element={<ConsumerProtection />} />
+              <Route path="/developer-center" element={<DeveloperCenter />} />
+              <Route path="/references" element={<ApiReferences />} />
+              <Route path="/fraud-prevention" element={<FraudPrevention />} />
+              <Route path="/live-demo" element={<TrustverifyLive />} />
+              
+              {/* Protected Routes */}
+              <Route 
+                path="/dashboard" 
+                element={
+                  <ProtectedRoute>
+                    <Dashboard />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/messages" 
+                element={
+                  <ProtectedRoute>
+                    <Messages />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/messages-chat" 
+                element={
+                  <ProtectedRoute>
+                    <MessagesChat />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/support-center" 
+                element={
+                  <ProtectedRoute>
+                    <SupportCenter />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/report-scam" 
+                element={
+                  <ProtectedRoute>
+                    <ReportScam />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/secure-transaction" 
+                element={
+                  <ProtectedRoute>
+                    <SecureTransactions />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/create-new-transaction" 
+                element={
+                  <ProtectedRoute>
+                    <CreateNewTransaction />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/id-verification" 
+                element={
+                  <ProtectedRoute>
+                    <IdVerification />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/secure-escrow" 
+                element={
+                  <ProtectedRoute>
+                    <SecureEscrow />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/developer-portal" 
+                element={
+                  <ProtectedRoute>
+                    <DeveloperPortal />
+                  </ProtectedRoute>
+                } 
+              />
+            </Routes>
+          </Router>
+        </TooltipProvider>
+      </AuthProvider>
+    </QueryClientProvider>
   );
 }
 

@@ -206,7 +206,7 @@ export const PrivacyPolicy = (): JSX.Element => {
           description: "We are committed to protecting your privacy and ensuring transparency about how we collect, use, and safeguard your personal information. This policy explains our practices in clear, understandable terms.",
         }}
       />
-      <section className="flex flex-col xl:flex-row items-center xl:items-start gap-[73px] w-full justify-center px-6 md:px-10 pt-20 pb-28">
+      <section className="flex flex-col xl:flex-row items-center xl:items-start gap-[73px] w-full max-w-[1654px] mx-auto justify-center px-6 md:px-10 pt-20 pb-28">
         <Card className="block xl:hidden bg-white rounded-[20px] border border-solid border-[#e4e4e4]">
           <CardContent className="p-0">
             <div className="flex flex-col items-start gap-5 p-[31px]">
